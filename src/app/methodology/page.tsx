@@ -97,13 +97,13 @@ export default function MethodologyPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] mb-4">
               Ranking{" "}
               <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
                 Methodology
               </span>
             </h1>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               Understanding how we calculate and rank football legends
             </p>
           </motion.div>
@@ -113,22 +113,22 @@ export default function MethodologyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#FFD700]/10 ring-1 ring-[#FFD700]/20">
                   <Scale className="h-5 w-5 text-[#FFD700]" />
                 </div>
-                <h2 className="text-xl font-bold text-white">How Scoring Works</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">How Scoring Works</h2>
               </div>
-              <div className="space-y-4 text-white/60 leading-relaxed">
+              <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
                 <p>
                   Each player&apos;s total score is calculated by summing their
                   achievements across eight categories. Each category reflects a
                   specific type of accomplishment:
                 </p>
                 <p>
-                  <strong className="text-white">Score = </strong>
+                  <strong className="text-[var(--text-primary)]">Score = </strong>
                   Continental Club + Continental National + World Cup + Domestic
                   League + Ballon d&apos;Or + World Cup Runner-up + World Cup
                   Third Place + Continental Runner-up
@@ -153,19 +153,19 @@ export default function MethodologyPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + 0.1 * i }}
-                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6"
+                  className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 ring-1 ring-white/10">
+                    <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--bg-surface)] ring-1 ring-[var(--border-color)]">
                       {Icon && <Icon className="h-6 w-6 text-[#FFD700]" />}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-semibold text-white">
+                        <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                           {item.title}
                         </h3>
                       </div>
-                      <p className="text-sm text-white/60 leading-relaxed mb-3">
+                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
                         {item.description}
                       </p>
                       <div className="inline-flex items-center gap-1.5 text-xs text-[#FFD700]/70 bg-[#FFD700]/5 px-2.5 py-1 rounded-full">
@@ -182,15 +182,15 @@ export default function MethodologyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-purple-500/10 ring-1 ring-purple-500/20">
                   <BookOpen className="h-5 w-5 text-purple-400" />
                 </div>
-                <h2 className="text-xl font-bold text-white">A Note on Subjectivity</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">A Note on Subjectivity</h2>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-[var(--text-secondary)] leading-relaxed">
                 While this ranking is based on quantifiable achievements,
                 football evaluation is ultimately subjective. Different fans,
                 cultures, and eras value different accomplishments. This ranking

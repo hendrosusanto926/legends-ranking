@@ -34,7 +34,7 @@ export function Navigation() {
   }, [pathname, router]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#111111]/80 backdrop-blur-xl dark:bg-[#111111]/80">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <motion.div
@@ -44,7 +44,7 @@ export function Navigation() {
           >
             <Link
               href="/"
-              className="flex items-center gap-2 text-lg font-bold text-white"
+              className="flex items-center gap-2 text-lg font-bold text-[var(--text-primary)]"
             >
               <Trophy className="h-6 w-6 text-[#FFD700]" />
               <span className="hidden sm:inline">Football Legends Ranking</span>
@@ -65,7 +65,7 @@ export function Navigation() {
                     variant="ghost"
                     size="sm"
                     onClick={() => handleClick(item.href)}
-                    className="text-white/70 hover:text-white hover:bg-white/10"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
                   >
                     {item.label}
                   </Button>
@@ -74,7 +74,7 @@ export function Navigation() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-white/70 hover:text-white hover:bg-white/10"
+                      className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
                     >
                       {item.label}
                     </Button>
@@ -90,14 +90,14 @@ export function Navigation() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white/60 hover:text-red-400"
+                className="text-[var(--text-secondary)] hover:text-red-400"
                 aria-label="Favorites"
               >
                 <Heart className="h-4 w-4" />
               </Button>
             </Link>
             <button
-              className="md:hidden p-2 text-white"
+              className="md:hidden p-2 text-[var(--text-primary)]"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -113,7 +113,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-white/10 bg-[#111111]/95 backdrop-blur-xl overflow-hidden"
+            className="md:hidden border-t border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl overflow-hidden"
           >
             <div className="px-4 py-3 space-y-1">
               {NAV_ITEMS.map((item) => (
@@ -121,7 +121,7 @@ export function Navigation() {
                   {item.href.startsWith("/#") ? (
                     <Button
                       variant="ghost"
-                      className="w-full justify-start text-white/70 hover:text-white hover:bg-white/10"
+                      className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
                       onClick={() => handleClick(item.href)}
                     >
                       {item.label}
@@ -130,7 +130,7 @@ export function Navigation() {
                     <Link href={item.href} onClick={() => setIsOpen(false)}>
                       <Button
                         variant="ghost"
-                        className="w-full justify-start text-white/70 hover:text-white hover:bg-white/10"
+                        className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
                       >
                         {item.label}
                       </Button>
@@ -141,7 +141,7 @@ export function Navigation() {
               <Link href="/favorites" onClick={() => setIsOpen(false)}>
                 <Button
                   variant="ghost"
-                  className="w-full justify-start text-white/70 hover:text-white hover:bg-white/10"
+                  className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
                 >
                   <Heart className="h-4 w-4 mr-2" />
                   Favorites

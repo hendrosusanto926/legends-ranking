@@ -19,13 +19,13 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] mb-4">
               About This{" "}
               <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
                 Project
               </span>
             </h1>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               A premium football analytics platform ranking the greatest players
               in football history.
             </p>
@@ -36,15 +36,15 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#FFD700]/10 ring-1 ring-[#FFD700]/20">
                   <Info className="h-5 w-5 text-[#FFD700]" />
                 </div>
-                <h2 className="text-xl font-bold text-white">Project Purpose</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Project Purpose</h2>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-[var(--text-secondary)] leading-relaxed">
                 This website is a personal project created for football fans and
                 discussion purposes. It ranks legendary football players based on
                 their achievements, including club success, international trophies,
@@ -58,15 +58,15 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#1B5E20]/20 ring-1 ring-[#1B5E20]/30">
                   <Heart className="h-5 w-5 text-[#4CAF50]" />
                 </div>
-                <h2 className="text-xl font-bold text-white">Acknowledgements</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Acknowledgements</h2>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-[var(--text-secondary)] leading-relaxed">
                 This ranking is inspired by football discussions, statistics, and
                 the legacy of players who have shaped the beautiful game. Data
                 is gathered from historical records and football databases. The
@@ -79,13 +79,13 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-500/10 ring-1 ring-blue-500/20">
                   <Code className="h-5 w-5 text-blue-400" />
                 </div>
-                <h2 className="text-xl font-bold text-white">Technology Stack</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Technology Stack</h2>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 ].map((tech) => (
                   <div
                     key={tech}
-                    className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/60 text-center"
+                    className="rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-secondary)] text-center"
                   >
                     {tech}
                   </div>
@@ -113,15 +113,15 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-purple-500/10 ring-1 ring-purple-500/20">
                   <GitBranch className="h-5 w-5 text-purple-400" />
                 </div>
-                <h2 className="text-xl font-bold text-white">Future Roadmap</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Future Roadmap</h2>
               </div>
-              <ul className="space-y-2 text-white/60">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 {[
                   "Expand player database with more legends",
                   "Add head-to-head comparison history",
@@ -142,15 +142,15 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-red-500/10 ring-1 ring-red-500/20">
                   <MessageCircle className="h-5 w-5 text-red-400" />
                 </div>
-                <h2 className="text-xl font-bold text-white">Disclaimer</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Disclaimer</h2>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-[var(--text-secondary)] leading-relaxed">
                 This ranking reflects the creator&apos;s personal opinion and is
                 not affiliated with FIFA, UEFA, or any official football
                 organization. Football opinions are inherently subjective. This

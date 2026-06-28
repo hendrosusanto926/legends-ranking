@@ -7,13 +7,13 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   return (
-    <div className="min-h-screen bg-[#0a0e1a] flex items-center justify-center">
+    <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center">
       <div className="text-center px-4">
         <div className="text-6xl mb-4">⚽</div>
-        <h1 className="text-2xl font-bold text-white mb-2">
+        <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
           Something went wrong
         </h1>
-        <p className="text-white/50 mb-6 max-w-md">
+        <p className="text-[var(--text-secondary)] mb-6 max-w-md">
           An unexpected error occurred. Please try again.
         </p>
         <button

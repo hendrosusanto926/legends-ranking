@@ -4,22 +4,22 @@ import { Trophy } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer id="about" className="border-t border-white/10 bg-[#111111]/80 backdrop-blur-xl">
+    <footer id="about" className="border-t border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-lg font-bold text-white">
+            <div className="flex items-center gap-2 text-lg font-bold text-[var(--text-primary)]">
               <Trophy className="h-5 w-5 text-[#FFD700]" />
               Football Legends Ranking
             </div>
-            <p className="text-sm text-white/50">
+            <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
               A premium football analytics platform ranking the greatest players
               in football history based on achievements.
             </p>
           </div>
           <div className="space-y-3">
-            <h3 className="font-semibold text-white">Built With</h3>
-            <ul className="space-y-2 text-sm text-white/50">
+            <h3 className="font-semibold text-[var(--text-primary)]">Built With</h3>
+            <ul className="space-y-2 text-sm" style={{ color: "var(--text-secondary)" }}>
               <li>Next.js 15 • TypeScript</li>
               <li>Tailwind CSS • shadcn/ui</li>
               <li>TanStack Table • Recharts</li>
@@ -27,8 +27,8 @@ export function Footer() {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="font-semibold text-white">Features</h3>
-            <ul className="space-y-2 text-sm text-white/50">
+            <h3 className="font-semibold text-[var(--text-primary)]">Features</h3>
+            <ul className="space-y-2 text-sm" style={{ color: "var(--text-secondary)" }}>
               <li>Interactive Rankings</li>
               <li>Dynamic Charts</li>
               <li>Responsive Design</li>
@@ -36,8 +36,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-xs text-white/40 leading-relaxed max-w-3xl mx-auto">
+        <div className="border-t border-[var(--border-color)] pt-8 text-center">
+          <p className="text-xs leading-relaxed max-w-3xl mx-auto" style={{ color: "var(--text-muted)" }}>
             Football opinions are inherently subjective. This ranking represents
             the creator&apos;s personal evaluation based on achievements and is
             intended to encourage discussion rather than define an absolute

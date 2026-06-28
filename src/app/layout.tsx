@@ -56,6 +56,21 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var t = localStorage.getItem("football-legends-theme");
+                  if (t === "dark" || t === "light") {
+                    if (t === "dark") document.documentElement.classList.add("dark");
+                    else document.documentElement.classList.remove("dark");
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#111111" />
@@ -75,7 +90,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full font-sans text-white">
+      <body className="min-h-full font-sans text-foreground bg-background">
         <ThemeProvider>
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>

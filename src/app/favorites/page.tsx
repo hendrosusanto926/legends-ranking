@@ -46,12 +46,12 @@ export default function FavoritesPage() {
             <div>
               <Link
                 href="/"
-                className="inline-flex items-center gap-1 text-sm text-white/50 hover:text-white mb-2"
+                className="inline-flex items-center gap-1 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] mb-2"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
                 Back to Rankings
               </Link>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white">
+              <h1 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
                 Your{" "}
                 <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
                   Favorites
@@ -67,11 +67,11 @@ export default function FavoritesPage() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <Heart className="h-16 w-16 mx-auto text-white/20 mb-4" />
-              <h2 className="text-xl font-semibold text-white mb-2">
+              <Heart className="h-16 w-16 mx-auto text-[var(--text-muted)] mb-4" />
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
                 No favorites yet
               </h2>
-              <p className="text-white/50 mb-6">
+              <p className="text-[var(--text-secondary)] mb-6">
                 Start adding players to your favorites by clicking the heart icon
                 on any player.
               </p>
@@ -89,7 +89,7 @@ export default function FavoritesPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="group relative rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 hover:bg-white/10 transition-all"
+                    className="group relative rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-4 hover:bg-[var(--bg-surface)] transition-all"
                   >
                     <Link
                       href={`/players/${slugify(player.name)}`}
@@ -97,12 +97,12 @@ export default function FavoritesPage() {
                     >
                       <div className="flex items-center justify-between">
                         <div>
-                          <h3 className="font-semibold text-white">
+                          <h3 className="font-semibold text-[var(--text-primary)]">
                             {player.name}
                           </h3>
-                          <div className="flex items-center gap-2 mt-1 text-xs text-white/50">
+                          <div className="flex items-center gap-2 mt-1 text-xs text-[var(--text-secondary)]">
                             <span>{player.nationality}</span>
-                            <span className="text-white/20">|</span>
+                            <span className="text-[var(--text-muted)]">|</span>
                             <Badge variant="secondary" className="text-[10px]">
                               {player.position}
                             </Badge>

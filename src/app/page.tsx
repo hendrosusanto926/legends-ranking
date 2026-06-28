@@ -98,7 +98,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative min-h-screen text-white font-sans">
+    <div className="relative min-h-screen text-[var(--text-primary)] font-sans">
       <Background />
 
       <Navigation />
@@ -132,13 +132,13 @@ export default function Home() {
                   transition={{ duration: 0.5 }}
                   className="text-center mb-8"
                 >
-                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-3">
                     Full{" "}
                     <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
                       Rankings
                     </span>
                   </h2>
-                  <p className="text-white/50 text-sm sm:text-base">
+                  <p className="text-[var(--text-secondary)] text-sm sm:text-base">
                     Complete leaderboard of football legends ranked by achievements
                   </p>
                 </motion.div>
