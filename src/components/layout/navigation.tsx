@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Trophy, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "./theme-switcher";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const NAV_ITEMS = [
   { label: "Dashboard", href: "/#dashboard" },
@@ -17,14 +18,20 @@ const NAV_ITEMS = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const handleClick = (href: string) => {
+  const handleClick = useCallback((href: string) => {
     setIsOpen(false);
     if (href.startsWith("/#")) {
-      const el = document.querySelector(href.substring(1));
-      el?.scrollIntoView({ behavior: "smooth" });
+      if (pathname !== "/") {
+        router.push(href);
+      } else {
+        const el = document.querySelector(href.substring(1));
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  };
+  }, [pathname, router]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#111111]/80 backdrop-blur-xl dark:bg-[#111111]/80">
