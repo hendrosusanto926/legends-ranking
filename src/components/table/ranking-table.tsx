@@ -74,8 +74,8 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
       columnHelper.display({
         id: "rank",
         header: "#",
-        cell: ({ row, table }) => {
-          const rank = row.index + 1 + table.getState().pagination.pageIndex * table.getState().pagination.pageSize;
+        cell: ({ row }) => {
+          const rank = row.index + 1;
           return (
             <div className="flex items-center justify-center w-10">
               {rank <= 3 ? (
