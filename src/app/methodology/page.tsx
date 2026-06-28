@@ -86,7 +86,7 @@ const METHODOLOGY_ITEMS = [
 
 export default function MethodologyPage() {
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen">
       <Background />
       <Navigation />
 

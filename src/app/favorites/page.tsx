@@ -32,7 +32,7 @@ export default function FavoritesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen">
       <Background />
       <Navigation />
 

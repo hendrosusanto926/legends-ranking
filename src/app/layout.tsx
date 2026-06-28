@@ -75,7 +75,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full font-sans bg-[#111111] text-white dark:bg-[#111111] dark:text-white">
+      <body className="min-h-full font-sans text-white">
         <ThemeProvider>
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>

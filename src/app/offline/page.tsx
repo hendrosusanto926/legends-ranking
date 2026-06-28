@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function OfflinePage() {
   return (
-    <div className="min-h-screen bg-[#111111] flex items-center justify-center">
+    <div className="min-h-screen bg-[#0a0e1a] flex items-center justify-center">
       <div className="text-center px-4">
         <div className="text-6xl mb-4">📡</div>
         <h1 className="text-2xl font-bold text-white mb-2">

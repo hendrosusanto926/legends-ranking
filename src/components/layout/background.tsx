@@ -2,30 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
-interface Particle {
+interface Node {
   x: number;
   y: number;
+  vx: number;
+  vy: number;
   size: number;
-  speedX: number;
-  speedY: number;
   opacity: number;
-  color: string;
-  glow: boolean;
-}
-
-interface FloodBeam {
-  cx: number;
-  cy: number;
-  angle: number;
-  spread: number;
-  speed: number;
-  phase: number;
-  hue: number;
+  connections: number[];
 }
 
 export function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -34,8 +22,7 @@ export function Background() {
     if (!ctx) return;
 
     let animId: number;
-    let particles: Particle[] = [];
-    let beams: FloodBeam[] = [];
+    let nodes: Node[] = [];
     let time = 0;
 
     const resize = () => {
@@ -43,192 +30,243 @@ export function Background() {
       canvas.height = window.innerHeight;
     };
 
-    const createParticles = () => {
-      particles = [];
-      const count = Math.min(Math.floor(window.innerWidth * 0.06), 60);
+    const createNodes = () => {
+      nodes = [];
+      const count = Math.min(Math.floor(window.innerWidth * 0.03), 25);
       for (let i = 0; i < count; i++) {
-        const isBlue = Math.random() > 0.4;
-        particles.push({
+        nodes.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: isBlue ? 2.5 + Math.random() * 5 : 1 + Math.random() * 2.5,
-          speedX: (Math.random() - 0.5) * 0.25,
-          speedY: (Math.random() - 0.5) * 0.25,
-          opacity: 0.3 + Math.random() * 0.7,
-          color: isBlue ? "195, 85%, 72%" : "42, 100%, 65%",
-          glow: isBlue,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          size: 1.5 + Math.random() * 2.5,
+          opacity: 0.3 + Math.random() * 0.5,
+          connections: [],
         });
       }
     };
 
-    const createBeams = () => {
-      beams = [];
-      [
-        { x: 0.12, y: 0.06 },
-        { x: 0.5, y: 0.04 },
-        { x: 0.88, y: 0.06 },
-      ].forEach((pos) => {
-        beams.push({
-          cx: pos.x,
-          cy: pos.y,
-          angle: (Math.random() - 0.5) * 0.5,
-          spread: 0.07 + Math.random() * 0.05,
-          speed: 0.1 + Math.random() * 0.1,
-          phase: Math.random() * Math.PI * 2,
-          hue: 200 + Math.random() * 30,
-        });
+    function drawPitch(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+      const vx = w / 2;
+      const farY = h * 0.44;
+      const nearY = h;
+      const farHalfW = w * 0.08;
+      const nearHalfW = w * 0.42;
+
+      // Perspective projection with non-linear depth
+      const proj = (u: number, depth: number) => {
+        // depth: 0 = far end, 1 = near end
+        // Non-linear depth curve — more compression at far end
+        const d = 1 - Math.pow(1 - depth, 1.4);
+        const y = farY + (nearY - farY) * d;
+        const hw = farHalfW + (nearHalfW - farHalfW) * d;
+        return { x: vx + u * hw, y };
+      };
+
+      const p = Math.sin(t * 0.25) * 0.08 + 0.92;
+
+      // Pitch surface
+      const lt = proj(-1, 0), rt = proj(1, 0);
+      const lb = proj(-1, 1), rb = proj(1, 1);
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(lt.x, lt.y);
+      ctx.lineTo(rt.x, rt.y);
+      ctx.lineTo(rb.x, rb.y);
+      ctx.lineTo(lb.x, lb.y);
+      ctx.closePath();
+
+      const grd = ctx.createLinearGradient(0, farY, 0, nearY);
+      grd.addColorStop(0, "rgba(0, 35, 55, 0.06)");
+      grd.addColorStop(0.5, "rgba(0, 55, 75, 0.12)");
+      grd.addColorStop(1, "rgba(0, 40, 60, 0.2)");
+      ctx.fillStyle = grd;
+      ctx.fill();
+
+      // Glowing outline
+      ctx.shadowColor = "rgba(0, 200, 255, 0.15)";
+      ctx.shadowBlur = 18;
+      ctx.strokeStyle = `hsla(195, 85%, 60%, ${0.35 * p})`;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.restore();
+
+      const dline = (x1: number, y1: number, x2: number, y2: number, a: number) => {
+        ctx.save();
+        ctx.shadowColor = `rgba(0, 200, 255, ${0.1 * a})`;
+        ctx.shadowBlur = 6;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = `hsla(195, 80%, 60%, ${0.3 * a * p})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = `hsla(195, 90%, 75%, ${0.12 * a * p})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+        ctx.restore();
+      };
+
+      // Center line
+      const cl = proj(0, 0.5);
+      dline(proj(-1, 0.5).x, cl.y, proj(1, 0.5).x, cl.y, 0.9);
+
+      // Center circle (proper perspective ellipse)
+      // Real pitch: circle radius ~9.15m, pitch length ~105m, so circle radius is ~0.087 of pitch
+      const circleR = 0.085;
+      const ccTop = proj(0, 0.5 - circleR);
+      const ccBottom = proj(0, 0.5 + circleR);
+      const ccLeft = proj(-circleR, 0.5);
+      const ccRight = proj(circleR, 0.5);
+      const ellipseRx = (ccRight.x - ccLeft.x) / 2;
+      const ellipseRy = (ccBottom.y - ccTop.y) / 2;
+      ctx.save();
+      ctx.shadowColor = `rgba(0, 200, 255, ${0.08 * p})`;
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.ellipse(vx, cl.y, ellipseRx, ellipseRy, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = `hsla(195, 80%, 60%, ${0.3 * p})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.restore();
+
+      // Center dot
+      ctx.beginPath();
+      ctx.arc(vx, cl.y, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(195, 80%, 60%, ${0.4 * p})`;
+      ctx.fill();
+
+      // Penalty area (far half: ~16.5% of pitch length)
+      // Real pitch: PA extends 16.5m from goal line, width 40.3m → ratio ~0.157
+      const paDepth = 0.15;
+      const paWidth = 0.42;
+      dline(proj(-paWidth, paDepth).x, proj(0, paDepth).y, proj(paWidth, paDepth).x, proj(0, paDepth).y, 0.7);
+      dline(proj(paWidth, paDepth).x, proj(0, paDepth).y, proj(paWidth, 0).x, proj(0, 0).y, 0.7);
+      dline(proj(-paWidth, 0).x, proj(0, 0).y, proj(paWidth, 0).x, proj(0, 0).y, 0.7);
+      dline(proj(-paWidth, paDepth).x, proj(0, paDepth).y, proj(-paWidth, 0).x, proj(0, 0).y, 0.7);
+
+      // Goal area (far half: ~5.5% of pitch length, width ~18.3m)
+      const gaDepth = 0.05;
+      const gaWidth = 0.18;
+      dline(proj(-gaWidth, gaDepth).x, proj(0, gaDepth).y, proj(gaWidth, gaDepth).x, proj(0, gaDepth).y, 0.7);
+      dline(proj(gaWidth, gaDepth).x, proj(0, gaDepth).y, proj(gaWidth, 0).x, proj(0, 0).y, 0.7);
+      dline(proj(-gaWidth, 0).x, proj(0, 0).y, proj(gaWidth, 0).x, proj(0, 0).y, 0.7);
+      dline(proj(-gaWidth, gaDepth).x, proj(0, gaDepth).y, proj(-gaWidth, 0).x, proj(0, 0).y, 0.7);
+
+      // Penalty arc (far half)
+      const arcCx = proj(0, paDepth).x;
+      const arcCy = proj(0, paDepth).y;
+      const arcR = proj(circleR * 1.1, paDepth).x - arcCx;
+      ctx.save();
+      ctx.shadowColor = `rgba(0, 200, 255, ${0.06 * p})`;
+      ctx.shadowBlur = 6;
+      ctx.beginPath();
+      ctx.arc(arcCx, arcCy, arcR, 0.35, Math.PI - 0.35, false);
+      ctx.strokeStyle = `hsla(195, 80%, 60%, ${0.25 * p})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+      ctx.restore();
+
+      // Penalty spot
+      ctx.beginPath();
+      ctx.arc(arcCx, arcCy, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(195, 80%, 60%, ${0.4 * p})`;
+      ctx.fill();
+    }
+
+    function drawNodes(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+      // Update and draw connections
+      nodes.forEach((node, i) => {
+        node.x += node.vx + Math.sin(t * 0.05 + i) * 0.1;
+        node.y += node.vy + Math.cos(t * 0.04 + i * 0.7) * 0.1;
+
+        if (node.x < -20) node.x = w + 20;
+        if (node.x > w + 20) node.x = -20;
+        if (node.y < -20) node.y = h + 20;
+        if (node.y > h + 20) node.y = -20;
+
+        // Find nearby nodes for connections
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[j].x - node.x;
+          const dy = nodes[j].y - node.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const maxDist = 150;
+
+          if (dist < maxDist) {
+            const alpha = (1 - dist / maxDist) * 0.15;
+            const twinkle = Math.sin(t * 0.3 + i + j) * 0.3 + 0.7;
+
+            ctx.beginPath();
+            ctx.moveTo(node.x, node.y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = `hsla(195, 80%, 70%, ${alpha * twinkle})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
       });
-    };
+
+      // Draw nodes
+      nodes.forEach((node) => {
+        const tw = Math.sin(t * 0.4 + node.x * 0.01 + node.y * 0.01) * 0.2 + 0.8;
+
+        // Glow
+        const g = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.size * 4);
+        g.addColorStop(0, `hsla(195, 90%, 75%, ${node.opacity * tw * 0.4})`);
+        g.addColorStop(0.3, `hsla(195, 80%, 65%, ${node.opacity * tw * 0.1})`);
+        g.addColorStop(1, "rgba(255,255,255,0)");
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.size * 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(195, 90%, 80%, ${node.opacity * tw})`;
+        ctx.fill();
+      });
+    }
 
     const animate = () => {
       time += 0.016;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Floodlight beams
-      beams.forEach((beam) => {
-        const cx = beam.cx * canvas.width;
-        const cy = beam.cy * canvas.height;
-        const pulse = Math.sin(time * beam.speed + beam.phase) * 0.3 + 0.7;
-
-        // Main beam cone
-        ctx.save();
-        ctx.translate(cx, cy);
-        ctx.rotate(beam.angle);
-
-        const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, canvas.width * 0.7);
-        grad.addColorStop(0, `hsla(${beam.hue}, 85%, 78%, ${0.15 * pulse})`);
-        grad.addColorStop(0.25, `hsla(${beam.hue}, 75%, 65%, ${0.06 * pulse})`);
-        grad.addColorStop(0.5, `hsla(${beam.hue + 10}, 60%, 55%, ${0.03 * pulse})`);
-        grad.addColorStop(1, "rgba(255,255,255,0)");
-
-        ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.arc(0, 0, canvas.width * 0.7, -beam.spread, beam.spread);
-        ctx.closePath();
-        ctx.fillStyle = grad;
-        ctx.fill();
-
-        // Rays
-        for (let i = -3; i <= 3; i++) {
-          const ra = (i / 3) * beam.spread * 0.7;
-          ctx.beginPath();
-          ctx.moveTo(0, 0);
-          ctx.lineTo(Math.cos(ra) * canvas.width * 0.6, Math.sin(ra) * canvas.width * 0.6);
-          ctx.strokeStyle = `hsla(${beam.hue}, 80%, 85%, ${0.015 * pulse})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-
-        ctx.restore();
-
-        // Source glow
-        const sg = ctx.createRadialGradient(cx, cy, 0, cx, cy, 100);
-        sg.addColorStop(0, `hsla(${beam.hue}, 100%, 90%, ${0.25 * pulse})`);
-        sg.addColorStop(0.4, `hsla(${beam.hue}, 85%, 75%, ${0.08 * pulse})`);
-        sg.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.fillStyle = sg;
-        ctx.beginPath();
-        ctx.arc(cx, cy, 100, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      // Fog wisps
-      for (let i = 0; i < 6; i++) {
-        const fx = ((Math.sin(time * 0.06 + i * 1.7) * 0.5 + 0.5) * canvas.width * 1.2) - canvas.width * 0.1;
-        const fy = canvas.height * (0.25 + i * 0.13) + Math.sin(time * 0.04 + i * 2.3) * 50;
-        const fs = 150 + Math.sin(time * 0.08 + i * 1.1) * 50;
-        const fg = ctx.createRadialGradient(fx, fy, 0, fx, fy, fs);
-        fg.addColorStop(0, `hsla(210, 40%, 75%, ${0.04 + Math.sin(time * 0.015 + i) * 0.015})`);
-        fg.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.fillStyle = fg;
-        ctx.beginPath();
-        ctx.arc(fx, fy, fs, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      // Particles
-      particles.forEach((p) => {
-        p.x += p.speedX + Math.sin(time * 0.15 + p.x * 0.008) * 0.15;
-        p.y += p.speedY + Math.cos(time * 0.12 + p.y * 0.008) * 0.15;
-
-        if (p.x < -15) p.x = canvas.width + 15;
-        if (p.x > canvas.width + 15) p.x = -15;
-        if (p.y < -15) p.y = canvas.height + 15;
-        if (p.y > canvas.height + 15) p.y = -15;
-
-        const tw = Math.sin(time * 0.6 + p.x * 0.03 + p.y * 0.03) * 0.25 + 0.75;
-
-        if (p.glow) {
-          const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3.5);
-          g.addColorStop(0, `hsla(${p.color}, ${p.opacity * tw})`);
-          g.addColorStop(0.25, `hsla(${p.color}, ${p.opacity * tw * 0.35})`);
-          g.addColorStop(1, "rgba(255,255,255,0)");
-          ctx.fillStyle = g;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size * 3.5, 0, Math.PI * 2);
-          ctx.fill();
-        } else {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = `hsla(${p.color}, ${p.opacity * tw})`;
-          ctx.fill();
-        }
-      });
+      drawPitch(ctx, canvas.width, canvas.height, time);
+      drawNodes(ctx, canvas.width, canvas.height, time);
 
       animId = requestAnimationFrame(animate);
     };
 
-    const onScroll = () => {
-      if (imgRef.current) {
-        imgRef.current.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-      }
-    };
-
     resize();
-    createParticles();
-    createBeams();
+    createNodes();
     animate();
 
     window.addEventListener("resize", () => {
       resize();
-      createParticles();
-      createBeams();
+      createNodes();
     });
-    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
-      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Stadium image */}
-      <div
-        ref={imgRef}
-        className="absolute inset-0 will-change-transform scale-105"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1676746424139-77f8bd8922a8?w=1920&q=80')",
-          }}
-        />
-      </div>
+    <div className="fixed inset-0 z-0 overflow-hidden">
+      {/* Deep dark base */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#04060a] via-[#080d1a] to-[#04060a]" />
 
-      {/* Light dark wash */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/20 via-[#0a0e1a]/10 to-[#0a0e1a]/20" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0e1a]/10 via-transparent to-[#0a0e1a]/10" />
-
-      {/* UCL blue-green glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,220,255,0.2),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,255,230,0.15),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,215,0,0.1),transparent_50%)]" />
-
-      {/* Subtle vignette */}
-      <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.2)]" />
+      {/* Subtle cyber-glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,150,220,0.06),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,200,255,0.04),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,215,0,0.03),transparent_50%)]" />
 
       {/* Canvas */}
       <canvas

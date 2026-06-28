@@ -89,7 +89,7 @@ export default function PlayerPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#111111]">
+      <div className="min-h-screen">
         <Background />
         <Navigation />
         <div className="pt-24 px-4 max-w-5xl mx-auto space-y-6">
@@ -106,7 +106,7 @@ export default function PlayerPage() {
 
   if (!player) {
     return (
-      <div className="min-h-screen bg-[#111111] flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <Background />
         <Navigation />
         <div className="text-center pt-24">
@@ -122,7 +122,7 @@ export default function PlayerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen">
       <Background />
       <Navigation />
 

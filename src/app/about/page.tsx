@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen">
       <Background />
       <Navigation />
 

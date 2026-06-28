@@ -6,7 +6,7 @@ import { ArrowUp } from "lucide-react";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Background } from "@/components/layout/background";
-import { BouncingBalls } from "@/components/layout/bouncing-balls";
+
 import { Hero } from "@/components/dashboard/hero";
 import { StatsCards } from "@/components/dashboard/stats-cards";
 import { TopThree } from "@/components/dashboard/top-three";
@@ -83,7 +83,7 @@ export default function Home() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#111111]">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center space-y-4">
           <p className="text-red-400 text-lg">{error}</p>
           <Button
@@ -98,9 +98,9 @@ export default function Home() {
   }
 
   return (
-    <div className="relative min-h-screen bg-[#111111] text-white font-sans">
+    <div className="relative min-h-screen text-white font-sans">
       <Background />
-      <BouncingBalls />
+
       <Navigation />
 
       <main className="relative z-10">
