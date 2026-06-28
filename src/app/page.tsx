@@ -1,65 +1,202 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
+import { Navigation } from "@/components/layout/navigation";
+import { Footer } from "@/components/layout/footer";
+import { Background } from "@/components/layout/background";
+import { BouncingBalls } from "@/components/layout/bouncing-balls";
+import { Hero } from "@/components/dashboard/hero";
+import { StatsCards } from "@/components/dashboard/stats-cards";
+import { TopThree } from "@/components/dashboard/top-three";
+import { RankingTable } from "@/components/table/ranking-table";
+import { Filters } from "@/components/table/filters";
+import { PlayerModal } from "@/components/player/player-modal";
+import { StatsCharts } from "@/components/charts/stats-charts";
+import { HonorableMentions } from "@/components/dashboard/honorable-mentions";
+import { About } from "@/components/dashboard/about";
+import { PlayerComparison } from "@/components/comparison/player-comparison";
+import { AIChat } from "@/components/ai/ai-chat";
+import { ExportButton } from "@/components/export/export-button";
+import { ShareButton } from "@/components/share/share-button";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  getPlayers,
+  calculateStats,
+  filterPlayers,
+  getUniqueValues,
+} from "@/lib/players";
+import type { Player, FilterState } from "@/types/player";
 
 export default function Home() {
+  const [players, setPlayers] = useState<Player[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [filters, setFilters] = useState<FilterState>({
+    search: "",
+    nationality: "",
+    position: "",
+    minScore: 0,
+    maxScore: 0,
+  });
+
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      try {
+        const data = await getPlayers();
+        const sorted = data.sort((a, b) => b.score - a.score);
+        setPlayers(sorted);
+      } catch {
+        setError("Failed to load player data");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPlayers();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const stats = useMemo(() => calculateStats(players), [players]);
+  const filteredPlayers = useMemo(
+    () => filterPlayers(players, filters),
+    [players, filters]
+  );
+  const nationalities = useMemo(
+    () => getUniqueValues(players, "nationality"),
+    [players]
+  );
+  const positions = useMemo(
+    () => getUniqueValues(players, "position"),
+    [players]
+  );
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#111111]">
+        <div className="text-center space-y-4">
+          <p className="text-red-400 text-lg">{error}</p>
+          <Button
+            variant="outline"
+            onClick={() => window.location.reload()}
+          >
+            Retry
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="relative min-h-screen bg-[#111111] text-white font-sans">
+      <Background />
+      <BouncingBalls />
+      <Navigation />
+
+      <main className="relative z-10">
+        <Hero />
+
+        {loading ? (
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center mb-12">
+              <Skeleton className="h-10 w-64 mx-auto mb-3" />
+              <Skeleton className="h-5 w-80 mx-auto" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <Skeleton key={i} className="h-32 rounded-2xl" />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <>
+            <StatsCards stats={stats} />
+            <TopThree players={filteredPlayers} />
+
+            <section id="rankings" className="py-16">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="text-center mb-8"
+                >
+                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+                    Full{" "}
+                    <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
+                      Rankings
+                    </span>
+                  </h2>
+                  <p className="text-white/50 text-sm sm:text-base">
+                    Complete leaderboard of football legends ranked by achievements
+                  </p>
+                </motion.div>
+
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                  <Filters
+                    filters={filters}
+                    onFilterChange={setFilters}
+                    nationalities={nationalities}
+                    positions={positions}
+                  />
+                  <div className="flex items-center gap-2">
+                    <ExportButton players={filteredPlayers} />
+                    <ShareButton />
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <RankingTable
+                    players={filteredPlayers}
+                    onPlayerClick={setSelectedPlayer}
+                  />
+                </div>
+              </div>
+            </section>
+
+            <HonorableMentions />
+            <PlayerComparison players={players} />
+            <StatsCharts players={filteredPlayers} />
+            <About />
+          </>
+        )}
       </main>
+
+      <Footer />
+      <AIChat />
+
+      <PlayerModal
+        player={selectedPlayer}
+        isOpen={!!selectedPlayer}
+        onClose={() => setSelectedPlayer(null)}
+      />
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showScrollTop ? 1 : 0 }}
+        className="fixed bottom-6 right-6 z-40"
+      >
+        <Button
+          variant="default"
+          size="icon"
+          className="rounded-full shadow-xl shadow-[#FFD700]/20"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      </motion.div>
     </div>
   );
 }
