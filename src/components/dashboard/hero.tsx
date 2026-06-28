@@ -5,8 +5,8 @@ import { Trophy, Award, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+    <section className="relative flex items-center justify-center overflow-hidden pt-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,13 +67,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#111111] to-transparent"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      />
     </section>
   );
 }
