@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Trophy, Heart } from "lucide-react";
+import { Menu, X, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "./theme-switcher";
 import Link from "next/link";
@@ -93,16 +93,6 @@ export function Navigation() {
 
           <div className="flex items-center gap-1">
             <ThemeSwitcher />
-            <Link href="/favorites" className="hidden md:inline-flex">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-[var(--text-secondary)] hover:text-red-400"
-                aria-label="Favorites"
-              >
-                <Heart className="h-4 w-4" />
-              </Button>
-            </Link>
             <button
               className="md:hidden p-2 text-[var(--text-primary)]"
               onClick={() => setIsOpen(!isOpen)}
@@ -128,15 +118,7 @@ export function Navigation() {
                   {renderLink(item, true)}
                 </div>
               ))}
-              <Link href="/favorites" onClick={close}>
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
-                >
-                  <Heart className="h-4 w-4 mr-2" />
-                  Favorites
-                </Button>
-              </Link>
+
             </div>
           </motion.div>
         )}

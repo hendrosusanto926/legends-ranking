@@ -40,10 +40,3 @@ export interface ChatMessage {
   timestamp: number;
 }
 
-export interface FavoritePlayer {
-  id: number;
-  name: string;
-  nationality: string;
-  position: string;
-  score: number;
-}

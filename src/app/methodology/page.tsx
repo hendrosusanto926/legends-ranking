@@ -28,14 +28,14 @@ const ICON_MAP: Record<string, React.ElementType> = {
 const METHODOLOGY_ITEMS = [
   {
     key: "contributionClub",
-    title: "Continental Club",
+    title: "Contribution Club",
     description:
       "UEFA Champions League, Copa Libertadores, or equivalent continental club competition titles. Winning the premier club competition in a continent demonstrates excellence against the best clubs across multiple domestic leagues.",
     weight: "High - Multiple winners receive cumulative credit",
   },
   {
     key: "contributionNational",
-    title: "Continental National",
+    title: "Contribution National",
     description:
       "UEFA European Championship, Copa América, AFC Asian Cup, or equivalent continental national team competition titles. Winning a continental tournament showcases dominance against other nations in the same region.",
     weight: "High - Major international achievement",
@@ -129,7 +129,7 @@ export default function MethodologyPage() {
                 </p>
                 <p>
                   <strong className="text-[var(--text-primary)]">Score = </strong>
-                  Continental Club + Continental National + World Cup + Domestic
+                  Contribution Club + Contribution National + World Cup + Domestic
                   League + Ballon d&apos;Or + World Cup Runner-up + World Cup
                   Third Place + Continental Runner-up
                 </p>

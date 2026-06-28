@@ -19,7 +19,6 @@ import { Separator } from "@/components/ui/separator";
 import { Background } from "@/components/layout/background";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
-import { FavoriteButton } from "@/components/player/favorite-button";
 import { ShareButton } from "@/components/share/share-button";
 import {
   RadarChart,
@@ -171,7 +170,6 @@ export default function PlayerPage() {
                     </div>
                   </div>
                   <div className="hidden md:flex items-center gap-2">
-                    <FavoriteButton player={player} />
                     <ShareButton
                       title={`${player.name} - Football Legends Ranking`}
                     />
@@ -202,7 +200,6 @@ export default function PlayerPage() {
                 </div>
 
                 <div className="flex md:hidden items-center justify-center gap-4 mt-4">
-                  <FavoriteButton player={player} />
                   <ShareButton
                     title={`${player.name} - Football Legends Ranking`}
                   />
