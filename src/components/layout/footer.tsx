@@ -1,7 +1,5 @@
 "use client";
 
-import { Trophy } from "lucide-react";
-
 export function Footer() {
   return (
     <footer id="about" className="border-t border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl">
@@ -9,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-lg font-bold text-[var(--text-primary)]">
-              <Trophy className="h-5 w-5 text-[#FFD700]" />
+              <span className="flex items-center justify-center h-6 w-6 rounded bg-gradient-to-br from-[#FFD700] to-[#FFA500] text-[10px] font-black text-white">FRL</span>
               Football Legends Ranking
             </div>
             <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
@@ -18,13 +16,10 @@ export function Footer() {
             </p>
           </div>
           <div className="space-y-3">
-            <h3 className="font-semibold text-[var(--text-primary)]">Built With</h3>
-            <ul className="space-y-2 text-sm" style={{ color: "var(--text-secondary)" }}>
-              <li>Next.js 15 • TypeScript</li>
-              <li>Tailwind CSS • shadcn/ui</li>
-              <li>TanStack Table • Recharts</li>
-              <li>Framer Motion • Lucide React</li>
-            </ul>
+            <h3 className="font-semibold text-[var(--text-primary)]">Copyright</h3>
+            <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+              &copy; 2026 Hendro Susanto. All rights reserved.
+            </p>
           </div>
           <div className="space-y-3">
             <h3 className="font-semibold text-[var(--text-primary)]">Features</h3>
