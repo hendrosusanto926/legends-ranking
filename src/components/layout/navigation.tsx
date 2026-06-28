@@ -6,7 +6,7 @@ import { Menu, X, Trophy, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "./theme-switcher";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   { label: "Dashboard", href: "/#dashboard" },
@@ -19,19 +19,45 @@ const NAV_ITEMS = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
-  const handleClick = useCallback((href: string) => {
+  const handleHashClick = useCallback((e: React.MouseEvent, href: string) => {
+    if (!href.startsWith("/#")) return;
     setIsOpen(false);
-    if (href.startsWith("/#")) {
-      if (pathname !== "/") {
-        router.push(href);
-      } else {
-        const el = document.querySelector(href.substring(1));
-        el?.scrollIntoView({ behavior: "smooth" });
-      }
+    const id = href.replace("/#", "");
+    if (pathname !== "/") return; // Let the browser handle hash navigation on new page
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
     }
-  }, [pathname, router]);
+  }, [pathname]);
+
+  const close = useCallback(() => setIsOpen(false), []);
+
+  const renderLink = (item: typeof NAV_ITEMS[number], mobile?: boolean) => {
+    const base = "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10";
+    const classes = mobile ? `w-full justify-start ${base}` : base;
+
+    if (item.href.startsWith("/#")) {
+      return (
+        <a
+          href={item.href}
+          onClick={(e) => handleHashClick(e, item.href)}
+          className={`inline-flex items-center justify-center h-9 rounded-md px-3 text-sm font-medium transition-colors ${classes}`}
+        >
+          {item.label}
+        </a>
+      );
+    }
+    return (
+      <Link href={item.href} onClick={close}>
+        <Button variant="ghost" size={mobile ? undefined : "sm"} className={classes}>
+          {item.label}
+        </Button>
+      </Link>
+    );
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl">
@@ -60,26 +86,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 * i }}
               >
-                {item.href.startsWith("/#") ? (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => handleClick(item.href)}
-                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
-                  >
-                    {item.label}
-                  </Button>
-                ) : (
-                  <Link href={item.href}>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
-                    >
-                      {item.label}
-                    </Button>
-                  </Link>
-                )}
+                {renderLink(item)}
               </motion.div>
             ))}
           </div>
@@ -118,27 +125,10 @@ export function Navigation() {
             <div className="px-4 py-3 space-y-1">
               {NAV_ITEMS.map((item) => (
                 <div key={item.label}>
-                  {item.href.startsWith("/#") ? (
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
-                      onClick={() => handleClick(item.href)}
-                    >
-                      {item.label}
-                    </Button>
-                  ) : (
-                    <Link href={item.href} onClick={() => setIsOpen(false)}>
-                      <Button
-                        variant="ghost"
-                        className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"
-                      >
-                        {item.label}
-                      </Button>
-                    </Link>
-                  )}
+                  {renderLink(item, true)}
                 </div>
               ))}
-              <Link href="/favorites" onClick={() => setIsOpen(false)}>
+              <Link href="/favorites" onClick={close}>
                 <Button
                   variant="ghost"
                   className="w-full justify-start text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10"

@@ -31,12 +31,7 @@ export function Background() {
     const hue = isLight ? 200 : 195;
     const sat = isLight ? 50 : 85;
     const lit = isLight ? 55 : 65;
-    const pitchBase = isLight ? [0, 45, 65] : [0, 35, 55];
-    const pitchMid = isLight ? [0, 60, 80] : [0, 55, 75];
-    const pitchEnd = isLight ? [0, 50, 70] : [0, 40, 60];
     const alphaMul = isLight ? 0.5 : 1;
-
-    const grow = (r: number[]) => `rgba(${r[0]}, ${r[1]}, ${r[2]}, `;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -59,123 +54,111 @@ export function Background() {
       }
     };
 
-    function drawPitch(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
-      const vx = w / 2;
-      const farY = h * 0.44;
-      const nearY = h;
-      const farHalfW = w * 0.08;
-      const nearHalfW = w * 0.42;
+    function drawSilhouette(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+      const s = Math.min(w, h) * 0.002;
+      const cx = w * 0.5;
+      const cy = h * 0.5;
 
-      const proj = (u: number, depth: number) => {
-        const d = 1 - Math.pow(1 - depth, 1.4);
-        const y = farY + (nearY - farY) * d;
-        const hw = farHalfW + (nearHalfW - farHalfW) * d;
-        return { x: vx + u * hw, y };
-      };
-
-      const p = Math.sin(t * 0.25) * 0.08 + 0.92;
-
-      const lt = proj(-1, 0), rt = proj(1, 0);
-      const lb = proj(-1, 1), rb = proj(1, 1);
+      const pulse = Math.sin(t * 0.3) * 0.12 + 0.88;
 
       ctx.save();
+      ctx.shadowColor = `hsla(${hue}, ${sat}%, ${lit + 10}%, ${0.2 * alphaMul * pulse})`;
+      ctx.shadowBlur = 40;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+
+      const col = (a: number) => `hsla(${hue}, ${sat * 0.6}%, ${lit + 12}%, ${a * alphaMul * pulse})`;
+      const colS = (a: number) => `hsla(${hue}, ${sat}%, ${lit + 5}%, ${a * alphaMul * pulse})`;
+
+      // --- Head ---
       ctx.beginPath();
-      ctx.moveTo(lt.x, lt.y);
-      ctx.lineTo(rt.x, rt.y);
-      ctx.lineTo(rb.x, rb.y);
-      ctx.lineTo(lb.x, lb.y);
+      ctx.arc(cx, cy - 52 * s, 11 * s, 0, Math.PI * 2);
+      ctx.fillStyle = col(0.15);
+      ctx.fill();
+      ctx.strokeStyle = colS(0.45);
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // --- Body silhouette (filled outline) ---
+      ctx.beginPath();
+      // Neck right
+      ctx.moveTo(cx + 5 * s, cy - 41 * s);
+      // Right shoulder
+      ctx.quadraticCurveTo(cx + 12 * s, cy - 38 * s, cx + 14 * s, cy - 36 * s);
+      // Right arm outer (raised up in celebration)
+      ctx.quadraticCurveTo(cx + 16 * s, cy - 44 * s, cx + 12 * s, cy - 50 * s);
+      // Right hand
+      ctx.lineTo(cx + 14 * s, cy - 52 * s);
+      // Right arm inner
+      ctx.lineTo(cx + 8 * s, cy - 46 * s);
+      ctx.lineTo(cx + 8 * s, cy - 42 * s);
+      // Right side of torso down
+      ctx.quadraticCurveTo(cx + 10 * s, cy - 30 * s, cx + 8 * s, cy - 16 * s);
+      ctx.quadraticCurveTo(cx + 7 * s, cy - 8 * s, cx + 6 * s, cy - 2 * s);
+      // Right hip
+      ctx.lineTo(cx + 6 * s, cy);
+      // Right leg outer
+      ctx.lineTo(cx + 5 * s, cy + 12 * s);
+      ctx.quadraticCurveTo(cx + 4 * s, cy + 28 * s, cx + 3 * s, cy + 38 * s);
+      // Right foot bottom
+      ctx.lineTo(cx + 7 * s, cy + 38 * s);
+      ctx.lineTo(cx + 3 * s, cy + 42 * s);
+      // Right foot back
+      ctx.lineTo(cx + 1 * s, cy + 40 * s);
+      // Right leg inner
+      ctx.quadraticCurveTo(cx + 2 * s, cy + 28 * s, cx + 2 * s, cy + 12 * s);
+      // Between legs
+      ctx.quadraticCurveTo(cx, cy + 4 * s, cx - 1 * s, cy + 2 * s);
+      // Left leg inner
+      ctx.quadraticCurveTo(cx - 2 * s, cy + 14 * s, cx - 3 * s, cy + 28 * s);
+      ctx.quadraticCurveTo(cx - 4 * s, cy + 36 * s, cx - 5 * s, cy + 40 * s);
+      // Left foot
+      ctx.lineTo(cx - 9 * s, cy + 38 * s);
+      ctx.lineTo(cx - 5 * s, cy + 36 * s);
+      // Left leg outer
+      ctx.quadraticCurveTo(cx - 2 * s, cy + 26 * s, cx - 2 * s, cy + 14 * s);
+      ctx.quadraticCurveTo(cx - 3 * s, cy + 8 * s, cx - 4 * s, cy - 2 * s);
+      // Left hip
+      ctx.lineTo(cx - 5 * s, cy);
+      // Left side of torso up
+      ctx.quadraticCurveTo(cx - 7 * s, cy - 8 * s, cx - 7 * s, cy - 16 * s);
+      ctx.quadraticCurveTo(cx - 9 * s, cy - 28 * s, cx - 8 * s, cy - 34 * s);
+      // Left shoulder
+      ctx.quadraticCurveTo(cx - 10 * s, cy - 36 * s, cx - 13 * s, cy - 36 * s);
+      // Left arm outer (raised up in celebration)
+      ctx.quadraticCurveTo(cx - 16 * s, cy - 44 * s, cx - 12 * s, cy - 50 * s);
+      // Left hand
+      ctx.lineTo(cx - 14 * s, cy - 52 * s);
+      // Left arm inner
+      ctx.lineTo(cx - 8 * s, cy - 46 * s);
+      ctx.lineTo(cx - 7 * s, cy - 42 * s);
+      // Neck left
+      ctx.quadraticCurveTo(cx - 3 * s, cy - 42 * s, cx - 5 * s, cy - 42 * s);
       ctx.closePath();
 
-      const grd = ctx.createLinearGradient(0, farY, 0, nearY);
-      grd.addColorStop(0, `${grow(pitchBase)}${0.06 * alphaMul})`);
-      grd.addColorStop(0.5, `${grow(pitchMid)}${0.12 * alphaMul})`);
-      grd.addColorStop(1, `${grow(pitchEnd)}${0.2 * alphaMul})`);
-      ctx.fillStyle = grd;
+      ctx.fillStyle = col(0.12);
       ctx.fill();
-
-      ctx.shadowColor = `rgba(0, ${isLight ? 120 : 200}, 255, ${0.1 * alphaMul})`;
-      ctx.shadowBlur = 18;
-      ctx.strokeStyle = `hsla(${hue}, ${sat}%, ${lit}%, ${0.35 * p * alphaMul})`;
-      ctx.lineWidth = 1.2;
+      ctx.strokeStyle = colS(0.4);
+      ctx.lineWidth = 1.5;
       ctx.stroke();
-      ctx.restore();
 
-      const dline = (x1: number, y1: number, x2: number, y2: number, a: number) => {
-        ctx.save();
-        ctx.shadowColor = `rgba(0, ${isLight ? 120 : 200}, 255, ${0.08 * a * alphaMul})`;
-        ctx.shadowBlur = 6;
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.strokeStyle = `hsla(${hue}, ${sat * 0.9}%, ${lit}%, ${0.3 * a * p * alphaMul})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        ctx.shadowBlur = 0;
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.strokeStyle = `hsla(${hue}, ${sat * 0.95}%, ${lit + 10}%, ${0.12 * a * p * alphaMul})`;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-        ctx.restore();
-      };
-
-      const cl = proj(0, 0.5);
-      dline(proj(-1, 0.5).x, cl.y, proj(1, 0.5).x, cl.y, 0.9);
-
-      const circleR = 0.085;
-      const ccTop = proj(0, 0.5 - circleR);
-      const ccBottom = proj(0, 0.5 + circleR);
-      const ccLeft = proj(-circleR, 0.5);
-      const ccRight = proj(circleR, 0.5);
-      const ellipseRx = (ccRight.x - ccLeft.x) / 2;
-      const ellipseRy = (ccBottom.y - ccTop.y) / 2;
-      ctx.save();
-      ctx.shadowColor = `rgba(0, ${isLight ? 120 : 200}, 255, ${0.06 * alphaMul})`;
-      ctx.shadowBlur = 8;
+      // --- Subtle inner glow for depth ---
+      ctx.shadowBlur = 0;
       ctx.beginPath();
-      ctx.ellipse(vx, cl.y, ellipseRx, ellipseRy, 0, 0, Math.PI * 2);
-      ctx.strokeStyle = `hsla(${hue}, ${sat * 0.9}%, ${lit}%, ${0.3 * p * alphaMul})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      ctx.restore();
-
-      ctx.beginPath();
-      ctx.arc(vx, cl.y, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${hue}, ${sat * 0.9}%, ${lit}%, ${0.4 * p * alphaMul})`;
-      ctx.fill();
-
-      const paDepth = 0.15;
-      const paWidth = 0.42;
-      dline(proj(-paWidth, paDepth).x, proj(0, paDepth).y, proj(paWidth, paDepth).x, proj(0, paDepth).y, 0.7);
-      dline(proj(paWidth, paDepth).x, proj(0, paDepth).y, proj(paWidth, 0).x, proj(0, 0).y, 0.7);
-      dline(proj(-paWidth, 0).x, proj(0, 0).y, proj(paWidth, 0).x, proj(0, 0).y, 0.7);
-      dline(proj(-paWidth, paDepth).x, proj(0, paDepth).y, proj(-paWidth, 0).x, proj(0, 0).y, 0.7);
-
-      const gaDepth = 0.05;
-      const gaWidth = 0.18;
-      dline(proj(-gaWidth, gaDepth).x, proj(0, gaDepth).y, proj(gaWidth, gaDepth).x, proj(0, gaDepth).y, 0.7);
-      dline(proj(gaWidth, gaDepth).x, proj(0, gaDepth).y, proj(gaWidth, 0).x, proj(0, 0).y, 0.7);
-      dline(proj(-gaWidth, 0).x, proj(0, 0).y, proj(gaWidth, 0).x, proj(0, 0).y, 0.7);
-      dline(proj(-gaWidth, gaDepth).x, proj(0, gaDepth).y, proj(-gaWidth, 0).x, proj(0, 0).y, 0.7);
-
-      const arcCx = proj(0, paDepth).x;
-      const arcCy = proj(0, paDepth).y;
-      const arcR = proj(circleR * 1.1, paDepth).x - arcCx;
-      ctx.save();
-      ctx.shadowColor = `rgba(0, ${isLight ? 120 : 200}, 255, ${0.04 * alphaMul})`;
-      ctx.shadowBlur = 6;
-      ctx.beginPath();
-      ctx.arc(arcCx, arcCy, arcR, 0.35, Math.PI - 0.35, false);
-      ctx.strokeStyle = `hsla(${hue}, ${sat * 0.9}%, ${lit}%, ${0.25 * p * alphaMul})`;
+      // Torso center highlight
+      ctx.moveTo(cx - 4 * s, cy - 28 * s);
+      ctx.quadraticCurveTo(cx, cy - 20 * s, cx + 4 * s, cy - 28 * s);
+      ctx.strokeStyle = colS(0.12);
       ctx.lineWidth = 0.8;
       ctx.stroke();
-      ctx.restore();
 
-      ctx.beginPath();
-      ctx.arc(arcCx, arcCy, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${hue}, ${sat * 0.9}%, ${lit}%, ${0.4 * p * alphaMul})`;
-      ctx.fill();
+      // --- Jersey number suggestion (just a subtle mark) ---
+      ctx.fillStyle = colS(0.08);
+      ctx.font = `${10 * s}px sans-serif`;
+      ctx.textAlign = "center";
+      ctx.fillText("10", cx, cy - 6 * s);
+
+      ctx.restore();
     }
 
     function drawNodes(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
@@ -236,7 +219,7 @@ export function Background() {
       time += 0.016;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      drawPitch(ctx, canvas.width, canvas.height, time);
+      drawSilhouette(ctx, canvas.width, canvas.height, time);
       drawNodes(ctx, canvas.width, canvas.height, time);
 
       animId = requestAnimationFrame(animate);
