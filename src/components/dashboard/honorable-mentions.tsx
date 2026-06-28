@@ -12,7 +12,7 @@ const HONOREES = [
     flag: "🇩🇪",
     position: "CB • Libero",
     description:
-      "One of the few captains in football history to lift the FIFA World Cup, the continental championship, and the UEFA Champions League, demonstrating exceptional leadership at both club and international level.",
+      "The legendary 'Kaiser' redefined the role of a defender with elegance, intelligence, and leadership. As captain, he led West Germany to FIFA World Cup glory, won the UEFA European Championship, and lifted the European Cup with Bayern Munich, becoming one of football's greatest leaders.",
     achievements: [
       "World Cup Winner (1974)",
       "European Championship (1972)",
@@ -29,7 +29,7 @@ const HONOREES = [
     flag: "🇫🇷",
     position: "CDM • Captain",
     description:
-      "One of the few captains in football history to lift the FIFA World Cup, the continental championship, and the UEFA Champions League, demonstrating exceptional leadership at both club and international level.",
+      "A tireless leader in midfield, Didier Deschamps captained France to FIFA World Cup and UEFA European Championship triumphs while also lifting the UEFA Champions League with Marseille, earning his place among football's most accomplished captains.",
     achievements: [
       "World Cup Winner (1998)",
       "European Championship (2000)",
@@ -46,7 +46,7 @@ const HONOREES = [
     flag: "🇪🇸",
     position: "GK • Captain",
     description:
-      "One of the few captains in football history to lift the FIFA World Cup, the continental championship, and the UEFA Champions League, demonstrating exceptional leadership at both club and international level.",
+      "One of the greatest goalkeepers in football history, Iker Casillas captained Spain during its golden era to FIFA World Cup and UEFA European Championship success while also leading Real Madrid to UEFA Champions League glory.",
     achievements: [
       "World Cup Winner (2010)",
       "European Championship x2 (2008, 2012)",
