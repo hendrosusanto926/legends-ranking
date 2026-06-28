@@ -122,13 +122,13 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
           </Badge>
         ),
       }),
-      columnHelper.accessor("continentalClub", {
+      columnHelper.accessor("contributionClub", {
         header: "Cont. Club",
         cell: (info) => (
           <span className="text-white/70">{info.getValue()}</span>
         ),
       }),
-      columnHelper.accessor("continentalNational", {
+      columnHelper.accessor("contributionNational", {
         header: "Cont. Nat.",
         cell: (info) => (
           <span className="text-white/70">{info.getValue()}</span>

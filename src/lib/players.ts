@@ -73,8 +73,8 @@ export function getPlayerBySlug(players: Player[], slug: string): Player | undef
 }
 
 export const ACHIEVEMENT_CONFIG = [
-  { key: "continentalClub" as const, label: "Continental Club", icon: "Trophy", color: "#FFD700", maxValue: 5 },
-  { key: "continentalNational" as const, label: "Continental National", icon: "Earth", color: "#1B5E20", maxValue: 2 },
+  { key: "contributionClub" as const, label: "Continental Club", icon: "Trophy", color: "#FFD700", maxValue: 5 },
+  { key: "contributionNational" as const, label: "Continental National", icon: "Earth", color: "#1B5E20", maxValue: 2 },
   { key: "worldCup" as const, label: "World Cup", icon: "Globe", color: "#1B5E20", maxValue: 3 },
   { key: "domesticLeague" as const, label: "Domestic League", icon: "Award", color: "#FFD700", maxValue: 12 },
   { key: "ballonDor" as const, label: "Ballon d'Or", icon: "Star", color: "#FFD700", maxValue: 8 },
@@ -84,8 +84,8 @@ export const ACHIEVEMENT_CONFIG = [
 ] as const;
 
 export const ACHIEVEMENT_LABELS: Record<string, string> = {
-  continentalClub: "Continental Club",
-  continentalNational: "Continental National",
+  contributionClub: "Continental Club",
+  contributionNational: "Continental National",
   worldCup: "World Cup",
   domesticLeague: "Domestic League",
   ballonDor: "Ballon d'Or",
