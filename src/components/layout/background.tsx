@@ -54,113 +54,6 @@ export function Background() {
       }
     };
 
-    function drawSilhouette(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
-      const s = Math.min(w, h) * 0.002;
-      const cx = w * 0.5;
-      const cy = h * 0.5;
-
-      const pulse = Math.sin(t * 0.3) * 0.12 + 0.88;
-
-      ctx.save();
-      ctx.shadowColor = `hsla(${hue}, ${sat}%, ${lit + 10}%, ${0.2 * alphaMul * pulse})`;
-      ctx.shadowBlur = 40;
-      ctx.lineCap = "round";
-      ctx.lineJoin = "round";
-
-      const col = (a: number) => `hsla(${hue}, ${sat * 0.6}%, ${lit + 12}%, ${a * alphaMul * pulse})`;
-      const colS = (a: number) => `hsla(${hue}, ${sat}%, ${lit + 5}%, ${a * alphaMul * pulse})`;
-
-      // --- Head ---
-      ctx.beginPath();
-      ctx.arc(cx, cy - 52 * s, 11 * s, 0, Math.PI * 2);
-      ctx.fillStyle = col(0.15);
-      ctx.fill();
-      ctx.strokeStyle = colS(0.45);
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      // --- Body silhouette (filled outline) ---
-      ctx.beginPath();
-      // Neck right
-      ctx.moveTo(cx + 5 * s, cy - 41 * s);
-      // Right shoulder
-      ctx.quadraticCurveTo(cx + 12 * s, cy - 38 * s, cx + 14 * s, cy - 36 * s);
-      // Right arm outer (raised up in celebration)
-      ctx.quadraticCurveTo(cx + 16 * s, cy - 44 * s, cx + 12 * s, cy - 50 * s);
-      // Right hand
-      ctx.lineTo(cx + 14 * s, cy - 52 * s);
-      // Right arm inner
-      ctx.lineTo(cx + 8 * s, cy - 46 * s);
-      ctx.lineTo(cx + 8 * s, cy - 42 * s);
-      // Right side of torso down
-      ctx.quadraticCurveTo(cx + 10 * s, cy - 30 * s, cx + 8 * s, cy - 16 * s);
-      ctx.quadraticCurveTo(cx + 7 * s, cy - 8 * s, cx + 6 * s, cy - 2 * s);
-      // Right hip
-      ctx.lineTo(cx + 6 * s, cy);
-      // Right leg outer
-      ctx.lineTo(cx + 5 * s, cy + 12 * s);
-      ctx.quadraticCurveTo(cx + 4 * s, cy + 28 * s, cx + 3 * s, cy + 38 * s);
-      // Right foot bottom
-      ctx.lineTo(cx + 7 * s, cy + 38 * s);
-      ctx.lineTo(cx + 3 * s, cy + 42 * s);
-      // Right foot back
-      ctx.lineTo(cx + 1 * s, cy + 40 * s);
-      // Right leg inner
-      ctx.quadraticCurveTo(cx + 2 * s, cy + 28 * s, cx + 2 * s, cy + 12 * s);
-      // Between legs
-      ctx.quadraticCurveTo(cx, cy + 4 * s, cx - 1 * s, cy + 2 * s);
-      // Left leg inner
-      ctx.quadraticCurveTo(cx - 2 * s, cy + 14 * s, cx - 3 * s, cy + 28 * s);
-      ctx.quadraticCurveTo(cx - 4 * s, cy + 36 * s, cx - 5 * s, cy + 40 * s);
-      // Left foot
-      ctx.lineTo(cx - 9 * s, cy + 38 * s);
-      ctx.lineTo(cx - 5 * s, cy + 36 * s);
-      // Left leg outer
-      ctx.quadraticCurveTo(cx - 2 * s, cy + 26 * s, cx - 2 * s, cy + 14 * s);
-      ctx.quadraticCurveTo(cx - 3 * s, cy + 8 * s, cx - 4 * s, cy - 2 * s);
-      // Left hip
-      ctx.lineTo(cx - 5 * s, cy);
-      // Left side of torso up
-      ctx.quadraticCurveTo(cx - 7 * s, cy - 8 * s, cx - 7 * s, cy - 16 * s);
-      ctx.quadraticCurveTo(cx - 9 * s, cy - 28 * s, cx - 8 * s, cy - 34 * s);
-      // Left shoulder
-      ctx.quadraticCurveTo(cx - 10 * s, cy - 36 * s, cx - 13 * s, cy - 36 * s);
-      // Left arm outer (raised up in celebration)
-      ctx.quadraticCurveTo(cx - 16 * s, cy - 44 * s, cx - 12 * s, cy - 50 * s);
-      // Left hand
-      ctx.lineTo(cx - 14 * s, cy - 52 * s);
-      // Left arm inner
-      ctx.lineTo(cx - 8 * s, cy - 46 * s);
-      ctx.lineTo(cx - 7 * s, cy - 42 * s);
-      // Neck left
-      ctx.quadraticCurveTo(cx - 3 * s, cy - 42 * s, cx - 5 * s, cy - 42 * s);
-      ctx.closePath();
-
-      ctx.fillStyle = col(0.12);
-      ctx.fill();
-      ctx.strokeStyle = colS(0.4);
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      // --- Subtle inner glow for depth ---
-      ctx.shadowBlur = 0;
-      ctx.beginPath();
-      // Torso center highlight
-      ctx.moveTo(cx - 4 * s, cy - 28 * s);
-      ctx.quadraticCurveTo(cx, cy - 20 * s, cx + 4 * s, cy - 28 * s);
-      ctx.strokeStyle = colS(0.12);
-      ctx.lineWidth = 0.8;
-      ctx.stroke();
-
-      // --- Jersey number suggestion (just a subtle mark) ---
-      ctx.fillStyle = colS(0.08);
-      ctx.font = `${10 * s}px sans-serif`;
-      ctx.textAlign = "center";
-      ctx.fillText("10", cx, cy - 6 * s);
-
-      ctx.restore();
-    }
-
     function drawNodes(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
       // Update and draw connections
       nodes.forEach((node, i) => {
@@ -219,7 +112,6 @@ export function Background() {
       time += 0.016;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      drawSilhouette(ctx, canvas.width, canvas.height, time);
       drawNodes(ctx, canvas.width, canvas.height, time);
 
       animId = requestAnimationFrame(animate);
