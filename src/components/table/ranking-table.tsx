@@ -25,7 +25,9 @@ import {
   ChevronRight,
   Eye,
   EyeOff,
+  BookOpen,
 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -122,13 +124,13 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
           </Badge>
         ),
       }),
-      columnHelper.accessor("contributionClub", {
+      columnHelper.accessor("continentalClub", {
         header: "Cont. Club",
         cell: (info) => (
           <span className="text-white/70">{info.getValue()}</span>
         ),
       }),
-      columnHelper.accessor("contributionNational", {
+      columnHelper.accessor("continentalNational", {
         header: "Cont. Nat.",
         cell: (info) => (
           <span className="text-white/70">{info.getValue()}</span>
@@ -372,6 +374,19 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
               </option>
             ))}
           </select>
+        </div>
+
+        <div className="flex justify-center pt-2">
+          <Link href="/methodology">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-xs text-white/50 hover:text-white/80 gap-1.5"
+            >
+              <BookOpen className="h-3.5 w-3.5" />
+              View Ranking Methodology
+            </Button>
+          </Link>
         </div>
       </div>
     </TooltipProvider>

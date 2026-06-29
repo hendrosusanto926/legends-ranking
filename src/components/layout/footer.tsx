@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-lg font-bold text-[var(--text-primary)]">
-              <span className="flex items-center justify-center h-6 w-6 rounded bg-gradient-to-br from-[#FFD700] to-[#FFA500] text-[10px] font-black text-white">FRL</span>
+              <span className="flex items-center justify-center h-6 w-6 rounded bg-gradient-to-br from-[#FFD700] to-[#FFA500] text-[10px] font-black text-white">FLR</span>
               Football Legends Ranking
             </div>
             <p className="text-sm" style={{ color: "var(--text-secondary)" }}>

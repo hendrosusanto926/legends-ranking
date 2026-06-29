@@ -1,8 +1,8 @@
 export interface Player {
   id: number;
   name: string;
-  contributionClub: number;
-  contributionNational: number;
+  continentalClub: number;
+  continentalNational: number;
   worldCup: number;
   domesticLeague: number;
   ballonDor: number;

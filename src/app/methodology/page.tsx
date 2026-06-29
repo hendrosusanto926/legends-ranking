@@ -10,6 +10,7 @@ import {
   Earth,
   Scale,
   BookOpen,
+  Sparkles,
 } from "lucide-react";
 import { Background } from "@/components/layout/background";
 import { Navigation } from "@/components/layout/navigation";
@@ -23,21 +24,22 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Award,
   Star,
   Medal,
+  Sparkles,
 };
 
 const METHODOLOGY_ITEMS = [
   {
-    key: "contributionClub",
-    title: "Contribution Club",
+    key: "continentalClub",
+    title: "Continental Club",
     description:
       "UEFA Champions League, Copa Libertadores, or equivalent continental club competition titles. Winning the premier club competition in a continent demonstrates excellence against the best clubs across multiple domestic leagues.",
     weight: "High - Multiple winners receive cumulative credit",
   },
   {
-    key: "contributionNational",
-    title: "Contribution National",
+    key: "continentalNational",
+    title: "Continental National",
     description:
-      "UEFA European Championship, Copa América, AFC Asian Cup, or equivalent continental national team competition titles. Winning a continental tournament showcases dominance against other nations in the same region.",
+      "UEFA European Championship, Copa AmÃƒÂ©rica, AFC Asian Cup, or equivalent continental national team competition titles. Winning a continental tournament showcases dominance against other nations in the same region.",
     weight: "High - Major international achievement",
   },
   {
@@ -51,37 +53,48 @@ const METHODOLOGY_ITEMS = [
     key: "domesticLeague",
     title: "Domestic League",
     description:
-      "National league titles won in any top-tier domestic competition. Consistency over a full season is rewarded, with each title contributing incrementally to the player's overall score.",
-    weight: "Medium - Rewards sustained excellence",
+      "National league titles won in any top-tier domestic competition. Uses milestone scoring instead of counting every title: 1-4 titles earns +1, 5-8 titles earns +1.5, 9+ titles earns +2.",
+    weight: "Milestone-based scoring",
   },
   {
     key: "ballonDor",
     title: "Ballon d'Or",
     description:
-      "The most prestigious individual award in football, given annually to the best player in the world. Multiple Ballon d'Or wins indicate sustained dominance at the highest level.",
-    weight: "Very High - Individual excellence recognition",
+      "The most prestigious individual award in football, given annually to the best player in the world. At least one Ballon d'Or win earns a flat +1 point bonus.",
+    weight: "Flat bonus: +1 point",
   },
   {
     key: "worldCupRunnerUp",
     title: "World Cup Runner-up",
     description:
-      "Finishing as runner-up in the FIFA World Cup is a significant achievement, demonstrating the ability to reach the final of the world's biggest tournament.",
-    weight: "Medium - Recognition of deep tournament run",
+      "Finishing as runner-up in the FIFA World Cup is a significant achievement. Each runner-up appearance earns +1.5 points.",
+    weight: "+1.5 per appearance",
   },
   {
     key: "worldCupThirdPlace",
     title: "World Cup Third Place",
     description:
-      "Finishing in third place at the World Cup shows consistent high performance at the international level.",
-    weight: "Low-Medium - Solid achievement",
+      "Finishing in third place at the World Cup shows consistent high performance at the international level. Each third-place finish earns +0.75 points.",
+    weight: "+0.75 per finish",
   },
   {
     key: "continentalRunnerUp",
     title: "Continental Runner-up",
     description:
-      "Finishing as runner-up in a continental tournament (UEFA Euro, Copa América, etc.) demonstrates high-level performance against regional competition.",
-    weight: "Low-Medium - Recognition of continental success",
+      "Finishing as runner-up in a continental tournament (UEFA Euro, Copa AmÃƒÂ©rica, etc.). Each runner-up appearance earns +0.75 points.",
+    weight: "+0.75 per appearance",
   },
+];
+
+const POINT_SYSTEM = [
+  { icon: "Trophy", label: "Continental Club Champion", points: "+1.5", per: "per title" },
+  { icon: "Earth", label: "Continental National Champion", points: "+1.75", per: "per title" },
+  { icon: "Medal", label: "Continental National Runner-up", points: "+0.75", per: "per appearance" },
+  { icon: "Globe", label: "FIFA World Cup Champion", points: "+2", per: "per title" },
+  { icon: "Medal", label: "FIFA World Cup Runner-up", points: "+1.5", per: "per appearance" },
+  { icon: "Medal", label: "FIFA World Cup Third Place", points: "+0.75", per: "per finish" },
+  { icon: "Award", label: "Domestic League", points: "1\u20132", per: "milestone scoring" },
+  { icon: "Star", label: "Ballon d'Or", points: "+1", per: "flat bonus" },
 ];
 
 export default function MethodologyPage() {
@@ -115,30 +128,101 @@ export default function MethodologyPage() {
               transition={{ delay: 0.1 }}
               className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#FFD700]/10 ring-1 ring-[#FFD700]/20">
                   <Scale className="h-5 w-5 text-[#FFD700]" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--text-primary)]">How Scoring Works</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Ranking Methodology</h2>
               </div>
-              <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+
+              <div className="mb-6 text-[var(--text-secondary)] leading-relaxed">
                 <p>
-                  Each player&apos;s total score is calculated by summing their
-                  achievements across eight categories. Each category reflects a
-                  specific type of accomplishment:
+                  Each player&apos;s final score is calculated by summing points
+                  across eight achievement categories. Each category uses a
+                  specific point value per title, appearance, or milestone as
+                  detailed below.
                 </p>
-                <p>
-                  <strong className="text-[var(--text-primary)]">Score = </strong>
-                  Contribution Club + Contribution National + World Cup + Domestic
-                  League + Ballon d&apos;Or + World Cup Runner-up + World Cup
-                  Third Place + Continental Runner-up
-                </p>
-                <p>
-                  Each achievement is counted equally per occurrence, meaning a
-                  player who wins multiple league titles or Champions Leagues
-                  receives cumulative credit. The raw count approach ensures
-                  transparency and objectivity.
-                </p>
+              </div>
+
+              {/* Point System Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {POINT_SYSTEM.map((item) => {
+                  const Icon = ICON_MAP[item.icon] || Trophy;
+                  return (
+                    <div
+                      key={item.label}
+                      className="rounded-xl border border-white/10 bg-white/[0.03] p-4 flex items-center gap-4 hover:bg-white/[0.06] transition-colors"
+                    >
+                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br ring-1 ring-white/10 shrink-0">
+                        <Icon className="h-5 w-5 text-white/80" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-[var(--text-primary)] truncate">
+                          {item.label}
+                        </p>
+                        <div className="flex items-baseline gap-1.5 mt-0.5">
+                          <span className="text-lg font-bold text-[#FFD700]">
+                            {item.points}
+                          </span>
+                          <span className="text-xs text-[var(--text-secondary)]">
+                            {item.per}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Domestic League Milestone */}
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 mb-4">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500/20 to-amber-600/10 ring-1 ring-white/10">
+                    <Award className="h-4 w-4 text-yellow-400" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-[var(--text-primary)]">Domestic League â€” Milestone Scoring</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {[
+                    { range: "1\u20134 titles", points: "+1 point" },
+                    { range: "5\u20138 titles", points: "+1.5 points" },
+                    { range: "9+ titles", points: "+2 points" },
+                  ].map((tier) => (
+                    <div key={tier.range} className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-center">
+                      <p className="text-xs text-[var(--text-secondary)] mb-1">{tier.range}</p>
+                      <p className="text-base font-bold text-[#FFD700]">{tier.points}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Ballon d'Or & Major Bonus */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500/20 to-pink-600/10 ring-1 ring-white/10">
+                      <Star className="h-4 w-4 text-rose-400" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">Ballon d'Or</h3>
+                  </div>
+                  <p className="text-xs text-[var(--text-secondary)] mb-2">
+                    At least one Ballon d'Or win
+                  </p>
+                  <p className="text-lg font-bold text-[#FFD700]">+1 point</p>
+                </div>
+
+                <div className="rounded-xl border border-[#FFD700]/20 bg-[#FFD700]/[0.03] p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[#FFD700]/20 to-[#FFA500]/10 ring-1 ring-[#FFD700]/30">
+                      <Sparkles className="h-4 w-4 text-[#FFD700]" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">Major Achievement Bonus</h3>
+                  </div>
+                  <p className="text-xs text-[var(--text-secondary)] mb-2">
+                    Won all five major achievements<span className="block text-[10px] text-white/40 mt-0.5">Continental Club · Continental National · World Cup · Domestic League · Ballon d'Or</span>
+                  </p>
+                  <p className="text-lg font-bold text-[#FFD700]">+5 points</p>
+                </div>
               </div>
             </motion.div>
 
@@ -185,21 +269,20 @@ export default function MethodologyPage() {
               className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-purple-500/10 ring-1 ring-purple-500/20">
-                  <BookOpen className="h-5 w-5 text-purple-400" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-amber-500/10 ring-1 ring-amber-500/20">
+                  <BookOpen className="h-5 w-5 text-amber-400" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--text-primary)]">A Note on Subjectivity</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Important</h2>
               </div>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                While this ranking is based on quantifiable achievements,
-                football evaluation is ultimately subjective. Different fans,
-                cultures, and eras value different accomplishments. This ranking
-                is intended to encourage discussion and celebrate the rich
-                history of football rather than define an absolute hierarchy of
-                greatness. We acknowledge that many legendary players could be
-                ranked differently depending on personal criteria and
-                preferences.
-              </p>
+              <div className="space-y-3 text-[var(--text-secondary)] leading-relaxed">
+                <p>
+                  <strong className="text-[var(--text-primary)]">This ranking is based on major career achievements rather than individual statistics.</strong>{" "}
+                  The methodology is intentionally simplified to compare players across different eras, positions, and competitions.
+                </p>
+                <p>
+                  The ranking represents the creator&apos;s personal opinion and is designed to encourage discussion rather than establish an absolute truth.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
