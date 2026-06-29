@@ -17,6 +17,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
+import { getFlagEmoji } from "@/lib/flags";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { ACHIEVEMENT_CONFIG, slugify } from "@/lib/players";
@@ -66,7 +67,7 @@ export function PlayerModal({ player, isOpen, onClose }: PlayerModalProps) {
             >
               <h2 className="text-2xl font-bold text-white">{player.name}</h2>
               <div className="flex items-center justify-center gap-3 mt-1">
-                <Badge variant="secondary">{player.nationality}</Badge>
+                <Badge variant="secondary">{getFlagEmoji(player.nationality)} {player.nationality}</Badge>
                 <Badge variant="gold">{player.position}</Badge>
               </div>
             </motion.div>

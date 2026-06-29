@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { getFlagEmoji } from "@/lib/flags";
 import {
   RadarChart,
   PolarGrid,
@@ -116,7 +117,7 @@ export function PlayerComparison({ players }: PlayerComparisonProps) {
         >
           <div className="text-lg font-bold text-white mb-1">{player.name}</div>
           <div className="flex items-center justify-center gap-2 text-xs text-white/50 mb-3">
-            <span>{player.nationality}</span>
+            <span>{getFlagEmoji(player.nationality)} {player.nationality}</span>
             <span className="text-white/20">|</span>
             <Badge variant="secondary" className="text-[10px]">
               {player.position}
@@ -162,7 +163,7 @@ export function PlayerComparison({ players }: PlayerComparisonProps) {
                 >
                   <span className="font-medium">{p.name}</span>
                   <span className="text-white/30 text-xs ml-2">
-                    {p.nationality} • {p.position} • {p.score}
+                    {getFlagEmoji(p.nationality)} {p.nationality} • {p.position} • {p.score}
                   </span>
                 </button>
               ))}
