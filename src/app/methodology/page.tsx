@@ -39,7 +39,7 @@ const METHODOLOGY_ITEMS = [
     key: "continentalNational",
     title: "Continental National",
     description:
-      "UEFA European Championship, Copa AmÃƒÂ©rica, AFC Asian Cup, or equivalent continental national team competition titles. Winning a continental tournament showcases dominance against other nations in the same region.",
+      "UEFA European Championship, Copa America, AFC Asian Cup, or equivalent continental national team competition titles. Winning a continental tournament showcases dominance against other nations in the same region.",
     weight: "High - Major international achievement",
   },
   {
@@ -53,7 +53,7 @@ const METHODOLOGY_ITEMS = [
     key: "domesticLeague",
     title: "Domestic League",
     description:
-      "National league titles won in any top-tier domestic competition. Uses milestone scoring instead of counting every title: 1-4 titles earns +1, 5-8 titles earns +1.5, 9+ titles earns +2.",
+      "National league titles won in any top-tier domestic competition. Uses milestone scoring instead of counting every title: 1-4 titles earns +1, 5-9 titles earns +1.5, 10+ titles earns +2.",
     weight: "Milestone-based scoring",
   },
   {
@@ -81,7 +81,7 @@ const METHODOLOGY_ITEMS = [
     key: "continentalRunnerUp",
     title: "Continental Runner-up",
     description:
-      "Finishing as runner-up in a continental tournament (UEFA Euro, Copa AmÃƒÂ©rica, etc.). Each runner-up appearance earns +0.75 points.",
+      "Finishing as runner-up in a continental tournament (UEFA Euro, Copa America, etc.). Each runner-up appearance earns +0.75 points.",
     weight: "+0.75 per appearance",
   },
 ];
@@ -180,13 +180,13 @@ export default function MethodologyPage() {
                   <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500/20 to-amber-600/10 ring-1 ring-white/10">
                     <Award className="h-4 w-4 text-yellow-400" />
                   </div>
-                  <h3 className="text-sm font-semibold text-[var(--text-primary)]">Domestic League â€” Milestone Scoring</h3>
+                  <h3 className="text-sm font-semibold text-[var(--text-primary)]">Domestic League -Milestone Scoring</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   {[
                     { range: "1\u20134 titles", points: "+1 point" },
-                    { range: "5\u20138 titles", points: "+1.5 points" },
-                    { range: "9+ titles", points: "+2 points" },
+                    { range: "5\u20139 titles", points: "+1.5 points" },
+                    { range: "10+ titles", points: "+2 points" },
                   ].map((tier) => (
                     <div key={tier.range} className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-center">
                       <p className="text-xs text-[var(--text-secondary)] mb-1">{tier.range}</p>
@@ -219,7 +219,7 @@ export default function MethodologyPage() {
                     <h3 className="text-sm font-semibold text-[var(--text-primary)]">Major Achievement Bonus</h3>
                   </div>
                   <p className="text-xs text-[var(--text-secondary)] mb-2">
-                    Won all five major achievements<span className="block text-[10px] text-white/40 mt-0.5">Continental Club · Continental National · World Cup · Domestic League · Ballon d'Or</span>
+                    Won all five major achievements<span className="block text-[10px] text-white/40 mt-0.5">Continental Club, Continental National, World Cup, Domestic League, Ballon d'Or</span>
                   </p>
                   <p className="text-lg font-bold text-[#FFD700]">+5 points</p>
                 </div>
