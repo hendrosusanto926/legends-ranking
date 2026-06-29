@@ -209,7 +209,7 @@ export default function PlayerPage() {
       const res = await fetch(`/api/players/${player.id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ authKey: deleteAuthKey }),
+        body: JSON.stringify({ authKey: deleteAuthKey, playerName: player.name }),
       });
 
       if (!res.ok) {

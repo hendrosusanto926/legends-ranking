@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-import type { Player } from "@/types/player";
-
-const DATA_PATH = path.join(process.cwd(), "public", "data", "players.json");
+import { addPlayer } from "@/lib/github";
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,7 +18,7 @@ export async function POST(request: NextRequest) {
       "continentalClub", "continentalNational", "worldCup",
       "domesticLeague", "ballonDor", "worldCupRunnerUp",
       "worldCupThirdPlace", "continentalRunnerUp", "score",
-    ] as const;
+    ];
 
     for (const field of requiredFields) {
       if (body[field] === undefined || body[field] === null || body[field] === "") {
@@ -33,13 +29,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const raw = await fs.readFile(DATA_PATH, "utf-8");
-    const players: Player[] = JSON.parse(raw);
-
-    const maxId = players.reduce((max, p) => Math.max(max, p.id), 0);
-
-    const newPlayer: Player = {
-      id: maxId + 1,
+    const playerData = {
       name: body.name,
       continentalClub: Number(body.continentalClub),
       continentalNational: Number(body.continentalNational),
@@ -54,17 +44,16 @@ export async function POST(request: NextRequest) {
       score: Number(body.score),
     };
 
-    players.push(newPlayer);
-    await fs.writeFile(DATA_PATH, JSON.stringify(players, null, 2), "utf-8");
+    const player = await addPlayer(playerData, `Add player: ${body.name}`);
 
     return NextResponse.json(
-      { message: "Player added successfully", player: newPlayer },
+      { message: "Player added successfully", player },
       { status: 201 }
     );
   } catch (error) {
     console.error("Failed to add player:", error);
     return NextResponse.json(
-      { error: "Failed to add player" },
+      { error: error instanceof Error ? error.message : "Failed to add player" },
       { status: 500 }
     );
   }
