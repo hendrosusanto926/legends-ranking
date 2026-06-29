@@ -26,6 +26,7 @@ import {
   Eye,
   EyeOff,
   BookOpen,
+  ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -40,6 +41,7 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { slugify } from "@/lib/players";
 import type { Player } from "@/types/player";
 
 const columnHelper = createColumnHelper<Player>();
@@ -182,6 +184,21 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
           </span>
         ),
         size: 80,
+      }),
+      columnHelper.display({
+        id: "actions",
+        header: "",
+        cell: ({ row }) => (
+          <Link
+            href={`/players/${slugify(row.original.name)}`}
+            className="inline-flex items-center gap-1 text-xs text-[#FFD700] hover:text-[#FFD700]/80 transition-colors whitespace-nowrap"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View
+            <ExternalLink className="h-3 w-3" />
+          </Link>
+        ),
+        size: 70,
       }),
     ],
     []

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Plus } from "lucide-react";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Background } from "@/components/layout/background";
@@ -21,6 +21,7 @@ import { AIChat } from "@/components/ai/ai-chat";
 import { ExportButton } from "@/components/export/export-button";
 import { ShareButton } from "@/components/share/share-button";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   getPlayers,
@@ -151,6 +152,12 @@ export default function Home() {
                     positions={positions}
                   />
                   <div className="flex items-center gap-2">
+                    <Link href="/add-player">
+                      <Button variant="secondary" size="sm" className="gap-1.5">
+                        <Plus className="h-4 w-4" />
+                        Add Player
+                      </Button>
+                    </Link>
                     <ExportButton players={filteredPlayers} />
                     <ShareButton />
                   </div>

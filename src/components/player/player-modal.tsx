@@ -8,6 +8,7 @@ import {
   Award,
   Medal,
   Earth,
+  ExternalLink,
 } from "lucide-react";
 import {
   Dialog,
@@ -17,7 +18,8 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ACHIEVEMENT_CONFIG } from "@/lib/players";
+import { Button } from "@/components/ui/button";
+import { ACHIEVEMENT_CONFIG, slugify } from "@/lib/players";
 import type { Player } from "@/types/player";
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -82,6 +84,22 @@ export function PlayerModal({ player, isOpen, onClose }: PlayerModalProps) {
                 </span>
               </div>
               <p className="text-xs text-white/40 mt-1">Overall Score</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.35 }}
+            >
+              <a
+                href={`/players/${slugify(player.name)}`}
+                onClick={onClose}
+              >
+                <Button variant="outline" size="sm" className="gap-1.5 mt-2">
+                  <ExternalLink className="h-4 w-4" />
+                  View Full Profile
+                </Button>
+              </a>
             </motion.div>
           </div>
 
