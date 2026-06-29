@@ -9,7 +9,7 @@ const HONOREES = [
   {
     name: "Franz Beckenbauer",
     country: "Germany",
-    code: "DE",
+    flag: "🇩🇪",
     position: "CB • Libero",
     description:
       "The legendary 'Kaiser' redefined the role of a defender with elegance, intelligence, and leadership. As captain, he led West Germany to FIFA World Cup glory, won the UEFA European Championship, and lifted the European Cup with Bayern Munich, becoming one of football's greatest leaders.",
@@ -26,7 +26,7 @@ const HONOREES = [
   {
     name: "Didier Deschamps",
     country: "France",
-    code: "FR",
+    flag: "🇫🇷",
     position: "CDM • Captain",
     description:
       "A tireless leader in midfield, Didier Deschamps captained France to FIFA World Cup and UEFA European Championship triumphs while also lifting the UEFA Champions League with Marseille, earning his place among football's most accomplished captains.",
@@ -43,7 +43,7 @@ const HONOREES = [
   {
     name: "Iker Casillas",
     country: "Spain",
-    code: "ES",
+    flag: "🇪🇸",
     position: "GK • Captain",
     description:
       "One of the greatest goalkeepers in football history, Iker Casillas captained Spain during its golden era to FIFA World Cup and UEFA European Championship success while also leading Real Madrid to UEFA Champions League glory.",
@@ -112,8 +112,8 @@ export function HonorableMentions() {
 
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/20 text-lg font-bold text-white/70">
-                      {honoree.code}
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/20">
+                      <span className="text-2xl">{honoree.flag}</span>
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white">
