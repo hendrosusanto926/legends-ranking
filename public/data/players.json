@@ -2338,20 +2338,5 @@
     "position": "CF",
     "nationality": "Belgium",
     "score": 1.75
-  },
-  {
-    "id": 157,
-    "name": "test",
-    "continentalClub": 0,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 0,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "RM",
-    "nationality": "Algeria",
-    "score": 0
   }
 ]
