@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Menu, X, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "./theme-switcher";
@@ -23,8 +23,8 @@ export function Navigation() {
   const handleHashClick = useCallback((e: React.MouseEvent, href: string) => {
     if (!href.startsWith("/#")) return;
     e.preventDefault();
-    const id = href.replace("/#", "");
     setIsOpen(false);
+    const id = href.replace("/#", "");
     if (pathname === "/") {
       const el = document.getElementById(id);
       if (el) {
@@ -36,7 +36,9 @@ export function Navigation() {
     }
   }, [pathname]);
 
-  const close = useCallback(() => setIsOpen(false), []);
+  const handleMobileNav = useCallback((href: string) => {
+    setIsOpen(false);
+  }, []);
 
   const renderLink = (item: typeof NAV_ITEMS[number], mobile?: boolean) => {
     const base = "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 dark:hover:bg-white/10";
@@ -54,7 +56,7 @@ export function Navigation() {
       );
     }
     return (
-      <Link href={item.href} onClick={close}>
+      <Link href={item.href} onClick={() => handleMobileNav(item.href)}>
         <Button variant="ghost" size={mobile ? undefined : "sm"} className={classes}>
           {item.label}
         </Button>
@@ -107,25 +109,20 @@ export function Navigation() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl overflow-hidden"
-          >
-            <div className="px-4 py-3 space-y-1">
-              {NAV_ITEMS.map((item) => (
-                <div key={item.label}>
-                  {renderLink(item, true)}
-                </div>
-              ))}
-
+      {/* Mobile menu - simple conditional render */}
+      <div
+        className={`md:hidden border-t border-[var(--border-color)] bg-[var(--bg-nav)] backdrop-blur-xl overflow-hidden transition-all duration-200 ${
+          isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-4 py-3 space-y-1">
+          {NAV_ITEMS.map((item) => (
+            <div key={item.label}>
+              {renderLink(item, true)}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 }
