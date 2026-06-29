@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { motion } from "framer-motion";
-import { ArrowUp, Plus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUp, Plus, Clock, X } from "lucide-react";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Background } from "@/components/layout/background";
@@ -37,6 +37,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [banner, setBanner] = useState<string | null>(null);
   const [filters, setFilters] = useState<FilterState>({
     search: "",
     nationality: "",
@@ -58,6 +59,18 @@ export default function Home() {
       }
     };
     fetchPlayers();
+
+    const params = new URLSearchParams(window.location.search);
+    const action = params.get("action");
+    if (action === "player-added") setBanner("Player added successfully!");
+    else if (action === "player-updated") setBanner("Player updated successfully!");
+    else if (action === "player-deleted") setBanner("Player deleted successfully!");
+
+    if (action) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("action");
+      window.history.replaceState({}, "", url.toString());
+    }
   }, []);
 
   useEffect(() => {
@@ -143,6 +156,28 @@ export default function Home() {
                     Complete leaderboard of football legends ranked by achievements
                   </p>
                 </motion.div>
+
+                <AnimatePresence>
+                  {banner && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="mb-4 flex items-center gap-2 rounded-lg border border-[#FFD700]/20 bg-[#FFD700]/10 px-4 py-3 text-sm text-[#FFD700]"
+                    >
+                      <Clock className="h-4 w-4 shrink-0" />
+                      <span className="flex-1">
+                        {banner} Please allow a few seconds for changes to propagate across the site.
+                      </span>
+                      <button
+                        onClick={() => setBanner(null)}
+                        className="shrink-0 rounded p-0.5 transition-colors hover:bg-[#FFD700]/20"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                   <Filters

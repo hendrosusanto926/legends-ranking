@@ -193,7 +193,7 @@ export default function PlayerPage() {
       }
 
       setEditStatus("success");
-      await fetchData();
+      setTimeout(() => router.push("/?action=player-updated"), 1500);
     } catch (err) {
       setEditStatus("error");
       setEditError(err instanceof Error ? err.message : "Something went wrong");
@@ -218,7 +218,7 @@ export default function PlayerPage() {
       }
 
       setDeleteStatus("success");
-      setTimeout(() => router.push("/"), 1500);
+      setTimeout(() => router.push("/?action=player-deleted"), 1500);
     } catch (err) {
       setDeleteStatus("error");
       setDeleteError(err instanceof Error ? err.message : "Something went wrong");

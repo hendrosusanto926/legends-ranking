@@ -107,6 +107,7 @@ export default function AddPlayerPage() {
 
       setStatus("success");
       setForm(INITIAL_FORM);
+      setTimeout(() => router.push("/?action=player-added"), 1500);
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
