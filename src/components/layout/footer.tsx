@@ -18,7 +18,7 @@ export function Footer() {
           <div className="space-y-3">
             <h3 className="font-semibold text-[var(--text-primary)]">Copyright</h3>
             <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-              &copy; 2026 Hendro Susanto. All rights reserved.
+              &copy; 2026 Hendro Susanto &amp; Team. All rights reserved.
             </p>
           </div>
           <div className="space-y-3">
