@@ -22,14 +22,17 @@ export function Navigation() {
 
   const handleHashClick = useCallback((e: React.MouseEvent, href: string) => {
     if (!href.startsWith("/#")) return;
-    setIsOpen(false);
-    const id = href.replace("/#", "");
-    if (pathname !== "/") return; // Let the browser handle hash navigation on new page
     e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: "smooth" });
+    const id = href.replace("/#", "");
+    setIsOpen(false);
+    if (pathname === "/") {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    } else {
+      window.location.href = href;
     }
   }, [pathname]);
 
