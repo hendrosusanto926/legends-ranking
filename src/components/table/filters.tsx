@@ -130,53 +130,84 @@ export function Filters({
         </div>
 
         {/* Mobile filters */}
-        <div className="sm:hidden flex gap-2 overflow-x-auto pb-2">
-          <Select
-            value={filters.nationality}
-            onValueChange={(v) => update("nationality", v)}
-          >
-            <SelectTrigger className="w-[130px] text-xs" aria-label="Filter by nationality">
-              <SelectValue placeholder="Nationality" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              {nationalities.map((n) => (
-                <SelectItem key={n} value={n}>
-                  {n}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        <details className="sm:hidden group">
+          <summary className="text-xs text-white/50 cursor-pointer hover:text-white/70 transition-colors list-none flex items-center gap-1 select-none">
+            <svg className="h-3 w-3 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
+            Filters
+          </summary>
+          <div className="flex flex-col gap-2 pt-2">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-white/40" />
+              <Input
+                placeholder="Search players..."
+                value={filters.search}
+                onChange={(e) => update("search", e.target.value)}
+                className="pl-9 h-9 text-sm"
+                aria-label="Search players by name"
+              />
+            </div>
+            <div className="flex gap-2 overflow-x-auto pb-1">
+              <Select
+                value={filters.nationality}
+                onValueChange={(v) => update("nationality", v)}
+              >
+                <SelectTrigger className="w-[130px] text-xs h-9" aria-label="Filter by nationality">
+                  <SelectValue placeholder="Nationality" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All</SelectItem>
+                  {nationalities.map((n) => (
+                    <SelectItem key={n} value={n}>
+                      {n}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
-          <Select
-            value={filters.position}
-            onValueChange={(v) => update("position", v)}
-          >
-            <SelectTrigger className="w-[100px] text-xs" aria-label="Filter by position">
-              <SelectValue placeholder="Position" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              {positions.map((p) => (
-                <SelectItem key={p} value={p}>
-                  {p}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+              <Select
+                value={filters.position}
+                onValueChange={(v) => update("position", v)}
+              >
+                <SelectTrigger className="w-[100px] text-xs h-9" aria-label="Filter by position">
+                  <SelectValue placeholder="Position" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All</SelectItem>
+                  {positions.map((p) => (
+                    <SelectItem key={p} value={p}>
+                      {p}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
-          {hasFilters && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={reset}
-              className="text-xs"
-            >
-              <RotateCcw className="h-3 w-3 mr-1" />
-              Reset
-            </Button>
-          )}
-        </div>
+              <Input
+                type="number"
+                placeholder="Min"
+                value={filters.minScore || ""}
+                onChange={(e) => update("minScore", e.target.value ? Number(e.target.value) : 0)}
+                className="w-[70px] h-9 text-xs"
+                aria-label="Minimum score"
+              />
+
+              <Input
+                type="number"
+                placeholder="Max"
+                value={filters.maxScore || ""}
+                onChange={(e) => update("maxScore", e.target.value ? Number(e.target.value) : 0)}
+                className="w-[70px] h-9 text-xs"
+                aria-label="Maximum score"
+              />
+
+              {hasFilters && (
+                <Button variant="ghost" size="sm" onClick={reset} className="text-xs h-9 shrink-0">
+                  <RotateCcw className="h-3 w-3 mr-1" />
+                  Reset
+                </Button>
+              )}
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   );
