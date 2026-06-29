@@ -237,6 +237,19 @@ export function PlayerComparison({ players }: PlayerComparisonProps) {
             transition={{ duration: 0.5 }}
             className="mt-12 space-y-8"
           >
+            <div className="flex justify-center">
+              <button
+                onClick={() => {
+                  setPlayer1(null);
+                  setPlayer2(null);
+                  setSearch1("");
+                  setSearch2("");
+                }}
+                className="text-xs text-white/40 hover:text-white/70 transition-colors px-4 py-2 rounded-lg border border-white/10 hover:border-white/20"
+              >
+                Clear Comparison
+              </button>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
                 <h3 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
