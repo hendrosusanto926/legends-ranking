@@ -68,23 +68,29 @@ const COUNTRY_TO_CODE: Record<string, string> = {
   "Zambia": "ZM", "Zimbabwe": "ZW",
 };
 
-function countryCodeToFlag(code: string): string {
-  if (/^[A-Z]{2}$/.test(code)) {
-    return String.fromCodePoint(
-      ...code.split("").map((c) => 0x1F1E6 + c.charCodeAt(0) - 65)
-    );
-  }
-  if (code === "GB-ENG")
-    return "\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F";
-  if (code === "GB-SCT")
-    return "\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74\uDB40\uDC7F";
-  if (code === "GB-WLS")
-    return "\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73\uDB40\uDC7F";
-  return "\uD83C\uDDEC\uD83C\uDDE7";
+const SUB_FLAGS: Record<string, string> = {
+  "GB-ENG": "https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/england.svg",
+  "GB-SCT": "https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/scotland.svg",
+  "GB-WLS": "https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/wales.svg",
+  "GB-NIR": "https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/united-kingdom.svg",
+};
+
+export function getFlagUrl(countryName: string): string | null {
+  const code = COUNTRY_TO_CODE[countryName];
+  if (!code) return null;
+  if (SUB_FLAGS[code]) return SUB_FLAGS[code];
+  const base = code.toLowerCase();
+  return `https://flagcdn.com/w40/${base}.png`;
 }
 
-export function getFlagEmoji(countryName: string): string {
-  const code = COUNTRY_TO_CODE[countryName];
-  if (!code) return "";
-  return countryCodeToFlag(code);
+export function Flag({ country, className }: { country: string; className?: string }) {
+  const url = getFlagUrl(country);
+  if (!url) return null;
+  return (
+    <img
+      src={url}
+      alt={country}
+      className={`inline-block align-middle ${className ?? "w-5 h-4"}`}
+    />
+  );
 }

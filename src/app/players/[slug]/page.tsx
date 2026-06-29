@@ -57,7 +57,7 @@ import {
   ACHIEVEMENT_CONFIG,
 } from "@/lib/players";
 import { COUNTRIES } from "@/lib/countries";
-import { getFlagEmoji } from "@/lib/flags";
+import { Flag } from "@/lib/flags";
 import type { Player } from "@/types/player";
 
 const POSITIONS = [
@@ -305,7 +305,7 @@ export default function PlayerPage() {
                       {player.name}
                     </h1>
                     <div className="flex items-center justify-center md:justify-start gap-3 mt-2">
-                      <Badge variant="secondary">{getFlagEmoji(player.nationality)} {player.nationality}</Badge>
+                      <Badge variant="secondary"><Flag country={player.nationality} /> {player.nationality}</Badge>
                       <Badge variant="gold">{player.position}</Badge>
                     </div>
                   </div>
@@ -526,7 +526,7 @@ export default function PlayerPage() {
                       {p.name}
                     </div>
                     <div className="flex items-center justify-center gap-2 text-xs text-white/50 mb-2">
-                      <span>{getFlagEmoji(p.nationality)} {p.nationality}</span>
+                      <span><Flag country={p.nationality} /> {p.nationality}</span>
                       <span className="text-white/20">|</span>
                       <span>{p.position}</span>
                     </div>

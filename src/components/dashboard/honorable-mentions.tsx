@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Crown, Trophy, Star, Globe, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { getFlagEmoji } from "@/lib/flags";
+import { Flag } from "@/lib/flags";
 
 const HONOREES = [
   {
@@ -111,7 +111,7 @@ export function HonorableMentions() {
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/20">
-                      <span className="text-2xl">{getFlagEmoji(honoree.country)}</span>
+                      <Flag country={honoree.country} className="w-8 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white">

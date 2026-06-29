@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Trophy, Medal, Star, Crown } from "lucide-react";
-import { getFlagEmoji } from "@/lib/flags";
+import { Flag } from "@/lib/flags";
 import { cn } from "@/lib/utils";
 import type { Player } from "@/types/player";
 
@@ -126,7 +126,7 @@ export function TopThree({ players }: TopThreeProps) {
                   <div className="flex items-center justify-center gap-3 text-sm text-white/60">
                     <span className="flex items-center gap-1">
                       <Trophy className="h-3.5 w-3.5 text-white/40" />
-                      {getFlagEmoji(player.nationality)} {player.nationality}
+                      <Flag country={player.nationality} /> {player.nationality}
                     </span>
                     <span className="text-white/20">|</span>
                     <span>{player.position}</span>
