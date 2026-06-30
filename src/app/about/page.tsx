@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Info, MessageCircle, Heart, GitBranch, Users } from "lucide-react";
+import { Info, MessageCircle, Heart, GitBranch, Users, Mail } from "lucide-react";
 import { Background } from "@/components/layout/background";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
@@ -100,6 +100,45 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/80 backdrop-blur-xl p-8"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-500/20">
+                  <Mail className="h-5 w-5 text-emerald-400" />
+                </div>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Contact Our Team</h2>
+              </div>
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                Have feedback, suggestions, found incorrect data, or would like to collaborate with us? We&apos;d love to hear from you. Feel free to reach out and our team will get back to you as soon as possible.
+              </p>
+              <a
+                href="mailto:legendsrankingteam@gmail.com?subject=Legends%20Ranking%20Inquiry"
+                className="group block rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 hover:border-emerald-500/30 hover:bg-emerald-500/[0.02] transition-all duration-300"
+                aria-label="Send email to Legends Ranking team"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-500/20 shrink-0 group-hover:bg-emerald-500/20 group-hover:ring-emerald-500/30 transition-all duration-300">
+                    <Mail className="h-6 w-6 text-emerald-400" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-[var(--text-primary)] group-hover:text-emerald-400 transition-colors duration-300">
+                      legendsrankingteam@gmail.com
+                    </p>
+                    <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+                      Click to send an email
+                    </p>
+                  </div>
+                  <div className="rounded-lg bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-400 group-hover:bg-emerald-500/20 transition-all duration-300 shrink-0">
+                    Send Email
+                  </div>
+                </div>
+              </a>
             </motion.div>
 
             <motion.div
