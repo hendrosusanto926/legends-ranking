@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Info, MessageCircle, Heart, Code, GitBranch } from "lucide-react";
+import { Info, MessageCircle, Heart, GitBranch, Users } from "lucide-react";
 import { Background } from "@/components/layout/background";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
@@ -83,27 +83,20 @@ export default function AboutPage() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-500/10 ring-1 ring-blue-500/20">
-                  <Code className="h-5 w-5 text-blue-400" />
+                  <Users className="h-5 w-5 text-blue-400" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--text-primary)]">Technology Stack</h2>
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">Meet the Team</h2>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {[
-                  "Next.js 15",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "shadcn/ui",
-                  "TanStack Table",
-                  "Framer Motion",
-                  "Recharts",
-                  "Lucide React",
-                  "Google Gemini AI",
-                ].map((tech) => (
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                Legends Ranking is an independent football project built by a small team of football enthusiasts, developers, and researchers. Our goal is to create a transparent, data-driven ranking system that celebrates football&apos;s greatest legends through objective achievements and thoughtful analysis.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["Hendro", "Esa", "Ergi", "Eldad", "Lotes", "Doni", "Arjun", "Bagas"].map((name) => (
                   <div
-                    key={tech}
-                    className="rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-secondary)] text-center"
+                    key={name}
+                    className="rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] px-4 py-2 text-sm font-medium text-[var(--text-primary)]"
                   >
-                    {tech}
+                    {name}
                   </div>
                 ))}
               </div>
