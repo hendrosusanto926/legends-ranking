@@ -240,6 +240,21 @@
     "score": 10.75
   },
   {
+    "id": 157,
+    "name": "Samuel Eto'o",
+    "continentalClub": 3.5,
+    "continentalNational": 2,
+    "worldCup": 0,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "CF",
+    "nationality": "Cameroon",
+    "score": 10.5
+  },
+  {
     "id": 17,
     "name": "Ronaldo Nazario",
     "continentalClub": 0,
