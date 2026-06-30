@@ -495,6 +495,21 @@
     "score": 8.25
   },
   {
+    "id": 171,
+    "name": "Paul Breitner",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 7,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LB",
+    "nationality": "Germany",
+    "score": 8.25
+  },
+  {
     "id": 33,
     "name": "Ousmane Dembele",
     "continentalClub": 2,
