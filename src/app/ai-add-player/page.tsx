@@ -96,7 +96,6 @@ export default function AiAddPlayerPage() {
         body: JSON.stringify({
           authKey,
           ...result.playerData,
-          score: result.score,
         }),
       });
 

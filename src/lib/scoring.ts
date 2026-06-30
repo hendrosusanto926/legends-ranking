@@ -14,15 +14,15 @@ export function calculateScore(achievements: {
   score += achievements.continentalNational * 1.75;
   score += achievements.worldCup * 2;
 
-  if (achievements.domesticLeague >= 10) {
+  if (achievements.domesticLeague > 9) {
     score += 2;
-  } else if (achievements.domesticLeague >= 5) {
+  } else if (achievements.domesticLeague > 5) {
     score += 1.5;
-  } else if (achievements.domesticLeague >= 1) {
+  } else if (achievements.domesticLeague > 0) {
     score += 1;
   }
 
-  if (achievements.ballonDor >= 1) {
+  if (achievements.ballonDor > 0) {
     score += 1;
   }
 
@@ -31,11 +31,11 @@ export function calculateScore(achievements: {
   score += achievements.continentalRunnerUp * 0.75;
 
   if (
-    achievements.continentalClub >= 1 &&
-    achievements.continentalNational >= 1 &&
-    achievements.worldCup >= 1 &&
-    achievements.domesticLeague >= 1 &&
-    achievements.ballonDor >= 1
+    achievements.continentalClub > 0 &&
+    achievements.continentalNational > 0 &&
+    achievements.worldCup > 0 &&
+    achievements.domesticLeague > 0 &&
+    achievements.ballonDor > 0
   ) {
     score += 5;
   }

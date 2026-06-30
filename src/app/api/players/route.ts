@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addPlayer } from "@/lib/github";
+import { calculateScore } from "@/lib/scoring";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +18,7 @@ export async function POST(request: NextRequest) {
       "name", "nationality", "position",
       "continentalClub", "continentalNational", "worldCup",
       "domesticLeague", "ballonDor", "worldCupRunnerUp",
-      "worldCupThirdPlace", "continentalRunnerUp", "score",
+      "worldCupThirdPlace", "continentalRunnerUp",
     ];
 
     for (const field of requiredFields) {
@@ -29,8 +30,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const playerData = {
-      name: body.name,
+    const achievements = {
       continentalClub: Number(body.continentalClub),
       continentalNational: Number(body.continentalNational),
       worldCup: Number(body.worldCup),
@@ -39,9 +39,14 @@ export async function POST(request: NextRequest) {
       worldCupRunnerUp: Number(body.worldCupRunnerUp),
       worldCupThirdPlace: Number(body.worldCupThirdPlace),
       continentalRunnerUp: Number(body.continentalRunnerUp),
+    };
+
+    const playerData = {
+      name: body.name,
+      ...achievements,
       position: body.position,
       nationality: body.nationality,
-      score: Number(body.score),
+      score: calculateScore(achievements),
     };
 
     const player = await addPlayer(playerData, `Add player: ${body.name}`);

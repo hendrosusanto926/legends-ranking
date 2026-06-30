@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updatePlayer, deletePlayer } from "@/lib/github";
+import { calculateScore } from "@/lib/scoring";
 
 export async function PUT(
   request: NextRequest,
@@ -21,7 +22,7 @@ export async function PUT(
       "name", "nationality", "position",
       "continentalClub", "continentalNational", "worldCup",
       "domesticLeague", "ballonDor", "worldCupRunnerUp",
-      "worldCupThirdPlace", "continentalRunnerUp", "score",
+      "worldCupThirdPlace", "continentalRunnerUp",
     ];
 
     for (const field of requiredFields) {
@@ -33,8 +34,7 @@ export async function PUT(
       }
     }
 
-    const playerData = {
-      name: body.name,
+    const achievements = {
       continentalClub: Number(body.continentalClub),
       continentalNational: Number(body.continentalNational),
       worldCup: Number(body.worldCup),
@@ -43,9 +43,14 @@ export async function PUT(
       worldCupRunnerUp: Number(body.worldCupRunnerUp),
       worldCupThirdPlace: Number(body.worldCupThirdPlace),
       continentalRunnerUp: Number(body.continentalRunnerUp),
+    };
+
+    const playerData = {
+      name: body.name,
+      ...achievements,
       position: body.position,
       nationality: body.nationality,
-      score: Number(body.score),
+      score: calculateScore(achievements),
     };
 
     const player = await updatePlayer(

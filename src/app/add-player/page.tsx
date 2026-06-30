@@ -45,7 +45,6 @@ interface FormData {
   worldCupRunnerUp: string;
   worldCupThirdPlace: string;
   continentalRunnerUp: string;
-  score: string;
 }
 
 const INITIAL_FORM: FormData = {
@@ -61,7 +60,6 @@ const INITIAL_FORM: FormData = {
   worldCupRunnerUp: "0",
   worldCupThirdPlace: "0",
   continentalRunnerUp: "0",
-  score: "0",
 };
 
 export default function AddPlayerPage() {
@@ -96,7 +94,6 @@ export default function AddPlayerPage() {
           worldCupRunnerUp: parseFloat(form.worldCupRunnerUp) || 0,
           worldCupThirdPlace: parseFloat(form.worldCupThirdPlace) || 0,
           continentalRunnerUp: parseFloat(form.continentalRunnerUp) || 0,
-          score: parseFloat(form.score) || 0,
         }),
       });
 
@@ -177,7 +174,7 @@ export default function AddPlayerPage() {
             <CardHeader>
               <CardTitle>Player Details</CardTitle>
               <CardDescription>
-                Fill in all fields below. The score is the total achievement score.
+                Fill in the achievements below. The score is calculated automatically.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -242,19 +239,6 @@ export default function AddPlayerPage() {
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[var(--text-primary)]">
-                      Score
-                    </label>
-                    <Input
-                      type="number"
-                      step="0.25"
-                      placeholder="e.g. 19.50"
-                      value={form.score}
-                      onChange={(e) => updateField("score", e.target.value)}
-                      required
-                    />
-                  </div>
                 </div>
 
                 <div>
