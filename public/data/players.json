@@ -915,6 +915,21 @@
     "score": 6.25
   },
   {
+    "id": 160,
+    "name": "Sadio Mane",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 2,
+    "position": "LW",
+    "nationality": "Senegal",
+    "score": 6.25
+  },
+  {
     "id": 60,
     "name": "Lothar Matthaus",
     "continentalClub": 0,
