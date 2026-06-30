@@ -269,7 +269,7 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
           </DropdownMenu>
         </div>
 
-        <div className="overflow-auto max-h-[500px] lg:max-h-none rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
+        <div className="overflow-auto max-h-[500px] lg:overflow-visible lg:max-h-none rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
           <table className="w-full min-w-[900px]">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -277,7 +277,7 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50 cursor-pointer select-none hover:text-white/80 transition-colors sticky top-0 bg-[#111111]/95 backdrop-blur-xl z-10"
+                      className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50 cursor-pointer select-none hover:text-white/80 transition-colors sticky top-0 lg:top-16 bg-[#111111]/95 backdrop-blur-xl z-10"
                       style={{ width: header.getSize() }}
                       onClick={header.column.getToggleSortingHandler()}
                     >
