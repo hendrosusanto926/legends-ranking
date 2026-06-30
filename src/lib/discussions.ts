@@ -51,7 +51,7 @@ async function getFileContent(): Promise<{ discussions: Discussion[]; sha: strin
 export async function getDiscussions(): Promise<Discussion[]> {
   const { discussions } = await getFileContent();
   return discussions.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
   );
 }
 
@@ -64,7 +64,7 @@ export async function addDiscussion(
   discussions.push(discussion);
 
   discussions.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
   );
 
   const content = Buffer.from(
