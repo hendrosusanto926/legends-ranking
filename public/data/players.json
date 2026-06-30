@@ -1485,6 +1485,21 @@
     "score": 4.75
   },
   {
+    "id": 163,
+    "name": "Luis Suarez",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 9,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Uruguay",
+    "score": 4.75
+  },
+  {
     "id": 95,
     "name": "Lautaro Martinez",
     "continentalClub": 0,
