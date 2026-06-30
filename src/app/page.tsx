@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp, Plus, Clock, X } from "lucide-react";
+import { ArrowUp, Plus, Sparkles, Clock, X } from "lucide-react";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Background } from "@/components/layout/background";
@@ -191,6 +191,12 @@ export default function Home() {
                       <Button variant="secondary" size="sm" className="gap-1.5">
                         <Plus className="h-4 w-4" />
                         Add Player
+                      </Button>
+                    </Link>
+                    <Link href="/ai-add-player">
+                      <Button variant="ghost" size="sm" className="gap-1.5 text-[#FFD700]">
+                        <Sparkles className="h-4 w-4" />
+                        AI Quick Add
                       </Button>
                     </Link>
                     <ExportButton players={filteredPlayers} />
