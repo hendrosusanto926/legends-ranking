@@ -600,6 +600,21 @@
     "score": 7.75
   },
   {
+    "id": 166,
+    "name": "Julián Álvarez",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Argentina",
+    "score": 7.75
+  },
+  {
     "id": 40,
     "name": "Nacho Fernandez",
     "continentalClub": 3.5,
