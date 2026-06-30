@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import { ToastProvider } from "@/components/ui/toast";
+import { DiscussionPanel } from "@/components/discussions/discussion-panel";
 import "./globals.css";
 
 const inter = Inter({
@@ -92,7 +94,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-full font-sans text-foreground bg-background">
         <ThemeProvider>
-          <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>
+            <ToastProvider>
+              {children}
+              <DiscussionPanel />
+            </ToastProvider>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
