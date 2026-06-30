@@ -1620,6 +1620,21 @@
     "score": 4.5
   },
   {
+    "id": 164,
+    "name": "Didier Drogba",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 2,
+    "position": "CF",
+    "nationality": "Ivory Coast",
+    "score": 4.5
+  },
+  {
     "id": 103,
     "name": "Vinicius Junior",
     "continentalClub": 2,
