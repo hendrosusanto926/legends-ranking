@@ -3,6 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { calculateScore } from "@/lib/scoring";
 import { getFileContent } from "@/lib/github";
 
+const ACHIEVEMENT_FIELDS = [
+  "continentalClub", "continentalNational", "worldCup",
+  "domesticLeague", "ballonDor", "worldCupRunnerUp",
+  "worldCupThirdPlace", "continentalRunnerUp",
+] as const;
+
 const AI_PROMPT = (name: string) =>
   `You are a football statistics expert with comprehensive knowledge of football history.
 
@@ -19,7 +25,17 @@ Research the career achievements of "${name}" and return ONLY a valid JSON objec
   "ballonDor": number (count of Ballon d'Or awards),
   "worldCupRunnerUp": number (count of FIFA World Cup runner-up finishes),
   "worldCupThirdPlace": number (count of FIFA World Cup third-place finishes),
-  "continentalRunnerUp": number (count of continental national team runner-up finishes, e.g., Euro runner-up, Copa America runner-up)
+  "continentalRunnerUp": number (count of continental national team runner-up finishes, e.g., Euro runner-up, Copa America runner-up),
+  "achievementDetails": {
+    "continentalClub": "List each title with year (e.g., UEFA Champions League 2006, 2008, 2016)",
+    "continentalNational": "List each title with year (e.g., UEFA Euro 2008)",
+    "worldCup": "List each title with year (e.g., FIFA World Cup 2010)",
+    "domesticLeague": "List league + year for each (e.g., La Liga 2005, 2006, 2009, 2010, 2011)",
+    "ballonDor": "List each award with year (e.g., Ballon d'Or 2009, 2010, 2011, 2012)",
+    "worldCupRunnerUp": "List each with year (e.g., FIFA World Cup runner-up 2014)",
+    "worldCupThirdPlace": "List each with year",
+    "continentalRunnerUp": "List each with year (e.g., Copa America runner-up 2007)"
+  }
 }
 
 Guidelines:
@@ -27,6 +43,8 @@ Guidelines:
 - For domesticLeague, count only top-flight league titles.
 - For ballonDor, count only official Ballon d'Or awards.
 - Be precise and accurate. Make your best estimate if unsure.
+- achievementDetails must have the same count of items as the number values above.
+- If a count is 0, achievementDetails for that field should be an empty string "".
 - Return ONLY the JSON object, no other text, no markdown.`;
 
 export async function POST(request: NextRequest) {
@@ -131,10 +149,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const rawDetails = aiData.achievementDetails as Record<string, unknown> | undefined;
+    const achievementDetails: Record<string, string> = {};
+    for (const field of ACHIEVEMENT_FIELDS) {
+      const val = rawDetails?.[field];
+      achievementDetails[field] = val && String(val).trim() ? String(val).trim() : "";
+    }
+
     const score = calculateScore(playerData);
 
     return NextResponse.json({
       playerData,
+      achievementDetails,
       score,
     });
   } catch (error) {

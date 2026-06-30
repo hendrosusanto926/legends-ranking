@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -13,6 +13,7 @@ import {
   Loader2,
   Trophy,
   X,
+  Pencil,
 } from "lucide-react";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
@@ -43,10 +44,52 @@ interface ResearchResult {
     worldCupThirdPlace: number;
     continentalRunnerUp: number;
   };
+  achievementDetails: Record<string, string>;
   score: number;
 }
 
+const ACHIEVEMENT_FIELDS = [
+  { key: "continentalClub", label: "Continental Club", highlight: false },
+  { key: "continentalNational", label: "Continental National", highlight: false },
+  { key: "worldCup", label: "World Cup", highlight: true },
+  { key: "domesticLeague", label: "Domestic League", highlight: false },
+  { key: "ballonDor", label: "Ballon d'Or", highlight: true },
+  { key: "worldCupRunnerUp", label: "WC Runner-up", highlight: false },
+  { key: "worldCupThirdPlace", label: "WC 3rd Place", highlight: false },
+  { key: "continentalRunnerUp", label: "Continental Runner-up", highlight: false },
+] as const;
+
 type Step = "input" | "researching" | "preview" | "submitting" | "success" | "error";
+
+function calculateLocalScore(values: Record<string, number>): number {
+  let score = 0;
+  score += (values.continentalClub || 0) * 1.5;
+  score += (values.continentalNational || 0) * 1.75;
+  score += (values.worldCup || 0) * 2;
+
+  const dl = values.domesticLeague || 0;
+  if (dl > 9) score += 2;
+  else if (dl > 5) score += 1.5;
+  else if (dl > 0) score += 1;
+
+  if ((values.ballonDor || 0) > 0) score += 1;
+
+  score += (values.worldCupRunnerUp || 0) * 1.5;
+  score += (values.worldCupThirdPlace || 0) * 0.75;
+  score += (values.continentalRunnerUp || 0) * 0.75;
+
+  if (
+    (values.continentalClub || 0) > 0 &&
+    (values.continentalNational || 0) > 0 &&
+    (values.worldCup || 0) > 0 &&
+    (values.domesticLeague || 0) > 0 &&
+    (values.ballonDor || 0) > 0
+  ) {
+    score += 5;
+  }
+
+  return Math.round(score * 100) / 100;
+}
 
 export default function AiAddPlayerPage() {
   const router = useRouter();
@@ -54,7 +97,16 @@ export default function AiAddPlayerPage() {
   const [playerName, setPlayerName] = useState("");
   const [step, setStep] = useState<Step>("input");
   const [result, setResult] = useState<ResearchResult | null>(null);
+  const [editable, setEditable] = useState<Record<string, number> | null>(null);
+  const [editName, setEditName] = useState("");
+  const [editNation, setEditNation] = useState("");
+  const [editPos, setEditPos] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+
+  const score = useMemo(() => {
+    if (!editable) return result?.score ?? 0;
+    return calculateLocalScore(editable);
+  }, [editable, result]);
 
   const handleResearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,6 +130,20 @@ export default function AiAddPlayerPage() {
       }
 
       setResult(data);
+      const pd = data.playerData;
+      setEditable({
+        continentalClub: pd.continentalClub,
+        continentalNational: pd.continentalNational,
+        worldCup: pd.worldCup,
+        domesticLeague: pd.domesticLeague,
+        ballonDor: pd.ballonDor,
+        worldCupRunnerUp: pd.worldCupRunnerUp,
+        worldCupThirdPlace: pd.worldCupThirdPlace,
+        continentalRunnerUp: pd.continentalRunnerUp,
+      });
+      setEditName(pd.name);
+      setEditNation(pd.nationality);
+      setEditPos(pd.position);
       setStep("preview");
     } catch (err) {
       setStep("error");
@@ -86,7 +152,7 @@ export default function AiAddPlayerPage() {
   };
 
   const handleConfirm = async () => {
-    if (!result) return;
+    if (!result || !editable) return;
     setStep("submitting");
 
     try {
@@ -95,7 +161,10 @@ export default function AiAddPlayerPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           authKey,
-          ...result.playerData,
+          name: editName,
+          nationality: editNation,
+          position: editPos,
+          ...editable,
         }),
       });
 
@@ -111,9 +180,15 @@ export default function AiAddPlayerPage() {
     }
   };
 
+  const updateEditable = (key: string, val: string) => {
+    if (!editable) return;
+    setEditable({ ...editable, [key]: parseFloat(val) || 0 });
+  };
+
   const reset = () => {
     setStep("input");
     setResult(null);
+    setEditable(null);
     setErrorMsg("");
   };
 
@@ -157,7 +232,7 @@ export default function AiAddPlayerPage() {
             >
               <CheckCircle className="h-5 w-5 text-green-400 shrink-0" />
               <p className="text-green-300 text-sm">
-                {result?.playerData.name} added successfully!{" "}
+                {editName || result?.playerData.name} added successfully!{" "}
                 <Link href="/" className="underline hover:text-green-200">
                   Go back to dashboard
                 </Link>{" "}
@@ -250,7 +325,7 @@ export default function AiAddPlayerPage() {
           )}
 
           {/* Preview Step */}
-          {(step === "preview" || step === "submitting") && result && (
+          {(step === "preview" || step === "submitting") && result && editable && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -259,15 +334,27 @@ export default function AiAddPlayerPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <div>
-                      <CardTitle>{result.playerData.name}</CardTitle>
-                      <CardDescription className="flex items-center gap-2 mt-1">
-                        <Badge variant="outline">{result.playerData.nationality}</Badge>
-                        <Badge variant="secondary">{result.playerData.position}</Badge>
-                        <Badge className="bg-[#FFD700]/10 text-[#FFD700] border-[#FFD700]/30">
-                          Score: {result.score}
+                    <div className="flex-1 space-y-2">
+                      <Input
+                        value={editName}
+                        onChange={(e) => setEditName(e.target.value)}
+                        className="text-xl font-bold border-0 bg-transparent px-0 h-auto"
+                      />
+                      <div className="flex items-center gap-2 mt-1">
+                        <Input
+                          value={editNation}
+                          onChange={(e) => setEditNation(e.target.value)}
+                          className="w-40 text-xs border-0 bg-transparent px-0 h-auto"
+                        />
+                        <Input
+                          value={editPos}
+                          onChange={(e) => setEditPos(e.target.value)}
+                          className="w-24 text-xs border-0 bg-transparent px-0 h-auto"
+                        />
+                        <Badge className="bg-[#FFD700]/10 text-[#FFD700] border-[#FFD700]/30 shrink-0">
+                          Score: {score}
                         </Badge>
-                      </CardDescription>
+                      </div>
                     </div>
                   </div>
                 </CardHeader>
@@ -275,32 +362,39 @@ export default function AiAddPlayerPage() {
                   <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3 flex items-center gap-2">
                     <Trophy className="h-4 w-4 text-[#FFD700]" />
                     Achievement Counts
+                    <span className="text-xs text-[var(--text-secondary)] font-normal ml-1">
+                      — click to edit
+                    </span>
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {[
-                      { label: "Continental Club", value: result.playerData.continentalClub },
-                      { label: "Continental National", value: result.playerData.continentalNational },
-                      { label: "World Cup", value: result.playerData.worldCup, highlight: true },
-                      { label: "Domestic League", value: result.playerData.domesticLeague },
-                      { label: "Ballon d'Or", value: result.playerData.ballonDor, highlight: true },
-                      { label: "WC Runner-up", value: result.playerData.worldCupRunnerUp },
-                      { label: "WC 3rd Place", value: result.playerData.worldCupThirdPlace },
-                      { label: "Continental Runner-up", value: result.playerData.continentalRunnerUp },
-                    ].map(({ label, value, highlight }) => (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {ACHIEVEMENT_FIELDS.map(({ key, label, highlight }) => (
                       <div
-                        key={label}
+                        key={key}
                         className={`rounded-lg border p-3 ${
                           highlight
                             ? "border-[#FFD700]/20 bg-[#FFD700]/[0.03]"
                             : "border-white/10 bg-white/[0.03]"
                         }`}
                       >
-                        <p className="text-xs text-[var(--text-secondary)] mb-1">{label}</p>
-                        <p className={`text-lg font-bold ${
-                          highlight ? "text-[#FFD700]" : "text-[var(--text-primary)]"
-                        }`}>
-                          {value}
-                        </p>
+                        <label className="text-xs text-[var(--text-secondary)] mb-1 block">
+                          {label}
+                        </label>
+                        <input
+                          type="number"
+                          step="0.5"
+                          min="0"
+                          value={editable[key]}
+                          onChange={(e) => updateEditable(key, e.target.value)}
+                          className={`w-full bg-transparent border-0 outline-none text-lg font-bold p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+                            highlight ? "text-[#FFD700]" : "text-[var(--text-primary)]"
+                          }`}
+                          disabled={step === "submitting"}
+                        />
+                        {result.achievementDetails?.[key] && (
+                          <p className="text-[10px] text-[var(--text-secondary)]/50 mt-1.5 leading-tight">
+                            {result.achievementDetails[key]}
+                          </p>
+                        )}
                       </div>
                     ))}
                   </div>
