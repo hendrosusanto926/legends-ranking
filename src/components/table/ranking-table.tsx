@@ -269,7 +269,7 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
           </DropdownMenu>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
+        <div className="overflow-auto max-h-[500px] lg:max-h-none rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
           <table className="w-full min-w-[900px]">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
