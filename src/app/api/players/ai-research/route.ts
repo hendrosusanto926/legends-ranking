@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 import { calculateScore } from "@/lib/scoring";
+import { getFileContent } from "@/lib/github";
 
 const AI_PROMPT = (name: string) =>
   `You are a football statistics expert with comprehensive knowledge of football history.
@@ -114,6 +115,21 @@ export async function POST(request: NextRequest) {
       worldCupThirdPlace: Number(aiData.worldCupThirdPlace),
       continentalRunnerUp: Number(aiData.continentalRunnerUp),
     };
+
+    const { players } = await getFileContent();
+    const exists = players.some(
+      (p) =>
+        p.name.trim().toLowerCase() === playerData.name.trim().toLowerCase() &&
+        p.nationality.trim().toLowerCase() === playerData.nationality.trim().toLowerCase()
+    );
+    if (exists) {
+      return NextResponse.json(
+        {
+          error: `Player "${playerData.name}" (${playerData.nationality}) already exists in the database`,
+        },
+        { status: 409 }
+      );
+    }
 
     const score = calculateScore(playerData);
 

@@ -22,7 +22,7 @@ interface GitHubContent {
   encoding: string;
 }
 
-async function getFileContent(): Promise<{ players: Player[]; sha: string }> {
+export async function getFileContent(): Promise<{ players: Player[]; sha: string }> {
   const { token, owner, repo, branch } = getConfig();
 
   const res = await fetch(
@@ -95,11 +95,16 @@ export async function addPlayer(
   const { players } = await getFileContent();
 
   const nameLower = playerData.name.trim().toLowerCase();
+  const nationLower = playerData.nationality.trim().toLowerCase();
   const exists = players.some(
-    (p) => p.name.trim().toLowerCase() === nameLower
+    (p) =>
+      p.name.trim().toLowerCase() === nameLower &&
+      p.nationality.trim().toLowerCase() === nationLower
   );
   if (exists) {
-    throw new Error(`Player "${playerData.name}" already exists in the database`);
+    throw new Error(
+      `Player "${playerData.name}" (${playerData.nationality}) already exists in the database`
+    );
   }
 
   const maxId = players.reduce((max, p) => Math.max(max, p.id), 0);
