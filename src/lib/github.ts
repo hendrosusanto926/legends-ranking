@@ -93,6 +93,15 @@ export async function addPlayer(
   commitMessage: string
 ): Promise<Player> {
   const { players } = await getFileContent();
+
+  const nameLower = playerData.name.trim().toLowerCase();
+  const exists = players.some(
+    (p) => p.name.trim().toLowerCase() === nameLower
+  );
+  if (exists) {
+    throw new Error(`Player "${playerData.name}" already exists in the database`);
+  }
+
   const maxId = players.reduce((max, p) => Math.max(max, p.id), 0);
 
   const newPlayer: Player = {
