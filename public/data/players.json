@@ -1215,6 +1215,21 @@
     "score": 6.25
   },
   {
+    "id": 202,
+    "name": "Lilian Thuram",
+    "continentalClub": 0,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 2,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "France",
+    "score": 6.25
+  },
+  {
     "id": 60,
     "name": "Lothar Matthaus",
     "continentalClub": 0,
