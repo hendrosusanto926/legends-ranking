@@ -1080,6 +1080,21 @@
     "score": 6.25
   },
   {
+    "id": 182,
+    "name": "Ronald Koeman",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 8,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Netherlands",
+    "score": 6.25
+  },
+  {
     "id": 60,
     "name": "Lothar Matthaus",
     "continentalClub": 0,
