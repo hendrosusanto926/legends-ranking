@@ -1665,6 +1665,21 @@
     "score": 5
   },
   {
+    "id": 199,
+    "name": "Roberto Rosato",
+    "continentalClub": 1,
+    "continentalNational": 0.5,
+    "worldCup": 0,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Italy",
+    "score": 4.88
+  },
+  {
     "id": 87,
     "name": "N'Golo Kante",
     "continentalClub": 1,
