@@ -855,6 +855,21 @@
     "score": 6.75
   },
   {
+    "id": 179,
+    "name": "Danilo",
+    "continentalClub": 3,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 7,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "CB",
+    "nationality": "Brazil",
+    "score": 6.75
+  },
+  {
     "id": 53,
     "name": "Ruud Gullit",
     "continentalClub": 1.5,
