@@ -2235,6 +2235,21 @@
     "score": 4
   },
   {
+    "id": 200,
+    "name": "Hristo Stoichkov",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 8,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LW",
+    "nationality": "Bulgaria",
+    "score": 4
+  },
+  {
     "id": 114,
     "name": "Mesut Ozil",
     "continentalClub": 0,
