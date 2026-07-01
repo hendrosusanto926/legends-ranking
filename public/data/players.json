@@ -1335,6 +1335,21 @@
     "score": 5.75
   },
   {
+    "id": 198,
+    "name": "Aristide Guerneri",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Italy",
+    "score": 5.75
+  },
+  {
     "id": 68,
     "name": "Leonardo",
     "continentalClub": 0,
