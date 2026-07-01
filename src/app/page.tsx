@@ -233,9 +233,10 @@ export default function Home() {
                             AI Quick Add
                           </Button>
                         </Link>
-                        <ExportButton players={filteredPlayers} />
-                        <ShareButton />
-                        <DropdownMenu>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <ExportButton players={filteredPlayers} />
+                          <ShareButton />
+                          <DropdownMenu>
                           <DropdownMenuTrigger asChild>
                             <Button variant="ghost" size="sm" className="text-xs text-white/60">
                               <Eye className="h-3.5 w-3.5 mr-1" />
@@ -273,9 +274,10 @@ export default function Home() {
                               );
                             })}
                           </DropdownMenuContent>
-                        </DropdownMenu>
+                          </DropdownMenu>
+                        </div>
                       </>
-                    }
+                      }
                   />
                 </div>
               </div>
