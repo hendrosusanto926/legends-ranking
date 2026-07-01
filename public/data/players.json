@@ -945,6 +945,21 @@
     "score": 6.5
   },
   {
+    "id": 176,
+    "name": "Rodrigo De Paul",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Argentina",
+    "score": 6.5
+  },
+  {
     "id": 57,
     "name": "Pedro",
     "continentalClub": 2,
