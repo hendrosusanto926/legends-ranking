@@ -1995,6 +1995,21 @@
     "score": 4.25
   },
   {
+    "id": 191,
+    "name": "Rudi Voller",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 0,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Germany",
+    "score": 4.25
+  },
+  {
     "id": 109,
     "name": "Antonio Conte",
     "continentalClub": 1,
