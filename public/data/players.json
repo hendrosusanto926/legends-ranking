@@ -2445,6 +2445,21 @@
     "score": 2.75
   },
   {
+    "id": 178,
+    "name": "Gianluigi Donnarumma",
+    "continentalClub": 0,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "Italy",
+    "score": 2.75
+  },
+  {
     "id": 142,
     "name": "Per Mertesacker",
     "continentalClub": 0,
