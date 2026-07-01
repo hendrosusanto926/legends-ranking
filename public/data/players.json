@@ -420,6 +420,21 @@
     "score": 9
   },
   {
+    "id": 193,
+    "name": "Ruud Krol",
+    "continentalClub": 3,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 6,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 2,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LB",
+    "nationality": "Netherlands",
+    "score": 9
+  },
+  {
     "id": 27,
     "name": "Pele",
     "continentalClub": 1.5,
