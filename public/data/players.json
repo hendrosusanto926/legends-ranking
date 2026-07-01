@@ -1305,6 +1305,21 @@
     "score": 5.5
   },
   {
+    "id": 189,
+    "name": "Jürgen Klinsmann",
+    "continentalClub": 0,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "CF",
+    "nationality": "Germany",
+    "score": 5.5
+  },
+  {
     "id": 72,
     "name": "Neymar",
     "continentalClub": 2,
