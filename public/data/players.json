@@ -870,6 +870,21 @@
     "score": 6.75
   },
   {
+    "id": 180,
+    "name": "Gianni Rivera",
+    "continentalClub": 2,
+    "continentalNational": 0.5,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "Italy",
+    "score": 6.63
+  },
+  {
     "id": 53,
     "name": "Ruud Gullit",
     "continentalClub": 1.5,
