@@ -137,7 +137,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative min-h-screen text-[var(--text-primary)] font-sans">
+    <div className="relative min-h-screen text-[var(--text-primary)] font-sans overflow-x-hidden">
       <Background />
 
       <Navigation />
