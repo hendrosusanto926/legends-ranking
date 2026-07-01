@@ -39,12 +39,13 @@ export function Filters({
     });
   };
 
-  const hasFilters =
+  const hasFilters = !!(
     filters.search ||
     filters.nationality ||
     filters.position ||
     filters.minScore ||
-    filters.maxScore;
+    filters.maxScore
+  );
 
   return (
     <div className="space-y-4">
@@ -63,7 +64,7 @@ export function Filters({
         <div className="hidden sm:flex gap-3">
           <Select
             value={filters.nationality}
-            onValueChange={(v) => update("nationality", v)}
+            onValueChange={(v) => update("nationality", v === "all" ? "" : v)}
           >
             <SelectTrigger className="w-[160px]" aria-label="Filter by nationality">
               <SelectValue placeholder="Nationality" />
@@ -80,7 +81,7 @@ export function Filters({
 
           <Select
             value={filters.position}
-            onValueChange={(v) => update("position", v)}
+            onValueChange={(v) => update("position", v === "all" ? "" : v)}
           >
             <SelectTrigger className="w-[140px]" aria-label="Filter by position">
               <SelectValue placeholder="Position" />
@@ -149,7 +150,7 @@ export function Filters({
             <div className="flex gap-2 overflow-x-auto pb-1">
               <Select
                 value={filters.nationality}
-                onValueChange={(v) => update("nationality", v)}
+                onValueChange={(v) => update("nationality", v === "all" ? "" : v)}
               >
                 <SelectTrigger className="w-[130px] text-xs h-9" aria-label="Filter by nationality">
                   <SelectValue placeholder="Nationality" />
@@ -166,7 +167,7 @@ export function Filters({
 
               <Select
                 value={filters.position}
-                onValueChange={(v) => update("position", v)}
+                onValueChange={(v) => update("position", v === "all" ? "" : v)}
               >
                 <SelectTrigger className="w-[100px] text-xs h-9" aria-label="Filter by position">
                   <SelectValue placeholder="Position" />

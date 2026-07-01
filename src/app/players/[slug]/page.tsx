@@ -46,7 +46,6 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   Radar,
   ResponsiveContainer,
   Tooltip,
@@ -468,20 +467,12 @@ export default function PlayerPage() {
               </h2>
               <ResponsiveContainer width="100%" height={320}>
                 <RadarChart data={radarData}>
-                  <PolarGrid stroke="rgba(255,255,255,0.1)" />
+                  <PolarGrid stroke="rgba(255,255,255,0.08)" />
                   <PolarAngleAxis
                     dataKey="stat"
                     tick={{
                       fill: "rgba(255,255,255,0.5)",
                       fontSize: 10,
-                    }}
-                  />
-                  <PolarRadiusAxis
-                    angle={30}
-                    domain={[0, "auto"]}
-                    tick={{
-                      fill: "rgba(255,255,255,0.3)",
-                      fontSize: 9,
                     }}
                   />
                   <Radar

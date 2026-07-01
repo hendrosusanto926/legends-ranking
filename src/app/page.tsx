@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp, Plus, Sparkles, Clock, X } from "lucide-react";
+import { ArrowUp, Plus, Sparkles, Clock, X, Eye, EyeOff } from "lucide-react";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Background } from "@/components/layout/background";
@@ -21,6 +21,12 @@ import { AIChat } from "@/components/ai/ai-chat";
 import { ExportButton } from "@/components/export/export-button";
 import { ShareButton } from "@/components/share/share-button";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -30,6 +36,22 @@ import {
   getUniqueValues,
 } from "@/lib/players";
 import type { Player, FilterState } from "@/types/player";
+import type { VisibilityState } from "@tanstack/react-table";
+import { cn } from "@/lib/utils";
+
+const COLUMNS_CONFIG: { id: string; label: string }[] = [
+  { id: "nationality", label: "Nationality" },
+  { id: "position", label: "Pos" },
+  { id: "continentalClub", label: "Cont. Club" },
+  { id: "continentalNational", label: "Cont. Nat." },
+  { id: "worldCup", label: "World Cup" },
+  { id: "domesticLeague", label: "Dom. League" },
+  { id: "ballonDor", label: "Ballon d'Or" },
+  { id: "worldCupRunnerUp", label: "WC RU" },
+  { id: "worldCupThirdPlace", label: "WC 3rd" },
+  { id: "continentalRunnerUp", label: "Cont. RU" },
+  { id: "score", label: "Score" },
+];
 
 export default function Home() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -45,6 +67,7 @@ export default function Home() {
     minScore: 0,
     maxScore: 0,
   });
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -137,7 +160,7 @@ export default function Home() {
         ) : (
           <>
             <StatsCards stats={stats} />
-            <TopThree players={filteredPlayers} />
+            <TopThree players={players} />
 
             <section id="rankings" className="py-16">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -181,35 +204,78 @@ export default function Home() {
                   )}
                 </AnimatePresence>
 
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <div className="mb-4">
                   <Filters
                     filters={filters}
                     onFilterChange={setFilters}
                     nationalities={nationalities}
                     positions={positions}
                   />
-                  <div className="flex items-center gap-2">
-                    <Link href="/add-player">
-                      <Button variant="secondary" size="sm" className="gap-1.5">
-                        <Plus className="h-4 w-4" />
-                        Add Player
-                      </Button>
-                    </Link>
-                    <Link href="/ai-add-player">
-                      <Button variant="ghost" size="sm" className="gap-1.5 text-[#FFD700]">
-                        <Sparkles className="h-4 w-4" />
-                        AI Quick Add
-                      </Button>
-                    </Link>
-                    <ExportButton players={filteredPlayers} />
-                    <ShareButton />
-                  </div>
                 </div>
 
                 <div className="mt-6">
                   <RankingTable
                     players={filteredPlayers}
                     onPlayerClick={setSelectedPlayer}
+                    columnVisibility={columnVisibility}
+                    onColumnVisibilityChange={setColumnVisibility}
+                    actions={
+                      <>
+                        <Link href="/add-player">
+                          <Button variant="secondary" size="sm" className="gap-1.5">
+                            <Plus className="h-4 w-4" />
+                            Add Player
+                          </Button>
+                        </Link>
+                        <Link href="/ai-add-player">
+                          <Button variant="ghost" size="sm" className="gap-1.5 text-[#FFD700]">
+                            <Sparkles className="h-4 w-4" />
+                            AI Quick Add
+                          </Button>
+                        </Link>
+                        <ExportButton players={filteredPlayers} />
+                        <ShareButton />
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm" className="text-xs text-white/60">
+                              <Eye className="h-3.5 w-3.5 mr-1" />
+                              Columns
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className="w-48">
+                            {COLUMNS_CONFIG.map((col) => {
+                              const isVisible = columnVisibility[col.id] !== false;
+                              return (
+                                <DropdownMenuItem
+                                  key={col.id}
+                                  onClick={() =>
+                                    setColumnVisibility((prev) => ({
+                                      ...prev,
+                                      [col.id]: !isVisible,
+                                    }))
+                                  }
+                                  className="flex items-center gap-2"
+                                >
+                                  <div
+                                    className={cn(
+                                      "w-3.5 h-3.5 rounded border border-white/30 flex items-center justify-center",
+                                      isVisible && "bg-[#FFD700] border-[#FFD700]"
+                                    )}
+                                  >
+                                    {isVisible && (
+                                      <EyeOff className="h-2 w-2 text-[#111111]" />
+                                    )}
+                                  </div>
+                                  <span className="capitalize">
+                                    {col.label}
+                                  </span>
+                                </DropdownMenuItem>
+                              );
+                            })}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </>
+                    }
                   />
                 </div>
               </div>

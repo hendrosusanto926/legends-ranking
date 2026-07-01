@@ -23,25 +23,15 @@ import {
   ArrowUpDown,
   ChevronLeft,
   ChevronRight,
-  Eye,
-  EyeOff,
   BookOpen,
-  ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { slugify } from "@/lib/players";
 import type { Player } from "@/types/player";
 
 const columnHelper = createColumnHelper<Player>();
@@ -61,25 +51,27 @@ const RANK_COLORS = [
 interface RankingTableProps {
   players: Player[];
   onPlayerClick: (player: Player) => void;
+  columnVisibility: VisibilityState;
+  onColumnVisibilityChange: (updater: VisibilityState | ((prev: VisibilityState) => VisibilityState)) => void;
+  actions?: React.ReactNode;
 }
 
 // @react-no-memo-disable - TanStack Table returns non-memoizable functions
 
 const STICKY_COLUMNS = new Set(["rank", "name"]);
 
-export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
+export function RankingTable({ players, onPlayerClick, columnVisibility, onColumnVisibilityChange, actions }: RankingTableProps) {
   const [sorting, setSorting] = useState<SortingState>([
     { id: "score", desc: true },
   ]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
 
   const columns = useMemo(
     () => [
       columnHelper.display({
         id: "rank",
-        header: "#",
+        header: "RANK",
         cell: ({ row }) => {
           const rank = row.original.rank ?? row.index + 1;
           return (
@@ -155,9 +147,9 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
       columnHelper.accessor("ballonDor", {
         header: "Ballon d'Or",
         cell: (info) => (
-          <span className="font-semibold text-[#FFD700]">
-            {info.getValue()}
-          </span>
+            <span className="font-semibold text-white">
+              {info.getValue()}
+            </span>
         ),
       }),
       columnHelper.accessor("worldCupRunnerUp", {
@@ -187,21 +179,6 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
         ),
         size: 80,
       }),
-      columnHelper.display({
-        id: "actions",
-        header: "",
-        cell: ({ row }) => (
-          <Link
-            href={`/players/${slugify(row.original.name)}`}
-            className="inline-flex items-center gap-1 text-xs text-[#FFD700] hover:text-[#FFD700]/80 transition-colors whitespace-nowrap"
-            onClick={(e) => e.stopPropagation()}
-          >
-            View
-            <ExternalLink className="h-3 w-3" />
-          </Link>
-        ),
-        size: 70,
-      }),
     ],
     []
   );
@@ -217,7 +194,7 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
     },
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
-    onColumnVisibilityChange: setColumnVisibility,
+    onColumnVisibilityChange,
     onPaginationChange: setPagination,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -234,41 +211,11 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
           <p className="text-sm text-white/50">
             Showing {table.getRowModel().rows.length} of {players.length} players
           </p>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="text-xs text-white/60">
-                <Eye className="h-3.5 w-3.5 mr-1" />
-                Columns
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
-              {table.getAllColumns().map((column) => {
-                if (column.id === "rank") return null;
-                return (
-                  <DropdownMenuItem
-                    key={column.id}
-                    onClick={() =>
-                      column.toggleVisibility(!column.getIsVisible())
-                    }
-                    className="flex items-center gap-2"
-                  >
-                    <div
-                      className={cn(
-                        "w-3.5 h-3.5 rounded border border-white/30 flex items-center justify-center",
-                        column.getIsVisible() && "bg-[#FFD700] border-[#FFD700]"
-                      )}
-                    >
-                      {column.getIsVisible() && (
-                        <EyeOff className="h-2 w-2 text-[#111111]" />
-                      )}
-                    </div>
-                    <span className="capitalize">{column.id.replace(/([A-Z])/g, " $1")}</span>
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {actions && (
+            <div className="flex items-center gap-2">
+              {actions}
+            </div>
+          )}
         </div>
 
         <div className="overflow-auto max-h-[500px] lg:overflow-visible lg:max-h-none rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
@@ -366,8 +313,8 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
                         <td
                           key={cell.id}
                           className={cn(
-                            "px-3 py-2.5",
-                            isSticky && `sticky z-20 ${rowBg}`
+                            "px-3 py-2.5 whitespace-nowrap",
+                            isSticky && "sticky z-20 bg-[#111111]"
                           )}
                           style={{
                             width: cell.column.getSize(),
