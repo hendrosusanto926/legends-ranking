@@ -1275,6 +1275,21 @@
     "score": 6
   },
   {
+    "id": 197,
+    "name": "Michel Platini",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 3,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "France",
+    "score": 6
+  },
+  {
     "id": 65,
     "name": "Alessandro Nesta",
     "continentalClub": 2,
