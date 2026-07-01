@@ -137,16 +137,6 @@ export function Filters({
             Filters
           </summary>
           <div className="flex flex-col gap-2 pt-2">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-white/40" />
-              <Input
-                placeholder="Search players..."
-                value={filters.search}
-                onChange={(e) => update("search", e.target.value)}
-                className="pl-9 h-9 text-sm"
-                aria-label="Search players by name"
-              />
-            </div>
             <div className="flex gap-2 overflow-x-auto pb-1">
               <Select
                 value={filters.nationality}
