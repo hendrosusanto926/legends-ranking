@@ -88,13 +88,13 @@ export function RankingTable({ players, onPlayerClick, columnVisibility, onColum
             </div>
           );
         },
-        size: 50,
+        size: 40,
       }),
       columnHelper.accessor("name", {
         header: "Player",
         cell: ({ row }) => (
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-white">
+            <span className="font-semibold text-white text-sm">
               {row.original.name}
             </span>
             {(row.original.rank ?? row.index + 1) <= 3 && (
@@ -104,13 +104,14 @@ export function RankingTable({ players, onPlayerClick, columnVisibility, onColum
             )}
           </div>
         ),
-        size: 200,
+        size: 140,
       }),
       columnHelper.accessor("nationality", {
-        header: "Nationality",
+        header: "Nat",
         cell: (info) => (
           <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 80,
       }),
       columnHelper.accessor("position", {
         header: "Pos",
@@ -119,65 +120,74 @@ export function RankingTable({ players, onPlayerClick, columnVisibility, onColum
             {info.getValue()}
           </Badge>
         ),
+        size: 56,
       }),
       columnHelper.accessor("continentalClub", {
-        header: "Cont. Club",
+        header: "C.Club",
         cell: (info) => (
-          <span className="text-white/70">{info.getValue()}</span>
+          <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 60,
       }),
       columnHelper.accessor("continentalNational", {
-        header: "Cont. Nat.",
+        header: "C.Nat",
         cell: (info) => (
-          <span className="text-white/70">{info.getValue()}</span>
+          <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 60,
       }),
       columnHelper.accessor("worldCup", {
-        header: "World Cup",
+        header: "WorldCup",
         cell: (info) => (
-          <span className="font-semibold text-white">{info.getValue()}</span>
+          <span className="font-semibold text-white text-xs">{info.getValue()}</span>
         ),
+        size: 72,
       }),
       columnHelper.accessor("domesticLeague", {
-        header: "Dom. League",
+        header: "Dom.Lg",
         cell: (info) => (
-          <span className="text-white/70">{info.getValue()}</span>
+          <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 64,
       }),
       columnHelper.accessor("ballonDor", {
-        header: "Ballon d'Or",
+        header: "B.d'Or",
         cell: (info) => (
-            <span className="font-semibold text-white">
+            <span className="font-semibold text-white text-xs">
               {info.getValue()}
             </span>
         ),
+        size: 64,
       }),
       columnHelper.accessor("worldCupRunnerUp", {
         header: "WC RU",
         cell: (info) => (
-          <span className="text-white/70">{info.getValue()}</span>
+          <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 56,
       }),
       columnHelper.accessor("worldCupThirdPlace", {
         header: "WC 3rd",
         cell: (info) => (
-          <span className="text-white/70">{info.getValue()}</span>
+          <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 56,
       }),
       columnHelper.accessor("continentalRunnerUp", {
-        header: "Cont. RU",
+        header: "C.RU",
         cell: (info) => (
-          <span className="text-white/70">{info.getValue()}</span>
+          <span className="text-white/70 text-xs">{info.getValue()}</span>
         ),
+        size: 56,
       }),
       columnHelper.accessor("score", {
         header: "Score",
         cell: (info) => (
-          <span className="font-bold text-[#FFD700] text-base">
+          <span className="font-bold text-[#FFD700] text-sm">
             {info.getValue().toFixed(2)}
           </span>
         ),
-        size: 80,
+        size: 64,
       }),
     ],
     []
@@ -219,7 +229,7 @@ export function RankingTable({ players, onPlayerClick, columnVisibility, onColum
         </div>
 
         <div className="overflow-auto max-h-[500px] lg:overflow-visible lg:max-h-none rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
-          <table className="w-full min-w-[900px]">
+          <table className="w-full min-w-[650px] lg:min-w-[900px]">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id} className="border-b border-white/10">
@@ -238,7 +248,7 @@ export function RankingTable({ players, onPlayerClick, columnVisibility, onColum
                     <th
                       key={header.id}
                       className={cn(
-                        "px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50 cursor-pointer select-none hover:text-white/80 transition-colors sticky top-0 lg:top-16 bg-[#111111]/95 backdrop-blur-xl z-10",
+                        "px-2 py-2 lg:px-3 lg:py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50 cursor-pointer select-none hover:text-white/80 transition-colors sticky top-0 lg:top-16 bg-[#111111]/95 backdrop-blur-xl z-10",
                         isStickyHeader && "z-30 bg-[#111111]"
                       )}
                       style={{
@@ -313,7 +323,7 @@ export function RankingTable({ players, onPlayerClick, columnVisibility, onColum
                         <td
                           key={cell.id}
                           className={cn(
-                            "px-3 py-2.5 whitespace-nowrap",
+                            "px-2 py-2 lg:px-3 lg:py-2.5 whitespace-nowrap",
                             isSticky && "sticky z-20 bg-[#111111]"
                           )}
                           style={{
