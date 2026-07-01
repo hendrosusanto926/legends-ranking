@@ -12,6 +12,7 @@ export interface Player {
   position: string;
   nationality: string;
   score: number;
+  rank?: number;
 }
 
 export interface PlayerStats {

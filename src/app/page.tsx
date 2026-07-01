@@ -50,7 +50,9 @@ export default function Home() {
     const fetchPlayers = async () => {
       try {
         const data = await getPlayers();
-        const sorted = data.sort((a, b) => b.score - a.score);
+        const sorted = data
+          .sort((a, b) => b.score - a.score)
+          .map((player, index) => ({ ...player, rank: index + 1 }));
         setPlayers(sorted);
       } catch {
         setError("Failed to load player data");

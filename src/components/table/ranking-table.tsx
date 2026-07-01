@@ -65,6 +65,8 @@ interface RankingTableProps {
 
 // @react-no-memo-disable - TanStack Table returns non-memoizable functions
 
+const STICKY_COLUMNS = new Set(["rank", "name"]);
+
 export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
   const [sorting, setSorting] = useState<SortingState>([
     { id: "score", desc: true },
@@ -79,7 +81,7 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
         id: "rank",
         header: "#",
         cell: ({ row }) => {
-          const rank = row.index + 1;
+          const rank = row.original.rank ?? row.index + 1;
           return (
             <div className="flex items-center justify-center w-10">
               {rank <= 3 ? (
@@ -103,9 +105,9 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
             <span className="font-semibold text-white">
               {row.original.name}
             </span>
-            {row.index + 1 <= 3 && (
+            {(row.original.rank ?? row.index + 1) <= 3 && (
               <Badge variant="gold" className="text-[10px] px-1.5 py-0">
-                #{row.index + 1}
+                #{row.original.rank ?? row.index + 1}
               </Badge>
             )}
           </div>
@@ -274,11 +276,28 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id} className="border-b border-white/10">
-                  {headerGroup.headers.map((header) => (
+                  {headerGroup.headers.map((header) => {
+                    const isStickyHeader = STICKY_COLUMNS.has(header.column.id);
+                    let leftOffset = 0;
+                    if (isStickyHeader) {
+                      for (const h of headerGroup.headers) {
+                        if (h.id === header.id) break;
+                        if (STICKY_COLUMNS.has(h.column.id)) {
+                          leftOffset += h.getSize();
+                        }
+                      }
+                    }
+                    return (
                     <th
                       key={header.id}
-                      className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50 cursor-pointer select-none hover:text-white/80 transition-colors sticky top-0 lg:top-16 bg-[#111111]/95 backdrop-blur-xl z-10"
-                      style={{ width: header.getSize() }}
+                      className={cn(
+                        "px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50 cursor-pointer select-none hover:text-white/80 transition-colors sticky top-0 lg:top-16 bg-[#111111]/95 backdrop-blur-xl z-10",
+                        isStickyHeader && "z-30 bg-[#111111]"
+                      )}
+                      style={{
+                        width: header.getSize(),
+                        ...(isStickyHeader && { left: leftOffset }),
+                      }}
                       onClick={header.column.getToggleSortingHandler()}
                     >
                       <div className="flex items-center gap-1">
@@ -299,7 +318,8 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
                         )}
                       />
                     </th>
-                  ))}
+                  );
+                  })}
                 </tr>
               ))}
             </thead>
@@ -321,7 +341,11 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
                     </td>
                   </tr>
                 ) : (
-                  table.getRowModel().rows.map((row, i) => (
+                  table.getRowModel().rows.map((row, i) => {
+                    const rowBg = i % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.05]";
+                    let leftOffset = 0;
+                    const cells = row.getVisibleCells();
+                    return (
                     <motion.tr
                       key={row.original.id}
                       initial={{ opacity: 0, y: 10 }}
@@ -330,24 +354,36 @@ export function RankingTable({ players, onPlayerClick }: RankingTableProps) {
                       onClick={() => onPlayerClick(row.original)}
                       className={cn(
                         "border-b border-white/5 cursor-pointer transition-all duration-200",
-                        i % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.05]",
+                        rowBg,
                         "hover:bg-white/10"
                       )}
                     >
-                      {row.getVisibleCells().map((cell) => (
+                      {cells.map((cell) => {
+                        const isSticky = STICKY_COLUMNS.has(cell.column.id);
+                        const currentLeft = leftOffset;
+                        if (isSticky) leftOffset += cell.column.getSize();
+                        return (
                         <td
                           key={cell.id}
-                          className="px-3 py-2.5"
-                          style={{ width: cell.column.getSize() }}
+                          className={cn(
+                            "px-3 py-2.5",
+                            isSticky && `sticky z-20 ${rowBg}`
+                          )}
+                          style={{
+                            width: cell.column.getSize(),
+                            ...(isSticky && { left: currentLeft }),
+                          }}
                         >
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext()
                           )}
                         </td>
-                      ))}
+                        );
+                      })}
                     </motion.tr>
-                  ))
+                    );
+                  })
                 )}
               </AnimatePresence>
             </tbody>
