@@ -495,6 +495,21 @@
     "score": 8.625
   },
   {
+    "id": 194,
+    "name": "Johan Neeskens",
+    "continentalClub": 3,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 2,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 2,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Netherlands",
+    "score": 8.5
+  },
+  {
     "id": 31,
     "name": "Didier Deschamps",
     "continentalClub": 2,
