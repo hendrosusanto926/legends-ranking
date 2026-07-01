@@ -405,6 +405,21 @@
     "score": 9
   },
   {
+    "id": 188,
+    "name": "Karl-Hanz Rummenigge",
+    "continentalClub": 1.5,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 2,
+    "ballonDor": 2,
+    "worldCupRunnerUp": 2,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Germany",
+    "score": 9
+  },
+  {
     "id": 27,
     "name": "Pele",
     "continentalClub": 1.5,
