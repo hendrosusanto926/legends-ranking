@@ -1125,6 +1125,21 @@
     "score": 6.25
   },
   {
+    "id": 192,
+    "name": "Johnny Rep",
+    "continentalClub": 1.5,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 2,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "RW",
+    "nationality": "Netherlands",
+    "score": 6.25
+  },
+  {
     "id": 60,
     "name": "Lothar Matthaus",
     "continentalClub": 0,
