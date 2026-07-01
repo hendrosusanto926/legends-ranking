@@ -150,6 +150,21 @@
     "score": 12.5
   },
   {
+    "id": 203,
+    "name": "Alfredo Di Stefano",
+    "continentalClub": 5,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 13,
+    "ballonDor": 2,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "SS",
+    "nationality": "Argentina",
+    "score": 12.25
+  },
+  {
     "id": 11,
     "name": "Paolo Maldini",
     "continentalClub": 5,
