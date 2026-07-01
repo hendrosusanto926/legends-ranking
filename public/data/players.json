@@ -1440,6 +1440,21 @@
     "score": 5.25
   },
   {
+    "id": 190,
+    "name": "Andreas Brehme",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "LB",
+    "nationality": "Germany",
+    "score": 5.25
+  },
+  {
     "id": 80,
     "name": "Benjamin Pavard",
     "continentalClub": 0.5,
