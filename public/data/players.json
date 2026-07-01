@@ -930,6 +930,21 @@
     "score": 6.5
   },
   {
+    "id": 175,
+    "name": "Leandro Paredes",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Argentina",
+    "score": 6.5
+  },
+  {
     "id": 57,
     "name": "Pedro",
     "continentalClub": 2,
