@@ -88,9 +88,13 @@ export function StatsCharts({ players }: StatsChartsProps) {
     players.forEach((p) => {
       counts[p.nationality] = (counts[p.nationality] || 0) + 1;
     });
-    return Object.entries(counts)
+    const sorted = Object.entries(counts)
       .map(([name, value]) => ({ name, value }))
       .sort((a, b) => b.value - a.value);
+    if (sorted.length <= 12) return sorted;
+    const top = sorted.slice(0, 11);
+    const others = sorted.slice(11).reduce((sum, c) => sum + c.value, 0);
+    return [...top, { name: "Others", value: others }];
   }, [players]);
 
   const avgScoreByPosition = useMemo(() => {
@@ -188,14 +192,14 @@ export function StatsCharts({ players }: StatsChartsProps) {
       subtitle: "Countries represented",
       chart: (
         <ResponsiveContainer width="100%" height={400}>
-          <BarChart data={nationalityData} layout="vertical" barCategoryGap="20%">
+          <BarChart data={nationalityData} layout="vertical" barCategoryGap="20%" margin={{ left: 10, right: 20 }}>
             <CartesianGrid
               strokeDasharray="3 3"
               stroke="rgba(255,255,255,0.05)"
               horizontal={false}
             />
             <XAxis type="number" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11 }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} />
-            <YAxis type="category" dataKey="name" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11 }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} width={120} />
+            <YAxis type="category" dataKey="name" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10 }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} width={160} interval={0} />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="value" fill="#1B5E20" radius={[0, 4, 4, 0]} maxBarSize={20} />
           </BarChart>
@@ -207,12 +211,16 @@ export function StatsCharts({ players }: StatsChartsProps) {
       subtitle: "Performance distribution",
       chart: (
         <ResponsiveContainer width="100%" height={320}>
-          <BarChart data={avgScoreByPosition} barCategoryGap="20%">
+          <BarChart data={avgScoreByPosition} barCategoryGap="20%" margin={{ bottom: 60, left: 10, right: 20 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
             <XAxis
               dataKey="name"
-              tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11 }}
+              tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10 }}
               axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+              interval={0}
+              angle={-20}
+              textAnchor="end"
+              height={60}
             />
             <YAxis
               tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11 }}
