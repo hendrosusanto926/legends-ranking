@@ -2648,21 +2648,6 @@
     "score": 3
   },
   {
-    "id": 130,
-    "name": "Wayne Rooney",
-    "continentalClub": 1,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 5,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CF",
-    "nationality": "England",
-    "score": 3
-  },
-  {
     "id": 131,
     "name": "Ruben Dias",
     "continentalClub": 1,
@@ -2931,6 +2916,22 @@
     "position": "GK",
     "nationality": "Italy",
     "score": 2.75
+  },
+  {
+    "id": 130,
+    "name": "Wayne Rooney",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "England",
+    "description": "Wayne Rooney, 'The Boy Wonder' who matured into England and Manchester United's all-time leading goalscorer, was a force of nature on the pitch. His iconic playing style combined raw power, relentless work rate, and a streetfighter's tenacity with flashes of sublime skill and thunderous finishes. A decorated career saw him lift five Premier League titles and the UEFA Champions League, cementing his legacy as a true legend of the game.",
+    "score": 2.5
   },
   {
     "id": 142,
