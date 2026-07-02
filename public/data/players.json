@@ -1074,21 +1074,6 @@
     "score": 6.5
   },
   {
-    "id": 56,
-    "name": "Jorginho",
-    "continentalClub": 2,
-    "continentalNational": 1,
-    "worldCup": 0,
-    "domesticLeague": 1,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 1,
-    "position": "DM",
-    "nationality": "Italy",
-    "score": 6.5
-  },
-  {
     "id": 174,
     "name": "Alexis Mac Allister",
     "continentalClub": 0,
@@ -1405,6 +1390,22 @@
     "position": "AM",
     "nationality": "France",
     "score": 6
+  },
+  {
+    "id": 56,
+    "name": "Jorginho",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "DM",
+    "nationality": "Italy",
+    "description": "Known as 'The Maestro', Jorginho is the quintessential deep-lying playmaker, a footballing brain who orchestrated play with unparalleled vision and precise passing from the heart of the midfield. His illustrious career is marked by triumph, lifting two Continental Club trophies, a historic European Championship with Italy, and serving as a pivotal architect in a Domestic League triumph.",
+    "score": 5.75
   },
   {
     "id": 65,
