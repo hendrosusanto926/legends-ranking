@@ -1163,6 +1163,22 @@
     "score": 6.5
   },
   {
+    "id": 208,
+    "name": "Marcos Acuna",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LB",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 6.5
+  },
+  {
     "id": 57,
     "name": "Pedro",
     "continentalClub": 2,
