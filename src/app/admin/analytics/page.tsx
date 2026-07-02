@@ -1,5 +1,7 @@
+import { cookies } from "next/headers";
 import { getVisitors, type Visitor } from "@/lib/visitors";
 import { AnalyticsDashboard } from "./analytics-dashboard";
+import { AdminLogin } from "./admin-login";
 
 export const dynamic = "force-dynamic";
 
@@ -37,6 +39,13 @@ function computeStats(visitors: Visitor[]): Stats {
 }
 
 export default async function AdminAnalyticsPage() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token");
+
+  if (token?.value !== "authenticated") {
+    return <AdminLogin />;
+  }
+
   const visitors = await getVisitors();
   const stats = computeStats(visitors);
 
