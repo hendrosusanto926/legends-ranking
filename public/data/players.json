@@ -1711,6 +1711,22 @@
     "score": 5.25
   },
   {
+    "id": 210,
+    "name": "Fernando José Torres Sanz",
+    "continentalClub": 1,
+    "continentalNational": 1.5,
+    "worldCup": 0.5,
+    "domesticLeague": 0,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Spain",
+    "description": "Known as 'El Niño,' Fernando Torres was a prolific striker celebrated for his blistering pace, intelligent movement, and clinical finishing. He etched his name in footballing lore by scoring the winning goal in the Euro 2008 final and completing a remarkable triple crown of international and club titles. His career saw him lift the World Cup, two European Championships, and the UEFA Champions League.",
+    "score": 5.13
+  },
+  {
     "id": 80,
     "name": "Benjamin Pavard",
     "continentalClub": 0.5,
