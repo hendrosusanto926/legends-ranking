@@ -11,5 +11,18 @@
     "os": "Windows",
     "device": "Desktop",
     "visitedAt": "2026-07-02T13:50:04.146Z"
+  },
+  {
+    "id": "7077e8e3-9daa-463a-89b1-db773c00cf5d",
+    "ipHash": "41b2b258d0da30bc27681fa7bb6afa2a731342802477f385a3aca8cbdf6451ce",
+    "city": "North Jakarta",
+    "region": "sin1",
+    "country": "ID",
+    "latitude": "-6.1859",
+    "longitude": "106.9051",
+    "browser": "Chrome",
+    "os": "Android",
+    "device": "Mobile",
+    "visitedAt": "2026-07-02T13:50:05.829Z"
   }
 ]
