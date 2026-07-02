@@ -1,10 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Crown, Trophy, Star, Globe, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Flag } from "@/lib/flags";
+import { slugify } from "@/lib/players";
 
 const HONOREES = [
   {
@@ -60,6 +62,7 @@ const HONOREES = [
 const ICONS = [Trophy, Globe, Award];
 
 export function HonorableMentions() {
+  const router = useRouter();
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -94,8 +97,9 @@ export function HonorableMentions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 * index }}
                 whileHover={{ y: -5 }}
+                onClick={() => router.push(`/players/${slugify(honoree.name)}`)}
                 className={cn(
-                  "group relative overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-500",
+                  "group relative overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-500 cursor-pointer",
                   honoree.border,
                   `bg-gradient-to-b ${honoree.gradient}`,
                   "hover:shadow-2xl hover:shadow-black/30"

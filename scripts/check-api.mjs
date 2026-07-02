@@ -16,21 +16,23 @@ for (const line of envContent.split("\n")) {
   }
 }
 
-console.log("API Key present:", !!apiKey);
-console.log("API Key length:", apiKey.length);
-console.log("API Key prefix:", apiKey.slice(0, 10) + "...");
+const models = ["gemini-1.5-flash", "gemini-2.5-flash", "gemini-2.0-flash"];
 
-if (apiKey) {
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-  try {
-    const result = await model.generateContent("Return ONLY: {\"status\": \"ok\"}");
-    console.log("Response:", result.response.text().trim());
-  } catch (e) {
-    console.log("Error:", e.message);
-    console.log("Status:", e.status);
-    if (e.errorDetails) {
-      console.log("Details:", JSON.stringify(e.errorDetails));
+for (const modelName of models) {
+  console.log(`\n--- Testing ${modelName} ---`);
+  if (apiKey) {
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: modelName });
+    try {
+      const result = await model.generateContent("Return ONLY: {\"status\": \"ok\"}");
+      console.log("OK:", result.response.text().trim());
+    } catch (e) {
+      console.log("Error:", e.message?.slice(0, 200));
+      console.log("Status:", e.status);
+      if (e.errorDetails) {
+        const quota = e.errorDetails.find(d => d.violations);
+        if (quota) console.log("Quota:", JSON.stringify(quota.violations));
+      }
     }
   }
 }

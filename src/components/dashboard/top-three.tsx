@@ -1,8 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Trophy, Medal, Star, Crown } from "lucide-react";
 import { Flag } from "@/lib/flags";
+import { slugify } from "@/lib/players";
 import { cn } from "@/lib/utils";
 import type { Player } from "@/types/player";
 
@@ -47,6 +49,7 @@ interface TopThreeProps {
 }
 
 export function TopThree({ players }: TopThreeProps) {
+  const router = useRouter();
   const top3 = players.slice(0, 3);
 
   if (top3.length === 0) return null;
@@ -86,8 +89,9 @@ export function TopThree({ players }: TopThreeProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 * index }}
                 whileHover={{ scale: config.scale }}
+                onClick={() => router.push(`/players/${slugify(player.name)}`)}
                 className={cn(
-                  "relative overflow-hidden rounded-2xl border p-6 sm:p-8 backdrop-blur-xl transition-all duration-500 text-center",
+                  "relative overflow-hidden rounded-2xl border p-6 sm:p-8 backdrop-blur-xl transition-all duration-500 text-center cursor-pointer",
                   config.border,
                   `bg-gradient-to-b ${config.bg}`,
                   config.glow,
