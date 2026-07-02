@@ -548,21 +548,6 @@
     "score": 8.5
   },
   {
-    "id": 31,
-    "name": "Didier Deschamps",
-    "continentalClub": 2,
-    "continentalNational": 1,
-    "worldCup": 1,
-    "domesticLeague": 5,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "DM",
-    "nationality": "France",
-    "score": 8.25
-  },
-  {
     "id": 32,
     "name": "Alessandro Costacurta",
     "continentalClub": 4,
@@ -666,6 +651,22 @@
     "position": "LW",
     "nationality": "Brazil",
     "score": 7.875
+  },
+  {
+    "id": 31,
+    "name": "Didier Deschamps",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "DM",
+    "nationality": "France",
+    "description": "Known as 'The Water Carrier,' Didier Deschamps was the indispensable anchor whose tireless intelligence and tactical mastery built dynasties. He captained teams to an astonishing two Continental Club crowns, a Continental National title, the coveted World Cup, and five Domestic League triumphs. Deschamps embodied the spirit of a true midfield general, enabling greatness around him.",
+    "score": 7.75
   },
   {
     "id": 38,
