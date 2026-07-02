@@ -744,21 +744,6 @@
     "score": 7.625
   },
   {
-    "id": 41,
-    "name": "Clarence Seedorf",
-    "continentalClub": 4,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 5,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CM",
-    "nationality": "Netherlands",
-    "score": 7.5
-  },
-  {
     "id": 42,
     "name": "Marquinhos",
     "continentalClub": 2,
@@ -938,6 +923,22 @@
     "position": "SS",
     "nationality": "Italy",
     "score": 7.25
+  },
+  {
+    "id": 41,
+    "name": "Clarence Seedorf",
+    "continentalClub": 4,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Netherlands",
+    "description": "Clarence Seedorf, 'Il Professore' of the midfield, was a paragon of power and poise, whose elegant intelligence orchestrated play with effortless command. He stands unique in football history, the only player to conquer the UEFA Champions League an unprecedented four times with three different clubs, a testament to a career also gilded with five domestic league titles.",
+    "score": 7
   },
   {
     "id": 51,
