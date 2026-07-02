@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { ToastProvider } from "@/components/ui/toast";
 import { DiscussionPanel } from "@/components/discussions/discussion-panel";
 import { Analytics } from "@vercel/analytics/react";
+import { VisitorTracker } from "@/components/analytics/visitor-tracker";
 import "./globals.css";
 
 const inter = Inter({
@@ -100,6 +101,7 @@ export default function RootLayout({
               {children}
               <DiscussionPanel />
               <Analytics />
+              <VisitorTracker />
             </ToastProvider>
           </TooltipProvider>
         </ThemeProvider>
