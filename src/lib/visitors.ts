@@ -12,17 +12,18 @@ export interface Visitor {
   visitedAt: string;
 }
 
+const VISITOR_BRANCH = "visitor-data";
+
 function getConfig() {
   const token = process.env.GITHUB_TOKEN;
   const owner = process.env.GITHUB_OWNER;
   const repo = process.env.GITHUB_REPO;
-  const branch = process.env.GITHUB_BRANCH || "master";
 
   if (!token || !owner || !repo) {
     throw new Error("Missing GitHub configuration: GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO");
   }
 
-  return { token, owner, repo, branch };
+  return { token, owner, repo, branch: VISITOR_BRANCH };
 }
 
 const FILE_PATH = "public/data/visitors.json";
@@ -47,6 +48,10 @@ async function getFileContent(): Promise<{ visitors: Visitor[]; sha: string }> {
       },
     }
   );
+
+  if (res.status === 404) {
+    return { visitors: [], sha: "" };
+  }
 
   if (!res.ok) {
     const err = await res.text();
@@ -87,6 +92,13 @@ export async function trackVisitor(visitor: Visitor): Promise<Visitor> {
     "utf-8"
   ).toString("base64");
 
+  const body: Record<string, unknown> = {
+    message: "Track visitor",
+    content,
+    branch,
+  };
+  if (sha) body.sha = sha;
+
   const res = await fetch(
     `${API_BASE}/repos/${owner}/${repo}/contents/${FILE_PATH}`,
     {
@@ -97,12 +109,7 @@ export async function trackVisitor(visitor: Visitor): Promise<Visitor> {
         "User-Agent": "football-legends-ranking",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        message: "Track visitor",
-        content,
-        sha,
-        branch,
-      }),
+      body: JSON.stringify(body),
     }
   );
 
