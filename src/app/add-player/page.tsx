@@ -98,7 +98,6 @@ export default function AddPlayerPage() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              authKey: form.authKey,
               name: form.name,
               nationality: form.nationality,
               position: form.position,

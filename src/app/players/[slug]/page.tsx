@@ -686,7 +686,6 @@ export default function PlayerPage() {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                          authKey: editAuthKey,
                           name: editForm.name,
                           nationality: editForm.nationality,
                           position: editForm.position,

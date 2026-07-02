@@ -23,22 +23,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const authKey = process.env.ADD_PLAYER_KEY;
-    if (!authKey) {
-      return NextResponse.json(
-        { error: "ADD_PLAYER_KEY is not configured" },
-        { status: 500 }
-      );
-    }
-
     const body = await request.json();
-
-    if (body.authKey !== authKey) {
-      return NextResponse.json(
-        { error: "Invalid authentication key" },
-        { status: 401 }
-      );
-    }
 
     if (!body.name || typeof body.name !== "string" || !body.name.trim()) {
       return NextResponse.json(
