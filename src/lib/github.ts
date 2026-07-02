@@ -48,7 +48,7 @@ export async function getFileContent(): Promise<{ players: Player[]; sha: string
   return { players, sha: data.sha };
 }
 
-async function commitFile(
+export async function commitFile(
   players: Player[],
   message: string
 ): Promise<void> {

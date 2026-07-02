@@ -16,6 +16,8 @@ import {
   KeyRound,
   CheckCircle,
   AlertCircle,
+  Sparkles,
+  Quote,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -103,7 +105,10 @@ export default function PlayerPage() {
     worldCupThirdPlace: "",
     continentalRunnerUp: "",
     score: "",
+    description: "",
   });
+
+  const [generatingDesc, setGeneratingDesc] = useState(false);
 
   const fetchData = async () => {
     const data = await getPlayers();
@@ -154,6 +159,7 @@ export default function PlayerPage() {
       worldCupThirdPlace: String(player.worldCupThirdPlace),
       continentalRunnerUp: String(player.continentalRunnerUp),
       score: String(player.score),
+      description: player.description || "",
     });
     setEditAuthKey("");
     setEditStatus("idle");
@@ -184,6 +190,7 @@ export default function PlayerPage() {
           worldCupThirdPlace: parseFloat(editForm.worldCupThirdPlace) || 0,
           continentalRunnerUp: parseFloat(editForm.continentalRunnerUp) || 0,
           score: parseFloat(editForm.score) || 0,
+          description: editForm.description || "",
         }),
       });
 
@@ -392,6 +399,24 @@ export default function PlayerPage() {
               </div>
             </div>
           </motion.div>
+
+          {player.description && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="mt-8 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/[0.02] backdrop-blur-xl p-6 relative overflow-hidden"
+            >
+              <div className="absolute -top-6 -left-6 text-[#FFD700]/10">
+                <Quote className="h-16 w-16" />
+              </div>
+              <div className="relative z-10">
+                <p className="text-white/80 text-base leading-relaxed italic pl-4 border-l-2 border-[#FFD700]/40">
+                  {player.description}
+                </p>
+              </div>
+            </motion.div>
+          )}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
             <motion.div
@@ -643,6 +668,57 @@ export default function PlayerPage() {
               </div>
             </div>
           </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="text-xs font-semibold text-white/60">Description</label>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 gap-1 text-xs text-[#FFD700] hover:text-[#FFD700]/80"
+                  disabled={generatingDesc}
+                  onClick={async () => {
+                    if (!editForm.name) return;
+                    setGeneratingDesc(true);
+                    try {
+                      const res = await fetch("/api/players/generate-description", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          authKey: editAuthKey,
+                          name: editForm.name,
+                          nationality: editForm.nationality,
+                          position: editForm.position,
+                          achievements: ACHIEVEMENT_CONFIG.map((c) => ({
+                            label: c.label,
+                            value: parseFloat((editForm as Record<string, string>)[c.key]) || 0,
+                          })),
+                        }),
+                      });
+                      if (res.ok) {
+                        const data = await res.json();
+                        setEditForm((f) => ({ ...f, description: data.description }));
+                      }
+                    } catch {
+                      // silently fail
+                    } finally {
+                      setGeneratingDesc(false);
+                    }
+                  }}
+                >
+                  <Sparkles className="h-3 w-3" />
+                  {generatingDesc ? "Generating..." : "Generate with AI"}
+                </Button>
+              </div>
+              <textarea
+                value={editForm.description}
+                onChange={(e) => setEditForm((f) => ({ ...f, description: e.target.value }))}
+                placeholder="Iconic description, nickname, playing style, achievements..."
+                rows={4}
+                className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#FFD700]/50 resize-none"
+              />
+            </div>
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setEditOpen(false)}>

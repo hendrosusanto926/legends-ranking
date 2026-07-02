@@ -12,7 +12,8 @@
     "continentalRunnerUp": 2,
     "position": "RW",
     "nationality": "Argentina",
-    "score": 21.75
+    "score": 21.75,
+    "description": "Known universally as 'La Pulga' or simply the GOAT, Lionel Messi danced across pitches with unparalleled dribbling, visionary passing, and a preternatural goal-scoring touch that defied physics. His record 8 Ballon d'Or awards underscore a career shimmering with trophies, including four UEFA Champions League titles and a staggering twelve domestic league crowns. Culminating in an emotional FIFA World Cup triumph and two major continental national titles for Argentina, Messi's legacy is etched forever as football's most sublime and dominant force."
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
     "continentalRunnerUp": 1,
     "position": "CB",
     "nationality": "Germany",
-    "score": 18.75
+    "score": 18.75,
+    "description": "Franz Beckenbauer, 'Der Kaiser,' was the epitome of grace and authority, redefining the sweeper role with his elegant vision and effortless command from the back. A true football monarch, he lifted three European Cups, five Bundesliga titles, a European Championship, and the World Cup, cementing his legendary status with two Ballon d'Or awards."
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
     "continentalRunnerUp": 0,
     "position": "CF",
     "nationality": "Germany",
-    "score": 16.5
+    "score": 16.5,
+    "description": "Gerd Müller, affectionately known as \"Der Bomber,\" was the quintessential penalty box predator, a master of instinct and quick reflexes whose seemingly unconventional style concealed an absolutely lethal finish. His unparalleled goalscoring prowess led him to a World Cup, a European Championship, three European Cups, five Bundesliga titles, and the Ballon d'Or, forever cementing his place as one of football's most impactful and prolific strikers."
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
     "continentalRunnerUp": 0,
     "position": "AM",
     "nationality": "France",
-    "score": 13.75
+    "score": 13.75,
+    "description": "Zinedine Zidane, 'Zizou,' was the elegant maestro whose balletic grace and visionary genius illuminated the pitch. A World Cup, European Championship, and Champions League champion, adorned with a Ballon d'Or and multiple domestic league titles, his legendary touch transformed every team he graced."
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
     "continentalRunnerUp": 1,
     "position": "LB",
     "nationality": "Brazil",
-    "score": 13.75
+    "score": 13.75,
+    "description": "Known as 'El Hombre Bala', Roberto Carlos redefined the left-back position with his breathtaking pace, attacking prowess, and a thunderous left foot that unleashed unforgettable free-kicks. His legendary career boasts 3 continental club titles, 2 continental national championships, a FIFA World Cup, and 6 domestic league crowns, cementing his place among football's all-time greats."
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
     "continentalRunnerUp": 0,
     "position": "CM",
     "nationality": "Croatia",
-    "score": 13
+    "score": 13,
+    "description": "Luka Modric, the midfield Maestro, orchestrated football with unparalleled vision and balletic grace, turning every pass into a brushstroke. A multi-Champions League victor, seven-time domestic league champion, and the iconic 2018 Ballon d'Or laureate, his genius broke all molds, forever redefining the art of the central midfielder."
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
     "continentalRunnerUp": 0,
     "position": "CM",
     "nationality": "Spain",
-    "score": 13
+    "score": 13,
+    "description": "Don Andrés, the ethereal midfielder, danced through defenses with balletic grace and visionary passing that defied logic. A silent architect of an unprecedented era, he hoisted 9 La Liga titles, 4 Champions Leagues, two European Championships, and famously scored the winning goal to claim the 2010 World Cup, cementing his legacy as a true footballing legend."
   },
   {
     "id": 8,
@@ -117,7 +124,8 @@
     "continentalRunnerUp": 0,
     "position": "CB",
     "nationality": "Spain",
-    "score": 13
+    "score": 13,
+    "description": "Sergio Ramos, 'El Capitán', was the embodiment of a warrior on the pitch—a towering defender with an unparalleled will to win, often delivering crucial goals from unexpected positions. His legendary career saw him claim an astonishing four Champions League titles, two European Championships, a World Cup, and seven La Liga crowns, solidifying his status as an era-defining icon."
   },
   {
     "id": 9,
@@ -132,7 +140,8 @@
     "continentalRunnerUp": 0,
     "position": "CM",
     "nationality": "Germany",
-    "score": 12.875
+    "score": 12.875,
+    "description": "Toni Kroos, 'The Maestro,' conducted the beautiful game with unparalleled precision, his laser-guided passes and ice-cold composure dictating the rhythm from midfield. A true titan, he commanded an astounding 6 UEFA Champions League titles, a FIFA World Cup, and 7 domestic league crowns, etching his name among football's most decorated and influential orchestrators."
   },
   {
     "id": 10,
@@ -147,7 +156,8 @@
     "continentalRunnerUp": 1,
     "position": "CF",
     "nationality": "Portugal",
-    "score": 12.5
+    "score": 12.5,
+    "description": "Known globally as CR7, Cristiano Ronaldo is the epitome of a modern football legend, a prolific goalscorer whose athletic prowess and clinical precision terrorized defenses for two decades. With an astonishing five Champions League crowns, eight domestic league titles, a continental national championship, and five Ballon d'Or awards, his unparalleled drive for greatness etched his name into the pantheon of the sport's all-time greats."
   },
   {
     "id": 203,
@@ -177,7 +187,8 @@
     "continentalRunnerUp": 1,
     "position": "CB",
     "nationality": "Italy",
-    "score": 12
+    "score": 12,
+    "description": "Paolo Maldini, 'Il Capitano,' defined defensive artistry with unparalleled elegance and tactical brilliance across an astounding 25-year career. A loyal one-club man, he commanded the backline with a calm authority that became legendary. His immortal legacy is etched with a remarkable 5 UEFA Champions League titles and 7 Serie A championships, a testament to his peerless dominance."
   },
   {
     "id": 12,
@@ -192,7 +203,8 @@
     "continentalRunnerUp": 0,
     "position": "RB",
     "nationality": "Spain",
-    "score": 11.75
+    "score": 11.75,
+    "description": "The quintessential modern right-back, \"Dani\" Carvajal is a lion-hearted defender and an relentless attacking force for Real Madrid and Spain. Known for his tenacious tackling, boundless energy, and pinpoint crossing, he's etched his name in history as a serial winner, boasting an astonishing 6 Champions League titles, a UEFA Nations League, and 4 La Liga crowns, cementing his legacy as one of football's most decorated full-backs."
   },
   {
     "id": 13,
@@ -207,7 +219,8 @@
     "continentalRunnerUp": 0,
     "position": "CM",
     "nationality": "Spain",
-    "score": 11.5
+    "score": 11.5,
+    "description": "Known as 'The Maestro' or 'The Puppet Master', Xavi Hernández was the unparalleled architect of an era-defining style, dictating play with mesmerizing vision, control, and surgical passing from midfield. His illustrious career is etched in history with 1 World Cup, 2 European Championships, 3 UEFA Champions League titles, and 9 domestic league crowns, marking him as one of football's most influential and decorated legends."
   },
   {
     "id": 14,
@@ -222,7 +235,8 @@
     "continentalRunnerUp": 0,
     "position": "CB",
     "nationality": "Spain",
-    "score": 11
+    "score": 11,
+    "description": "“El Presidente,” Gerard Piqué was the epitome of the modern, ball-playing centre-back, elegant in possession and imperious in the air, marshalling defenses with unparalleled intelligence. A titan for both club and country, his cabinet gleams with a World Cup, a European Championship, four Champions League titles, and ten domestic league crowns, cementing his legacy as one of football's most decorated and influential defenders."
   },
   {
     "id": 15,
@@ -237,7 +251,8 @@
     "continentalRunnerUp": 0,
     "position": "LW",
     "nationality": "Spain",
-    "score": 11
+    "score": 11,
+    "description": "Paco Gento, famously known as \"La Galerna del Cantábrico,\" was a whirlwind of blistering pace and mesmerizing dribbling down the left wing. A true titan of the game, he immortalized his name by winning an unmatched six European Cups and twelve Spanish league titles, cementing his status as one of football's most decorated legends."
   },
   {
     "id": 16,
@@ -252,7 +267,8 @@
     "continentalRunnerUp": 0,
     "position": "GK",
     "nationality": "Spain",
-    "score": 10.75
+    "score": 10.75,
+    "description": "Known universally as 'San Iker,' Iker Casillas was the divine guardian between the sticks, a legend whose acrobatic saves and impeccable shot-stopping redefined the art of goalkeeping. He captained Spain to their historic treble of two UEFA European Championships and a FIFA World Cup, while also lifting an incredible three UEFA Champions League titles and six domestic league crowns with Real Madrid."
   },
   {
     "id": 157,
@@ -267,7 +283,8 @@
     "continentalRunnerUp": 1,
     "position": "CF",
     "nationality": "Cameroon",
-    "score": 10.5
+    "score": 10.5,
+    "description": "Samuel Eto'o, 'The Panther,' stalked defenses with a predatory instinct, combining explosive pace, relentless work rate, and a clinical finish that made him one of football's most feared strikers. A true legend, he achieved the unprecedented feat of winning back-to-back continental trebles, alongside two Africa Cup of Nations titles and four domestic league crowns, firmly establishing his legacy as an undisputed African icon."
   },
   {
     "id": 17,
@@ -282,7 +299,8 @@
     "continentalRunnerUp": 0.5,
     "position": "CF",
     "nationality": "Brazil",
-    "score": 10.375
+    "score": 10.375,
+    "description": "O Fenômeno, Ronaldo Nazário, wasn't just a striker; he was a force of nature, blending electrifying pace, mesmerizing dribbling, and clinical finishing into an unstoppable spectacle. With two World Cup triumphs, two Copa América titles, a UEFA Cup, and two La Liga crowns, his career was adorned with team glory, punctuated by two Ballon d'Or awards that cemented his status as the most complete and devastating forward of his generation."
   },
   {
     "id": 18,
@@ -297,7 +315,8 @@
     "continentalRunnerUp": 1,
     "position": "DM",
     "nationality": "Brazil",
-    "score": 10.25
+    "score": 10.25,
+    "description": "Known as 'The Tank', Casemiro was the unyielding bedrock that anchored some of football's most dominant sides. His astute positional sense, fierce tackling, and powerful presence forged a protective shield, allowing creative talents to flourish while he relentlessly broke down opposition attacks. A formidable five-time continental club champion, a Copa América winner with Brazil, and a three-time domestic league victor, he redefined the art of the defensive midfielder."
   },
   {
     "id": 19,
@@ -312,7 +331,8 @@
     "continentalRunnerUp": 0,
     "position": "CF",
     "nationality": "France",
-    "score": 10
+    "score": 10,
+    "description": "Known as 'Don Karim', Benzema was the quintessential modern centre-forward, an elegant architect of attacks who paired selfless link-up play with a lethal finishing touch. His illustrious career saw him clinch an astonishing 5 continental club titles, 9 domestic leagues, and the coveted Ballon d'Or, cementing his place as an all-time legend."
   },
   {
     "id": 20,
@@ -327,7 +347,8 @@
     "continentalRunnerUp": 0,
     "position": "DM",
     "nationality": "Spain",
-    "score": 9.75
+    "score": 9.75,
+    "description": "Known as 'El Pulpo,' Sergio Busquets was the silent, cerebral genius who redefined the defensive midfield role. His unparalleled positional awareness, elegant distribution, and invisible orchestrations were the heartbeat of an era-defining style of play. A true footballing savant, his ledger boasts a World Cup, a European Championship, three Champions League crowns, and nine La Liga titles."
   },
   {
     "id": 21,

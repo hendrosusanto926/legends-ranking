@@ -13,6 +13,7 @@ export interface Player {
   nationality: string;
   score: number;
   rank?: number;
+  description?: string;
 }
 
 export interface PlayerStats {

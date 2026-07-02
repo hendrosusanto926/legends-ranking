@@ -45,6 +45,7 @@ interface FormData {
   worldCupRunnerUp: string;
   worldCupThirdPlace: string;
   continentalRunnerUp: string;
+  description: string;
 }
 
 const INITIAL_FORM: FormData = {
@@ -60,6 +61,7 @@ const INITIAL_FORM: FormData = {
   worldCupRunnerUp: "0",
   worldCupThirdPlace: "0",
   continentalRunnerUp: "0",
+  description: "",
 };
 
 export default function AddPlayerPage() {
@@ -78,6 +80,40 @@ export default function AddPlayerPage() {
     setErrorMsg("");
 
     try {
+      let description = form.description;
+
+      if (!description.trim()) {
+        try {
+          const achievements = [
+            { label: "Continental Club", value: parseFloat(form.continentalClub) || 0 },
+            { label: "Continental National", value: parseFloat(form.continentalNational) || 0 },
+            { label: "World Cup", value: parseFloat(form.worldCup) || 0 },
+            { label: "Domestic League", value: parseFloat(form.domesticLeague) || 0 },
+            { label: "Ballon d'Or", value: parseFloat(form.ballonDor) || 0 },
+            { label: "WC Runner-up", value: parseFloat(form.worldCupRunnerUp) || 0 },
+            { label: "WC 3rd Place", value: parseFloat(form.worldCupThirdPlace) || 0 },
+            { label: "Continental RU", value: parseFloat(form.continentalRunnerUp) || 0 },
+          ];
+          const descRes = await fetch("/api/players/generate-description", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              authKey: form.authKey,
+              name: form.name,
+              nationality: form.nationality,
+              position: form.position,
+              achievements,
+            }),
+          });
+          if (descRes.ok) {
+            const descData = await descRes.json();
+            description = descData.description || "";
+          }
+        } catch {
+          // AI failed — leave description empty, user can edit later
+        }
+      }
+
       const res = await fetch("/api/players", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -86,6 +122,7 @@ export default function AddPlayerPage() {
           name: form.name,
           nationality: form.nationality,
           position: form.position,
+          description,
           continentalClub: parseFloat(form.continentalClub) || 0,
           continentalNational: parseFloat(form.continentalNational) || 0,
           worldCup: parseFloat(form.worldCup) || 0,
@@ -237,6 +274,19 @@ export default function AddPlayerPage() {
                         ))}
                       </SelectContent>
                     </Select>
+                  </div>
+
+                  <div className="sm:col-span-2 space-y-2">
+                    <label className="text-sm font-medium text-[var(--text-primary)]">
+                      Iconic Description <span className="text-[var(--text-secondary)]">(optional)</span>
+                    </label>
+                    <textarea
+                      placeholder="e.g. Known as 'The Emperor', redefined the libero position..."
+                      value={form.description}
+                      onChange={(e) => updateField("description", e.target.value)}
+                      rows={3}
+                      className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/30 focus:outline-none focus:ring-1 focus:ring-[#FFD700]/50 resize-none"
+                    />
                   </div>
 
                 </div>

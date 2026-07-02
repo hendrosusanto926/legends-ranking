@@ -26,6 +26,7 @@ Research the career achievements of "${name}" and return ONLY a valid JSON objec
   "worldCupRunnerUp": number (count of FIFA World Cup runner-up finishes),
   "worldCupThirdPlace": number (count of FIFA World Cup third-place finishes),
   "continentalRunnerUp": number (count of continental national team runner-up finishes, e.g., Euro runner-up, Copa America runner-up),
+  "description": "A short iconic description (2-3 sentences) about the player covering their nickname, playing style, and most notable achievements — written in a legendary, evocative style",
   "achievementDetails": {
     "continentalClub": "List each title with year (e.g., UEFA Champions League 2006, 2008, 2016)",
     "continentalNational": "List each title with year (e.g., UEFA Euro 2008)",
@@ -45,6 +46,7 @@ Guidelines:
 - Be precise and accurate. Make your best estimate if unsure.
 - achievementDetails must have the same count of items as the number values above.
 - If a count is 0, achievementDetails for that field should be an empty string "".
+- description should be 2-3 sentences covering nickname, playing style, and key achievements.
 - Return ONLY the JSON object, no other text, no markdown.`;
 
 export async function POST(request: NextRequest) {
@@ -120,6 +122,10 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    const description = aiData.description && String(aiData.description).trim()
+      ? String(aiData.description).trim()
+      : "";
+
     const playerData = {
       name: String(aiData.name),
       nationality: String(aiData.nationality),
@@ -161,6 +167,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       playerData,
       achievementDetails,
+      description,
       score,
     });
   } catch (error) {

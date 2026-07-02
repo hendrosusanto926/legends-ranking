@@ -50,6 +50,7 @@ export async function PUT(
       ...achievements,
       position: body.position,
       nationality: body.nationality,
+      description: body.description || "",
       score: calculateScore(achievements),
     };
 

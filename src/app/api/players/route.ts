@@ -46,6 +46,7 @@ export async function POST(request: NextRequest) {
       ...achievements,
       position: body.position,
       nationality: body.nationality,
+      description: body.description || "",
       score: calculateScore(achievements),
     };
 

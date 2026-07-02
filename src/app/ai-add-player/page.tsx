@@ -45,6 +45,7 @@ interface ResearchResult {
     continentalRunnerUp: number;
   };
   achievementDetails: Record<string, string>;
+  description: string;
   score: number;
 }
 
@@ -101,6 +102,7 @@ export default function AiAddPlayerPage() {
   const [editName, setEditName] = useState("");
   const [editNation, setEditNation] = useState("");
   const [editPos, setEditPos] = useState("");
+  const [editDescription, setEditDescription] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
   const score = useMemo(() => {
@@ -144,6 +146,7 @@ export default function AiAddPlayerPage() {
       setEditName(pd.name);
       setEditNation(pd.nationality);
       setEditPos(pd.position);
+      setEditDescription(data.description || "");
       setStep("preview");
     } catch (err) {
       setStep("error");
@@ -164,6 +167,7 @@ export default function AiAddPlayerPage() {
           name: editName,
           nationality: editNation,
           position: editPos,
+          description: editDescription,
           ...editable,
         }),
       });
@@ -400,6 +404,20 @@ export default function AiAddPlayerPage() {
                   </div>
                 </CardContent>
               </Card>
+
+              <div className="space-y-2 mt-4">
+                <label className="text-xs font-semibold text-[var(--text-secondary)]">
+                  Iconic Description
+                </label>
+                <textarea
+                  value={editDescription}
+                  onChange={(e) => setEditDescription(e.target.value)}
+                  placeholder="Iconic description, nickname, playing style..."
+                  rows={3}
+                  className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/30 focus:outline-none focus:ring-1 focus:ring-[#FFD700]/50 resize-none"
+                  disabled={step === "submitting"}
+                />
+              </div>
 
               <div className="flex items-center gap-3 justify-center">
                 <Button
