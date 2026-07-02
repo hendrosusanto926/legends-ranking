@@ -1486,6 +1486,22 @@
     "score": 5.5
   },
   {
+    "id": 205,
+    "name": "Cuti Romero",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 0,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 5.5
+  },
+  {
     "id": 72,
     "name": "Neymar",
     "continentalClub": 2,
