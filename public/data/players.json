@@ -1671,21 +1671,6 @@
     "score": 5.25
   },
   {
-    "id": 78,
-    "name": "Ivan Perisic",
-    "continentalClub": 1,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 5,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 1,
-    "worldCupThirdPlace": 1,
-    "continentalRunnerUp": 0,
-    "position": "LW",
-    "nationality": "Croatia",
-    "score": 5.25
-  },
-  {
     "id": 79,
     "name": "Eusebio",
     "continentalClub": 1,
@@ -1880,6 +1865,22 @@
     "position": "LM",
     "nationality": "Brazil",
     "score": 4.875
+  },
+  {
+    "id": 78,
+    "name": "Ivan Perisic",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 0,
+    "position": "LW",
+    "nationality": "Croatia",
+    "description": "Known as 'The Croatian Iron Man,' Ivan Perišić is a tireless, two-footed winger renowned for his powerful runs, aerial dominance, and clutch performances on football's biggest stages. His illustrious career is etched with a UEFA Champions League title, five domestic league championships, a World Cup runner-up medal, and a third-place finish, cementing his legacy as a truly remarkable and versatile Croatian legend.",
+    "score": 4.75
   },
   {
     "id": 89,
