@@ -76,5 +76,18 @@
     "os": "Windows",
     "device": "Desktop",
     "visitedAt": "2026-07-03T07:57:44.568Z"
+  },
+  {
+    "id": "5eab8ef0-8df2-4570-8fef-00e454827954",
+    "ipHash": "864c69fae684350247cfa37dc1353f9bb3bcebcb716932e09874e974a8c3b177",
+    "city": "Paris",
+    "region": "cdg1",
+    "country": "FR",
+    "latitude": "48.8558",
+    "longitude": "2.3494",
+    "browser": "Chrome",
+    "os": "Linux",
+    "device": "Desktop",
+    "visitedAt": "2026-07-04T07:41:35.574Z"
   }
 ]
