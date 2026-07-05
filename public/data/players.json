@@ -2928,6 +2928,22 @@
     "score": 3.5
   },
   {
+    "id": 234,
+    "name": "Juninho Pernambucano",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 10,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "Brazil",
+    "description": "Heralded as 'The Free-kick King', Juninho Pernambucano masterfully bent physics to his will, redefining the art of the set-piece with his unparalleled knuckleball. This midfield architect orchestrated play with vision and precision, leading his clubs to an astonishing 10 Domestic League titles and a cherished Continental Club crown. His legend is etched in every impossible curve.",
+    "score": 3.5
+  },
+  {
     "id": 127,
     "name": "Samuel Umtiti",
     "continentalClub": 0,
