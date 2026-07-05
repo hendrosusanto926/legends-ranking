@@ -223,6 +223,22 @@
     "description": "Known as 'The Maestro' or 'The Puppet Master', Xavi Hernández was the unparalleled architect of an era-defining style, dictating play with mesmerizing vision, control, and surgical passing from midfield. His illustrious career is etched in history with 1 World Cup, 2 European Championships, 3 UEFA Champions League titles, and 9 domestic league crowns, marking him as one of football's most influential and decorated legends."
   },
   {
+    "id": 212,
+    "name": "Sepp Maier",
+    "continentalClub": 3,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 1,
+    "position": "GK",
+    "nationality": "Germany",
+    "description": "",
+    "score": 11.5
+  },
+  {
     "id": 14,
     "name": "Gerard Pique",
     "continentalClub": 3.5,
