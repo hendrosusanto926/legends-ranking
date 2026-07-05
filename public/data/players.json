@@ -2182,6 +2182,22 @@
     "score": 4.75
   },
   {
+    "id": 226,
+    "name": "Julio Cesar",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 8,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "Brazil",
+    "description": "Julio Cesar, Brazil's imperious guardian, was a titan between the posts, renowned for his acrobatic saves, commanding presence, and unyielding resolve that redefined reliability in goal. His illustrious career is marked by a Continental National title, a coveted Continental Club crown, and an astounding eight Domestic League championships, cementing his status as a legendary shot-stopper.",
+    "score": 4.75
+  },
+  {
     "id": 95,
     "name": "Lautaro Martinez",
     "continentalClub": 0,
