@@ -2363,6 +2363,22 @@
     "score": 4.5
   },
   {
+    "id": 225,
+    "name": "Edmilson",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "DM",
+    "nationality": "Brazil",
+    "description": "Edmilson, the understated maestro, commanded the midfield with an unmatched blend of tactical acumen and quiet authority. A linchpin in a World Cup-winning squad, his triumph in a Continental Club and five domestic league titles cement his legacy as a true champion, a master of defensive artistry.",
+    "score": 4.5
+  },
+  {
     "id": 103,
     "name": "Vinicius Junior",
     "continentalClub": 2,
