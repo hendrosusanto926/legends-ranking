@@ -414,6 +414,22 @@
     "score": 9.75
   },
   {
+    "id": 220,
+    "name": "Nelson Dida",
+    "continentalClub": 3,
+    "continentalNational": 1,
+    "worldCup": 0.5,
+    "domesticLeague": 2,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0.5,
+    "position": "GK",
+    "nationality": "Brazil",
+    "description": "Nelson Dida, known as \"The Black Panther,\" was a towering presence in goal, renowned for his agile shot-stopping, dominant aerial command, and formidable penalty heroics. He marshaled his defenses to three continental club crowns and two domestic league titles, while also earning a World Cup winner's medal and a continental national trophy. His illustrious career is further marked by appearances in a FIFA Club World Cup final and a UEFA Champions League final, cementing his status as one of Brazil's greatest guardians.",
+    "score": 9.38
+  },
+  {
     "id": 22,
     "name": "Angel Di Maria",
     "continentalClub": 1,
