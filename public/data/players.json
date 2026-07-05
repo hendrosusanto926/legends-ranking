@@ -2251,6 +2251,22 @@
     "score": 4.5
   },
   {
+    "id": 218,
+    "name": "Lucio",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Brazil",
+    "description": "Known as 'The Gladiator,' Lúcio was a colossus in defense, renowned for his relentless power, aerial dominance, and breathtaking, often audacious, charges deep into enemy territory. A true titan of the game, his illustrious career stands adorned with a FIFA World Cup, a UEFA Champions League title, and an incredible five domestic league crowns, cementing his place among Brazil's defensive legends.",
+    "score": 4.5
+  },
+  {
     "id": 103,
     "name": "Vinicius Junior",
     "continentalClub": 2,
