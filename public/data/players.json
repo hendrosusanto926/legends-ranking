@@ -2475,6 +2475,22 @@
     "score": 4.5
   },
   {
+    "id": 236,
+    "name": "Bebeto",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Brazil",
+    "description": "Bebeto, the artful striker whose iconic 'cradle celebration' lit up the world stage, was a master of intelligent movement and clinical finishing. A pivotal architect of Brazil's 1994 World Cup triumph and a runner-up in 1998, his prolific career also saw him lift an astounding five domestic league titles.",
+    "score": 4.5
+  },
+  {
     "id": 103,
     "name": "Vinicius Junior",
     "continentalClub": 2,
