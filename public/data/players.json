@@ -720,6 +720,22 @@
     "score": 8
   },
   {
+    "id": 242,
+    "name": "Gilmar",
+    "continentalClub": 2,
+    "continentalNational": 0,
+    "worldCup": 2,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "Brazil",
+    "description": "Gilmar, 'O Goleiro de Ouro,' was a towering figure of unflappable composure and impeccable positioning between the posts. His legendary safe hands were the bedrock for an astounding two World Cup triumphs, two Continental Club titles, and five Domestic League championships, marking him as one of football's most decorated and reliable goalkeepers.",
+    "score": 8
+  },
+  {
     "id": 36,
     "name": "Xabi Alonso",
     "continentalClub": 1.5,
