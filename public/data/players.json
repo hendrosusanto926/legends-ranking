@@ -367,6 +367,22 @@
     "score": 10
   },
   {
+    "id": 215,
+    "name": "Uli Hoeneß",
+    "continentalClub": 3,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "AM",
+    "nationality": "Germany",
+    "description": "Uli Hoeneß, renowned for his electrifying runs and tenacious spirit, was a winger who embodied sheer pace and power on the pitch. His illustrious trophy cabinet boasts a World Cup, a European Championship, an incredible three European Cups, three Bundesliga titles, and a Continental Runners-up medal, cementing his status among football's elite.",
+    "score": 10
+  },
+  {
     "id": 20,
     "name": "Sergio Busquets",
     "continentalClub": 3,
