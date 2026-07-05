@@ -2214,6 +2214,22 @@
     "score": 4.75
   },
   {
+    "id": 228,
+    "name": "Kleberson",
+    "continentalClub": 0,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 2,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Brazil",
+    "description": "Kleberson, the relentless engine of the Seleção, dominated the midfield with tireless box-to-box energy, linking defense and attack with unparalleled dedication. His crucial contributions powered Brazil to a World Cup triumph, a Continental National title, and two esteemed Domestic League championships, cementing his legacy as a true midfield titan.",
+    "score": 4.75
+  },
+  {
     "id": 95,
     "name": "Lautaro Martinez",
     "continentalClub": 0,
