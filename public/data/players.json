@@ -1916,6 +1916,22 @@
     "score": 5.5
   },
   {
+    "id": 250,
+    "name": "Mateo Kovacic",
+    "continentalClub": 2,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Croatia",
+    "description": "Mateo Kovacic, often heralded as 'The Croatian Enigma,' is a midfield marvel whose elegant, press-resistant ball-carrying and incisive dribbling define his game. He possesses a unique ability to glide through tight spaces, intelligently orchestrating attacks and dictating tempo with exquisite precision. His illustrious career is marked by 2 Continental Club titles, 5 Domestic League crowns, and a pivotal role in Croatia's unforgettable journey to a World Cup runner-up finish and a subsequent third-place bronze.",
+    "score": 5.5
+  },
+  {
     "id": 223,
     "name": "Marcos",
     "continentalClub": 1,
