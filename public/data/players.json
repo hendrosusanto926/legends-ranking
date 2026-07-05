@@ -874,6 +874,22 @@
     "score": 7.75
   },
   {
+    "id": 246,
+    "name": "Marquitos",
+    "continentalClub": 4.5,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "RB",
+    "nationality": "Spain",
+    "description": "Marquitos, affectionately known as 'El Centinela' (The Sentinel), redefined the right-back position with his unyielding defensive masterclass and relentless, surging runs down the flank. A linchpin of an era-defining dynasty, his legacy is etched in gold with an incredible 4.5 Continental Club titles and 5 Domestic League championships.",
+    "score": 7.75
+  },
+  {
     "id": 40,
     "name": "Nacho Fernandez",
     "continentalClub": 3.5,
