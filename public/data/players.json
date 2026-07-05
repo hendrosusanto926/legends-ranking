@@ -1926,6 +1926,22 @@
     "score": 5.13
   },
   {
+    "id": 231,
+    "name": "Alex",
+    "continentalClub": 1,
+    "continentalNational": 1.5,
+    "worldCup": 0,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "Brazil",
+    "description": "Known as 'O Maestro Esmeralda,' Alex was a true artist of the beautiful game, dictating play with a silken touch, visionary passes, and an unerring instinct for goal. His illustrious career includes a Continental Club title, a continental triumph with his nation and a pivotal role in another major international campaign, alongside four Domestic League championships.",
+    "score": 5.13
+  },
+  {
     "id": 80,
     "name": "Benjamin Pavard",
     "continentalClub": 0.5,
