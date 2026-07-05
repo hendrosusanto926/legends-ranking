@@ -3126,6 +3126,22 @@
     "score": 3
   },
   {
+    "id": 235,
+    "name": "Zico",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0.5,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "Brazil",
+    "description": "",
+    "score": 2.88
+  },
+  {
     "id": 138,
     "name": "Rui Costa",
     "continentalClub": 1,
