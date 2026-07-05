@@ -1250,6 +1250,22 @@
     "score": 6.5
   },
   {
+    "id": 217,
+    "name": "Patrick Vieira",
+    "continentalClub": 0.5,
+    "continentalNational": 1,
+    "worldCup": 0.5,
+    "domesticLeague": 8,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "DM",
+    "nationality": "France",
+    "description": "",
+    "score": 6.5
+  },
+  {
     "id": 57,
     "name": "Pedro",
     "continentalClub": 2,
