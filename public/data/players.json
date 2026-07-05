@@ -2079,6 +2079,22 @@
     "score": 5
   },
   {
+    "id": 240,
+    "name": "Didi",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 2,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Brazil",
+    "description": "Waldyr Pereira, the revered 'Prince of Ethiopia,' was the elegant architect of Brazil's golden age, a central midfielder whose tactical genius and sublime passing orchestrated two FIFA World Cup triumphs in 1958 and 1962. A true pioneer, he revolutionized the game with his legendary 'folha seca' free-kick, bending the ball with physics-defying grace. His enduring legacy is further cemented by a domestic league title, marking him as one of football's most influential and iconic maestros.",
+    "score": 5
+  },
+  {
     "id": 199,
     "name": "Roberto Rosato",
     "continentalClub": 1,
