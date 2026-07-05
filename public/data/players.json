@@ -1740,6 +1740,22 @@
     "score": 5.5
   },
   {
+    "id": 223,
+    "name": "Marcos",
+    "continentalClub": 1,
+    "continentalNational": 0.5,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "Brazil",
+    "description": "Known affectionately as 'São Marcos,' the revered Brazilian goalkeeper was a beacon of agility and unwavering reliability. His iconic saves and commanding presence guided Palmeiras to a historic Copa Libertadores title and domestic league glory, while his pivotal role as the Seleção's undisputed guardian famously anchored their triumphant 2002 World Cup campaign and contributed to further continental honors.",
+    "score": 5.38
+  },
+  {
     "id": 72,
     "name": "Neymar",
     "continentalClub": 2,
