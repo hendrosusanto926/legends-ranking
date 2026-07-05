@@ -810,6 +810,22 @@
     "score": 7.75
   },
   {
+    "id": 221,
+    "name": "Fabien Barthez",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "France",
+    "description": "Known affectionately as 'Le Divin Chauve,' Fabien Barthez was a goalkeeper of audacious flair and captivating eccentricity, redefining the art of the sweeper-keeper. His illustrious career was a cascade of triumphs, including the UEFA Champions League, the UEFA European Championship, the FIFA World Cup (and a runner-up medal), alongside four domestic league titles.",
+    "score": 7.75
+  },
+  {
     "id": 40,
     "name": "Nacho Fernandez",
     "continentalClub": 3.5,
