@@ -141,5 +141,18 @@
     "os": "Android",
     "device": "Mobile",
     "visitedAt": "2026-07-05T07:21:37.934Z"
+  },
+  {
+    "id": "db31edbe-f1e6-46e0-b7e7-732e29ad8f9c",
+    "ipHash": "09405a613ff2f9a6575cb6e8787445990956c2db5dd42d3a69dd2c39a1d6d9a9",
+    "city": "Bekasi",
+    "region": "sin1",
+    "country": "ID",
+    "latitude": "-6.286",
+    "longitude": "106.9313",
+    "browser": "Chrome",
+    "os": "Android",
+    "device": "Mobile",
+    "visitedAt": "2026-07-05T13:28:48.644Z"
   }
 ]
