@@ -2278,6 +2278,22 @@
     "score": 4.75
   },
   {
+    "id": 237,
+    "name": "Alisson Becker",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 2,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0.5,
+    "position": "GK",
+    "nationality": "Brazil",
+    "description": "Known affectionately as 'The Holy Goalie', Alisson Becker redefined the art of goalkeeping. His calm command, breathtaking shot-stopping, and visionary distribution transformed the sweeper-keeper into a primary architect of attack. A legend forged in victory, his illustrious career includes a UEFA Champions League, a Copa América, two domestic league titles, and a Continental runner-up finish, solidifying his place among football's elite.",
+    "score": 4.63
+  },
+  {
     "id": 95,
     "name": "Lautaro Martinez",
     "continentalClub": 0,
