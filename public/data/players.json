@@ -351,6 +351,22 @@
     "description": "Known as 'Don Karim', Benzema was the quintessential modern centre-forward, an elegant architect of attacks who paired selfless link-up play with a lethal finishing touch. His illustrious career saw him clinch an astonishing 5 continental club titles, 9 domestic leagues, and the coveted Ballon d'Or, cementing his place as an all-time legend."
   },
   {
+    "id": 214,
+    "name": "Georg Schwarzenbeck",
+    "continentalClub": 3,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "CB",
+    "nationality": "Germany",
+    "description": "Affectionately known as 'Der Katastrophenschutz' – The Catastrophe Protector – Georg Schwarzenbeck was the uncompromising sentinel, a no-nonsense centre-back whose fearless tackling and unwavering commitment formed the bedrock of his teams. His legendary tenacity was pivotal in securing a FIFA World Cup, a European Championship, five Bundesliga titles, and three consecutive European Cups, alongside a Continental runner-up finish, solidifying his legend as one of football's most decorated and dependable defenders.",
+    "score": 10
+  },
+  {
     "id": 20,
     "name": "Sergio Busquets",
     "continentalClub": 3,
