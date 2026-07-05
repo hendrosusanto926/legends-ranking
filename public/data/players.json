@@ -1573,6 +1573,22 @@
     "score": 6
   },
   {
+    "id": 227,
+    "name": "Maicon",
+    "continentalClub": 1,
+    "continentalNational": 2,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "RB",
+    "nationality": "Brazil",
+    "description": "Maicon, often hailed as 'Il Colosso,' was a formidable attacking right-back whose thunderous charges down the flank and cannonball strikes redefined his position. His relentless power and unwavering drive were pivotal in claiming a UEFA Champions League title, two Continental National trophies, and an impressive five Domestic League crowns.",
+    "score": 6
+  },
+  {
     "id": 56,
     "name": "Jorginho",
     "continentalClub": 2,
