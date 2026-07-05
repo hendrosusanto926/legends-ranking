@@ -1637,6 +1637,22 @@
     "score": 6
   },
   {
+    "id": 243,
+    "name": "Ferenc Puskas",
+    "continentalClub": 2,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 9,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "SS",
+    "nationality": "Hungary",
+    "description": "Ferenc Puskás, 'The Galloping Major', was a footballing phenomenon whose legendary left foot terrorized defenses worldwide. A second striker with a thunderous shot and incredible goal-scoring prowess, he led his teams to unprecedented glory, claiming 9 domestic league titles, 2 Continental Club championships, and a World Cup Runner-up finish.",
+    "score": 6
+  },
+  {
     "id": 56,
     "name": "Jorginho",
     "continentalClub": 2,
