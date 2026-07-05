@@ -2262,6 +2262,22 @@
     "score": 4.75
   },
   {
+    "id": 233,
+    "name": "Antonio Carlos Zago",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 6,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Brazil",
+    "description": "",
+    "score": 4.75
+  },
+  {
     "id": 95,
     "name": "Lautaro Martinez",
     "continentalClub": 0,
