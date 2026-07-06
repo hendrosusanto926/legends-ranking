@@ -287,22 +287,6 @@
     "description": "Known universally as 'San Iker,' Iker Casillas was the divine guardian between the sticks, a legend whose acrobatic saves and impeccable shot-stopping redefined the art of goalkeeping. He captained Spain to their historic treble of two UEFA European Championships and a FIFA World Cup, while also lifting an incredible three UEFA Champions League titles and six domestic league crowns with Real Madrid."
   },
   {
-    "id": 157,
-    "name": "Samuel Eto'o",
-    "continentalClub": 3.5,
-    "continentalNational": 2,
-    "worldCup": 0,
-    "domesticLeague": 4,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 1,
-    "position": "CF",
-    "nationality": "Cameroon",
-    "score": 10.5,
-    "description": "Samuel Eto'o, 'The Panther,' stalked defenses with a predatory instinct, combining explosive pace, relentless work rate, and a clinical finish that made him one of football's most feared strikers. A true legend, he achieved the unprecedented feat of winning back-to-back continental trebles, alongside two Africa Cup of Nations titles and four domestic league crowns, firmly establishing his legacy as an undisputed African icon."
-  },
-  {
     "id": 17,
     "name": "Ronaldo Nazario",
     "continentalClub": 0,
@@ -381,6 +365,22 @@
     "nationality": "Germany",
     "description": "Uli Hoeneß, renowned for his electrifying runs and tenacious spirit, was a winger who embodied sheer pace and power on the pitch. His illustrious trophy cabinet boasts a World Cup, a European Championship, an incredible three European Cups, three Bundesliga titles, and a Continental Runners-up medal, cementing his status among football's elite.",
     "score": 10
+  },
+  {
+    "id": 157,
+    "name": "Samuel Eto'o",
+    "continentalClub": 3,
+    "continentalNational": 2,
+    "worldCup": 0,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "CF",
+    "nationality": "Cameroon",
+    "description": "Samuel Eto'o, 'The Panther,' stalked defenses with a predatory instinct, combining explosive pace, relentless work rate, and a clinical finish that made him one of football's most feared strikers. A true legend, he achieved the unprecedented feat of winning back-to-back continental trebles, alongside two Africa Cup of Nations titles and four domestic league crowns, firmly establishing his legacy as an undisputed African icon.",
+    "score": 9.75
   },
   {
     "id": 20,
