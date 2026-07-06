@@ -193,5 +193,18 @@
     "os": "Windows",
     "device": "Desktop",
     "visitedAt": "2026-07-06T04:48:15.866Z"
+  },
+  {
+    "id": "699b4bbd-1b94-452d-901b-c06086dcc1a1",
+    "ipHash": "7acfd44c253eb1b3ecf44e076ea214a1ff5a25e4c1aef632703787770955b8f9",
+    "city": "San Jose",
+    "region": "sfo1",
+    "country": "US",
+    "latitude": "37.3388",
+    "longitude": "-121.8916",
+    "browser": "Chrome",
+    "os": "Linux",
+    "device": "Desktop",
+    "visitedAt": "2026-07-06T04:55:56.139Z"
   }
 ]
