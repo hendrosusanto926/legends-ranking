@@ -8,6 +8,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { VisitorTracker } from "@/components/analytics/visitor-tracker";
 import "./globals.css";
 
+const enableVisitorTracking =
+  process.env.NEXT_PUBLIC_ENABLE_VISITOR_TRACKING === "true";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -101,7 +104,7 @@ export default function RootLayout({
               {children}
               <DiscussionPanel />
               <Analytics />
-              <VisitorTracker />
+              {enableVisitorTracking && <VisitorTracker />}
             </ToastProvider>
           </TooltipProvider>
         </ThemeProvider>

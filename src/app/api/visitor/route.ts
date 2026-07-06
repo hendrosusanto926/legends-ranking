@@ -61,6 +61,10 @@ function parseUserAgent(ua: string) {
 }
 
 export async function POST(request: NextRequest) {
+  if (process.env.NEXT_PUBLIC_ENABLE_VISITOR_TRACKING !== "true") {
+    return NextResponse.json({ success: false, reason: "disabled" }, { status: 403 });
+  }
+
   try {
     const geo = geolocation(request);
     const ip =

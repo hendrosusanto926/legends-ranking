@@ -39,6 +39,13 @@ function computeStats(visitors: Visitor[]): Stats {
 }
 
 export default async function AdminAnalyticsPage() {
+  if (process.env.NEXT_PUBLIC_ENABLE_VISITOR_TRACKING !== "true") {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <p className="text-lg text-muted-foreground">Visitor analytics is currently disabled.</p>
+      </div>
+    );
+  }
   const cookieStore = await cookies();
   const token = cookieStore.get("admin_token");
 
