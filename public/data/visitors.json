@@ -180,5 +180,18 @@
     "os": "Linux",
     "device": "Desktop",
     "visitedAt": "2026-07-06T04:43:47.364Z"
+  },
+  {
+    "id": "d9701d83-6bb9-47cd-9a65-9f06b8823e49",
+    "ipHash": "86f2bfdb1bba848f65d03ef7f58449aa1f35232141c6ddb9edf90dd2ed628715",
+    "city": "Unknown",
+    "region": "cle1",
+    "country": "US",
+    "latitude": "39.7391",
+    "longitude": "-104.9866",
+    "browser": "Chrome",
+    "os": "Windows",
+    "device": "Desktop",
+    "visitedAt": "2026-07-06T04:48:15.866Z"
   }
 ]
