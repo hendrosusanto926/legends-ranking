@@ -414,6 +414,22 @@
     "score": 9.75
   },
   {
+    "id": 23,
+    "name": "Carles Puyol",
+    "continentalClub": 3,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 6,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Spain",
+    "description": "Carles Puyol, the indomitable 'Tarzán,' was the very soul of courage and commitment on the pitch, a lion-hearted warrior who led with unwavering passion. His fearless, all-action defending and inspiring leadership defined an era. With him at the helm, he lifted 3 Champions League trophies, 1 European Championship, 1 World Cup, and 6 domestic La Liga titles.",
+    "score": 9.75
+  },
+  {
     "id": 220,
     "name": "Nelson Dida",
     "continentalClub": 3,
@@ -443,22 +459,6 @@
     "position": "RW",
     "nationality": "Argentina",
     "score": 9.125
-  },
-  {
-    "id": 23,
-    "name": "Carles Puyol",
-    "continentalClub": 2.5,
-    "continentalNational": 1,
-    "worldCup": 1,
-    "domesticLeague": 6,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CB",
-    "nationality": "Spain",
-    "description": "Carles Puyol, the indomitable 'Tarzán,' was the very soul of courage and commitment on the pitch, a lion-hearted warrior who led with unwavering passion. His fearless, all-action defending and inspiring leadership defined an era. With him at the helm, he lifted 3 Champions League trophies, 1 European Championship, 1 World Cup, and 6 domestic La Liga titles.",
-    "score": 9
   },
   {
     "id": 24,
