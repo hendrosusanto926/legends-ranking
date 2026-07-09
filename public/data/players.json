@@ -446,6 +446,22 @@
     "score": 9.38
   },
   {
+    "id": 35,
+    "name": "Franco Baresi",
+    "continentalClub": 3,
+    "continentalNational": 0,
+    "worldCup": 0.5,
+    "domesticLeague": 6,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Italy",
+    "description": "Franco Baresi, known as 'Il Capitano,' was a defensive colossus whose uncompromising elegance and unmatched anticipation defined an era. The bedrock of a legendary AC Milan, he inspired them to 3 European Cups and 6 Scudetti, along with guiding Italy to a World Cup final and a third-place finish. One of two retired jersey numbers from AC Milan. He also one-club man, meaning his entire career spend just for one club",
+    "score": 9.25
+  },
+  {
     "id": 22,
     "name": "Angel Di Maria",
     "continentalClub": 1,
@@ -705,22 +721,6 @@
     "continentalRunnerUp": 0,
     "position": "AM",
     "nationality": "Brazil",
-    "score": 8
-  },
-  {
-    "id": 35,
-    "name": "Franco Baresi",
-    "continentalClub": 3,
-    "continentalNational": 0,
-    "worldCup": 0.25,
-    "domesticLeague": 6,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0.5,
-    "worldCupThirdPlace": 1,
-    "continentalRunnerUp": 0,
-    "position": "CB",
-    "nationality": "Italy",
-    "description": "Franco Baresi, known as 'Il Capitano,' was a defensive colossus whose uncompromising elegance and unmatched anticipation defined an era. The bedrock of a legendary AC Milan, he inspired them to 3 European Cups and 6 Scudetti, along with guiding Italy to a World Cup final and a third-place finish. One of two retired jersey numbers from AC Milan. He also one-club man, meaning his entire career spend just for one club",
     "score": 8
   },
   {
