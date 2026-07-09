@@ -293,14 +293,14 @@
     "continentalNational": 2,
     "worldCup": 1.5,
     "domesticLeague": 2,
-    "ballonDor": 1,
+    "ballonDor": 2,
     "worldCupRunnerUp": 1,
     "worldCupThirdPlace": 0,
     "continentalRunnerUp": 0.5,
     "position": "CF",
     "nationality": "Brazil",
-    "score": 10.375,
-    "description": "O Fenômeno, Ronaldo Nazário, wasn't just a striker; he was a force of nature, blending electrifying pace, mesmerizing dribbling, and clinical finishing into an unstoppable spectacle. With two World Cup triumphs, two Copa América titles, a UEFA Cup, and two La Liga crowns, his career was adorned with team glory, punctuated by two Ballon d'Or awards that cemented his status as the most complete and devastating forward of his generation."
+    "description": "O Fenômeno, Ronaldo Nazário, wasn't just a striker; he was a force of nature, blending electrifying pace, mesmerizing dribbling, and clinical finishing into an unstoppable spectacle. With two World Cup triumphs, two Copa América titles, a UEFA Cup, and two La Liga crowns, his career was adorned with team glory, punctuated by two Ballon d'Or awards that cemented his status as the most complete and devastating forward of his generation.",
+    "score": 10.38
   },
   {
     "id": 18,
