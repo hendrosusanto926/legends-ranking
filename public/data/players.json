@@ -1836,6 +1836,22 @@
     "score": 5.75
   },
   {
+    "id": 73,
+    "name": "Filippo Inzaghi",
+    "continentalClub": 2,
+    "continentalNational": 0,
+    "worldCup": 0.5,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "CF",
+    "nationality": "Italy",
+    "description": "Known as 'SuperPippo', Filippo Inzaghi was a striker whose genius defied conventional wisdom, mastering the art of anticipation to become the ultimate fox-in-the-box. His uncanny ability to materialize in the perfect spot, often from seemingly nowhere, made him a truly unique and infuriatingly effective poacher. A legend forged in glory, he lifted two Continental Club titles, a World Cup, three Domestic Leagues, and reached one Continental final as a runner-up.",
+    "score": 5.75
+  },
+  {
     "id": 68,
     "name": "Leonardo",
     "continentalClub": 0,
@@ -1988,22 +2004,6 @@
     "position": "AM",
     "nationality": "Brazil",
     "description": "Neymar, the electrifying 'Prince of Brazil', redefined attacking play with a mesmerizing blend of audacious skill, lightning-fast dribbling, and the very essence of 'joga bonito'. A visionary creator, his storied career is emblazoned with two Continental Club triumphs, eight Domestic League titles, and a Continental Runner-up finish, forever cementing his place among football's modern legends.",
-    "score": 5.25
-  },
-  {
-    "id": 73,
-    "name": "Filippo Inzaghi",
-    "continentalClub": 2,
-    "continentalNational": 0,
-    "worldCup": 0.25,
-    "domesticLeague": 3,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 1,
-    "position": "CF",
-    "nationality": "Italy",
-    "description": "Known as 'SuperPippo', Filippo Inzaghi was a striker whose genius defied conventional wisdom, mastering the art of anticipation to become the ultimate fox-in-the-box. His uncanny ability to materialize in the perfect spot, often from seemingly nowhere, made him a truly unique and infuriatingly effective poacher. A legend forged in glory, he lifted two Continental Club titles, a World Cup, three Domestic Leagues, and reached one Continental final as a runner-up.",
     "score": 5.25
   },
   {
