@@ -2727,6 +2727,22 @@
     "score": 4.5
   },
   {
+    "id": 110,
+    "name": "Ricardo Kaka",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0.5,
+    "domesticLeague": 2,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "Brazil",
+    "description": "",
+    "score": 4.5
+  },
+  {
     "id": 103,
     "name": "Vinicius Junior",
     "continentalClub": 2,
@@ -2862,21 +2878,6 @@
     "position": "CM",
     "nationality": "Italy",
     "score": 4.125
-  },
-  {
-    "id": 110,
-    "name": "Ricardo Kaka",
-    "continentalClub": 1,
-    "continentalNational": 0,
-    "worldCup": 0.25,
-    "domesticLeague": 2,
-    "ballonDor": 1,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "AM",
-    "nationality": "Brazil",
-    "score": 4
   },
   {
     "id": 111,
