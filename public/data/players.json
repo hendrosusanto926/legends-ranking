@@ -3003,6 +3003,22 @@
     "score": 4
   },
   {
+    "id": 137,
+    "name": "Mario Kempes",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Argentina",
+    "description": "“El Matador,” Mario Kempes was the electrifying force who propelled Argentina to glory, a powerful center-forward famed for his relentless drive and cannon-like left foot. His iconic 1978 World Cup performance, where he was both top scorer and best player, remains legendary. This titan of the game also secured a coveted domestic league title and the prestigious Ballon d'Or, cementing his immortal status.",
+    "score": 4
+  },
+  {
     "id": 255,
     "name": "Emmanuel Petit",
     "continentalClub": 0,
@@ -3446,21 +3462,6 @@
     "continentalRunnerUp": 0,
     "position": "AM",
     "nationality": "South Korea",
-    "score": 3
-  },
-  {
-    "id": 137,
-    "name": "Mario Kempes",
-    "continentalClub": 0,
-    "continentalNational": 0,
-    "worldCup": 1,
-    "domesticLeague": 1,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CF",
-    "nationality": "Argentina",
     "score": 3
   },
   {
