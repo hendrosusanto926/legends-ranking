@@ -1620,6 +1620,22 @@
     "score": 6.25
   },
   {
+    "id": 267,
+    "name": "Djalma Santos",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 1.5,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 3,
+    "position": "RB",
+    "nationality": "Brazil",
+    "description": "Djalma Santos, Brazil's legendary right-back, embodied unparalleled consistency and athleticism. A true pioneer, his game flawlessly blended impeccable defensive solidity with dynamic attacking runs and thunderous shots, redefining the full-back role. Integral to two World Cup triumphs, three domestic league titles, and reaching three continental finals, he set the enduring standard for greatness.",
+    "score": 6.25
+  },
+  {
     "id": 254,
     "name": "Christian Karembeu",
     "continentalClub": 1.5,
