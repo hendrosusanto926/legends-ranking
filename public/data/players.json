@@ -3901,5 +3901,21 @@
     "nationality": "England",
     "description": "",
     "score": 1.5
+  },
+  {
+    "id": 258,
+    "name": "Dennis Bergkamp",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 4,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "SS",
+    "nationality": "Netherlands",
+    "description": "Revered as 'The Artist,' Dennis Bergkamp transformed the role of a second striker into a canvas for his unparalleled genius. His balletic grace, immaculate first touch, and visionary passing crafted moments of pure footballing magic, making the impossible seem effortless. A vital architect of four domestic league titles, including the legendary Arsenal 'Invincibles,' his legacy is etched in golden artistry.",
+    "score": 1
   }
 ]
