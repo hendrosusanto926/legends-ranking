@@ -3036,21 +3036,6 @@
     "score": 4
   },
   {
-    "id": 200,
-    "name": "Hristo Stoichkov",
-    "continentalClub": 1,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 8,
-    "ballonDor": 1,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "LW",
-    "nationality": "Bulgaria",
-    "score": 4
-  },
-  {
     "id": 137,
     "name": "Mario Kempes",
     "continentalClub": 0,
@@ -3405,6 +3390,22 @@
     "nationality": "Brazil",
     "description": "Known as 'O Príncipe,' Robinho dazzled defenses with his electrifying dribbling and iconic 'pedaladas' from the left wing, embodying the joyous spirit of Brazilian football. His mercurial talent delivered a coveted 1x Continental National title and an impressive 7x Domestic League championships, etching his name among the game's most captivating showmen.",
     "score": 3.25
+  },
+  {
+    "id": 200,
+    "name": "Hristo Stoichkov",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 8,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LW",
+    "nationality": "Bulgaria",
+    "description": "Hristo Stoichkov, 'The Dagger,' was a volcanic force on the left wing, renowned for his explosive left foot, incandescent temperament, and searing runs that left defenders in his wake. A true iconoclast, he spearheaded his teams to an astonishing 8 domestic league titles and a coveted continental club triumph. His fiery brilliance defined an era, carving an indelible legacy in football history.",
+    "score": 3
   },
   {
     "id": 129,
