@@ -1281,6 +1281,22 @@
     "score": 6.75
   },
   {
+    "id": 270,
+    "name": "Luis Suarez Miramontes",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Spain",
+    "description": "Known as 'El Arquitecto', Luis Suárez Miramontes was the elegant Spanish maestro who orchestrated play with unparalleled vision and intelligence. His sublime passing and tactical genius redefined the deep-lying playmaker, leading his teams to two Continental Club triumphs, five Domestic League titles, and a Continental National championship, earning him the coveted Ballon d'Or.",
+    "score": 6.75
+  },
+  {
     "id": 180,
     "name": "Gianni Rivera",
     "continentalClub": 2,
