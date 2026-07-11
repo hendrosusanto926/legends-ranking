@@ -740,6 +740,22 @@
     "score": 8
   },
   {
+    "id": 51,
+    "name": "Romario",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 6,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Brazil",
+    "description": "Known universally as 'O Baixinho', Romário was the quintessential penalty box predator, a genius whose minimalist movement and lethal finishing redefined the art of goal-scoring. His brilliance illuminated Brazil's 1994 World Cup triumph, alongside two Continental National titles, six domestic league championships, and football's most coveted individual prize, the Ballon d'Or.",
+    "score": 8
+  },
+  {
     "id": 36,
     "name": "Xabi Alonso",
     "continentalClub": 1.5,
@@ -1122,21 +1138,6 @@
     "position": "CM",
     "nationality": "Netherlands",
     "description": "Clarence Seedorf, 'Il Professore' of the midfield, was a paragon of power and poise, whose elegant intelligence orchestrated play with effortless command. He stands unique in football history, the only player to conquer the UEFA Champions League an unprecedented four times with three different clubs, a testament to a career also gilded with five domestic league titles.",
-    "score": 7
-  },
-  {
-    "id": 51,
-    "name": "Romario",
-    "continentalClub": 0,
-    "continentalNational": 2,
-    "worldCup": 1,
-    "domesticLeague": 6,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CF",
-    "nationality": "Brazil",
     "score": 7
   },
   {
