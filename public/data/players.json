@@ -3885,5 +3885,21 @@
     "position": "CF",
     "nationality": "Netherlands",
     "score": 1.75
+  },
+  {
+    "id": 257,
+    "name": "Steven Gerrard",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 0,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "England",
+    "description": "",
+    "score": 1.5
   }
 ]
