@@ -3889,6 +3889,22 @@
     "score": 2
   },
   {
+    "id": 262,
+    "name": "Michael Owen",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 1,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "England",
+    "description": "The electrifying 'Boy Wonder,' Michael Owen burst onto the global stage with his dazzling pace and clinical eye for goal, leaving defenders trailing in his wake. A true fox in the box, his instinctive finishing earned him the coveted Ballon d'Or and a domestic league title, cementing his legacy as one of England's most prolific strikers.",
+    "score": 2
+  },
+  {
     "id": 148,
     "name": "Romelu Lukaku",
     "continentalClub": 0,
