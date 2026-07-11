@@ -3828,6 +3828,22 @@
     "score": 2.5
   },
   {
+    "id": 264,
+    "name": "Erling Haaland",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Norway",
+    "description": "Erling Haaland, widely known as 'The Cyborg', is a prodigious force who has redefined the art of the modern centre-forward. His iconic playing style fuses terrifying power, devastating pace, and an unnerving clinical precision, making him an unstoppable goal-scoring machine. Already a legend in the making, his formidable career includes a coveted Continental Club triumph and three prestigious domestic league titles.",
+    "score": 2.5
+  },
+  {
     "id": 146,
     "name": "Vincent Kompany",
     "continentalClub": 0,
