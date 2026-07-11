@@ -3983,6 +3983,22 @@
     "score": 1.5
   },
   {
+    "id": 265,
+    "name": "Jamie Carragher",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 0,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "England",
+    "description": "Known affectionately as 'Carra,' Jamie Carragher was the embodiment of Liverpool's spirit, a fierce, vocal centre-back whose tactical intelligence and will to win simply refused to yield. His unwavering commitment culminated in the dramatic capture of the 2005 UEFA Champions League trophy, cementing his legacy as Anfield's indefatigable Red.",
+    "score": 1.5
+  },
+  {
     "id": 258,
     "name": "Dennis Bergkamp",
     "continentalClub": 0,
