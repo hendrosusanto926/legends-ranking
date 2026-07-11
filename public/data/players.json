@@ -3263,6 +3263,22 @@
     "score": 3.5
   },
   {
+    "id": 266,
+    "name": "George Best",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 2,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "RW",
+    "nationality": "Northern Ireland",
+    "description": "George Best, 'The Fifth Beatle', mesmerised the world with his balletic dribbling, electric pace, and two-footed genius from the wing. A dazzling showman, he led Manchester United to two First Division titles and a European Cup, justly earning him the prestigious Ballon d'Or in 1968.",
+    "score": 3.5
+  },
+  {
     "id": 127,
     "name": "Samuel Umtiti",
     "continentalClub": 0,
