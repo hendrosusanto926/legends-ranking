@@ -2363,6 +2363,22 @@
     "score": 5
   },
   {
+    "id": 271,
+    "name": "Antonio Cabrini",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 6,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LB",
+    "nationality": "Italy",
+    "description": "Dubbed 'Il Bell'Antonio,' Antonio Cabrini redefined the full-back position, a whirlwind of elegance and relentless attacking prowess who turned the left flank into his personal canvas. A true titan of his era, his trophy cabinet gleams with a World Cup, a Continental Club title, and an extraordinary six Domestic League championships.",
+    "score": 5
+  },
+  {
     "id": 199,
     "name": "Roberto Rosato",
     "continentalClub": 1,
