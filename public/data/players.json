@@ -430,6 +430,22 @@
     "score": 9.75
   },
   {
+    "id": 27,
+    "name": "Pele",
+    "continentalClub": 1.5,
+    "continentalNational": 0,
+    "worldCup": 2.5,
+    "domesticLeague": 6,
+    "ballonDor": 2,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "AM",
+    "nationality": "Brazil",
+    "description": "Known universally as 'The King,' Pelé, Brazil's eternal maestro, redefined the art of the attacking midfielder with a style of unparalleled grace, explosive power, and breathtaking goal-scoring prowess. His genius ignited pitches worldwide, a balletic blend of skill and athleticism that saw him lift an unprecedented three FIFA World Cups, two Copa Libertadores, and six domestic league titles.",
+    "score": 9.75
+  },
+  {
     "id": 220,
     "name": "Nelson Dida",
     "continentalClub": 3,
@@ -553,22 +569,6 @@
     "nationality": "Netherlands",
     "description": "From the heart of Total Football, Ruud Krol emerged as its elegant, intelligent left-back, an unparalleled architect who redefined the defensive art. His masterful command of the flank propelled Ajax to an astonishing three European Cups and six domestic titles. A dual World Cup finalist, Krol forever stands as a towering figure, epitomizing the brilliance of his era.",
     "score": 9
-  },
-  {
-    "id": 27,
-    "name": "Pele",
-    "continentalClub": 1.5,
-    "continentalNational": 0,
-    "worldCup": 2.5,
-    "domesticLeague": 6,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "AM",
-    "nationality": "Brazil",
-    "description": "Known universally as 'The King,' Pelé, Brazil's eternal maestro, redefined the art of the attacking midfielder with a style of unparalleled grace, explosive power, and breathtaking goal-scoring prowess. His genius ignited pitches worldwide, a balletic blend of skill and athleticism that saw him lift an unprecedented three FIFA World Cups, two Copa Libertadores, and six domestic league titles.",
-    "score": 8.75
   },
   {
     "id": 28,
