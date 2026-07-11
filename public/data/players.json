@@ -32,22 +32,6 @@
     "score": 18.25
   },
   {
-    "id": 3,
-    "name": "Gerd Muller",
-    "continentalClub": 3,
-    "continentalNational": 1,
-    "worldCup": 1,
-    "domesticLeague": 5,
-    "ballonDor": 1,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 1,
-    "continentalRunnerUp": 0,
-    "position": "CF",
-    "nationality": "Germany",
-    "score": 16.5,
-    "description": "Gerd Müller, affectionately known as \"Der Bomber,\" was the quintessential penalty box predator, a master of instinct and quick reflexes whose seemingly unconventional style concealed an absolutely lethal finish. His unparalleled goalscoring prowess led him to a World Cup, a European Championship, three European Cups, five Bundesliga titles, and the Ballon d'Or, forever cementing his place as one of football's most impactful and prolific strikers."
-  },
-  {
     "id": 4,
     "name": "Zinedine Zidane",
     "continentalClub": 1,
@@ -317,6 +301,22 @@
     "nationality": "Brazil",
     "score": 10.25,
     "description": "Known as 'The Tank', Casemiro was the unyielding bedrock that anchored some of football's most dominant sides. His astute positional sense, fierce tackling, and powerful presence forged a protective shield, allowing creative talents to flourish while he relentlessly broke down opposition attacks. A formidable five-time continental club champion, a Copa América winner with Brazil, and a three-time domestic league victor, he redefined the art of the defensive midfielder."
+  },
+  {
+    "id": 3,
+    "name": "Gerd Muller",
+    "continentalClub": 3,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 5,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Germany",
+    "description": "Gerd Müller, affectionately known as \"Der Bomber,\" was the quintessential penalty box predator, a master of instinct and quick reflexes whose seemingly unconventional style concealed an absolutely lethal finish. His unparalleled goalscoring prowess led him to a World Cup, a European Championship, three European Cups, five Bundesliga titles, and the Ballon d'Or, forever cementing his place as one of football's most impactful and prolific strikers.",
+    "score": 10
   },
   {
     "id": 19,
