@@ -3796,6 +3796,22 @@
     "score": 2.5
   },
   {
+    "id": 261,
+    "name": "Frank Lampard",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "England",
+    "description": "Frank Lampard, affectionately known as 'Super Frank,' redefined the modern goalscoring midfielder with his relentless engine, astute positioning, and an uncanny ability to arrive in the box at precisely the right moment. This midfield maestro’s legendary career yielded a staggering goal tally, culminating in a UEFA Champions League triumph and three Premier League titles.",
+    "score": 2.5
+  },
+  {
     "id": 146,
     "name": "Vincent Kompany",
     "continentalClub": 0,
