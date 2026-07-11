@@ -2743,6 +2743,22 @@
     "score": 4.5
   },
   {
+    "id": 260,
+    "name": "Carlo Ancelotti",
+    "continentalClub": 2,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0.5,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Italy",
+    "description": "Carlo Ancelotti, 'The Midfield Maestro,' was the intelligent orchestrator at the heart of legendary Italian teams. With masterful tactical awareness and exquisite passing, he dictated the tempo, conquering two Continental Club titles and three domestic league crowns. An integral figure, he also contributed to Italy's third-place finish at the World Cup.",
+    "score": 4.38
+  },
+  {
     "id": 103,
     "name": "Vinicius Junior",
     "continentalClub": 2,
