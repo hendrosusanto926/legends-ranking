@@ -3841,6 +3841,22 @@
     "score": 2
   },
   {
+    "id": 256,
+    "name": "Zlatan Ibrahimovic",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 12,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Sweden",
+    "description": "",
+    "score": 2
+  },
+  {
     "id": 148,
     "name": "Romelu Lukaku",
     "continentalClub": 0,
