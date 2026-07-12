@@ -3991,6 +3991,22 @@
     "score": 2.5
   },
   {
+    "id": 275,
+    "name": "Ashley Cole",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "LB",
+    "nationality": "England",
+    "description": "Ashley Cole, the definitive modern full-back, patrolled the left flank with unparalleled two-way brilliance, combining relentless defensive tenacity with devastating attacking surges. His iconic career is etched in history with three domestic league titles and the crowning glory of a UEFA Champions League triumph, solidifying his status as an undisputed legend of the game.",
+    "score": 2.5
+  },
+  {
     "id": 146,
     "name": "Vincent Kompany",
     "continentalClub": 0,
