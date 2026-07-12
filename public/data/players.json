@@ -2242,6 +2242,22 @@
     "score": 5.25
   },
   {
+    "id": 279,
+    "name": "Peter Schmeichel",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 10,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "Denmark",
+    "description": "Known as 'The Great Dane', Peter Schmeichel was an imposing, acrobatic giant whose commanding presence and audacious saves redefined the modern goalkeeper. His legendary career is emblazoned with 10 Domestic League titles, the historic UEFA European Championship with Denmark, and the crowning glory of a UEFA Champions League title.",
+    "score": 5.25
+  },
+  {
     "id": 210,
     "name": "Fernando José Torres Sanz",
     "continentalClub": 1,
