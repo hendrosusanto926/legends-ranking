@@ -112,22 +112,6 @@
     "score": 13
   },
   {
-    "id": 9,
-    "name": "Toni Kroos",
-    "continentalClub": 6,
-    "continentalNational": 0,
-    "worldCup": 1,
-    "domesticLeague": 7,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0.5,
-    "continentalRunnerUp": 0,
-    "position": "CM",
-    "nationality": "Germany",
-    "score": 12.875,
-    "description": "Toni Kroos, 'The Maestro,' conducted the beautiful game with unparalleled precision, his laser-guided passes and ice-cold composure dictating the rhythm from midfield. A true titan, he commanded an astounding 6 UEFA Champions League titles, a FIFA World Cup, and 7 domestic league crowns, etching his name among football's most decorated and influential orchestrators."
-  },
-  {
     "id": 10,
     "name": "Cristiano Ronaldo",
     "continentalClub": 5,
@@ -157,6 +141,22 @@
     "position": "SS",
     "nationality": "Argentina",
     "score": 12.25
+  },
+  {
+    "id": 9,
+    "name": "Toni Kroos",
+    "continentalClub": 5.5,
+    "continentalNational": 0,
+    "worldCup": 1,
+    "domesticLeague": 7,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0.5,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Germany",
+    "description": "Toni Kroos, universally acclaimed as 'Der Maestro,' orchestrated the beautiful game with unparalleled precision, vision, and a passing range that redefined midfield control. A World Cup champion and architect of an astonishing array of silverware, his legendary career includes 7 Domestic League titles, a bronze medal at the World Cup, and a staggering 5.5 Continental Club triumphs, marking him as one of football's most decorated and influential tacticians.",
+    "score": 12.13
   },
   {
     "id": 11,
