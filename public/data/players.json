@@ -3441,6 +3441,22 @@
     "score": 3.5
   },
   {
+    "id": 281,
+    "name": "Robert Lewandowski",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 14,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Poland",
+    "description": "",
+    "score": 3.5
+  },
+  {
     "id": 127,
     "name": "Samuel Umtiti",
     "continentalClub": 0,
