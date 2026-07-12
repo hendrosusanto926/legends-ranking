@@ -2904,6 +2904,22 @@
     "score": 4.5
   },
   {
+    "id": 280,
+    "name": "Lev Yashin",
+    "continentalClub": 0,
+    "continentalNational": 1,
+    "worldCup": 0,
+    "domesticLeague": 5,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "GK",
+    "nationality": "Russia",
+    "description": "Known as 'The Black Spider', Lev Yashin redefined the art of goalkeeping with his fearless, acrobatic saves and commanding presence that saw him charge off his line. His legendary career is marked by an unparalleled five Domestic League titles, a UEFA European Championship triumph, and an additional runner-up finish. A true pioneer, he remains the sole goalkeeper in history to be honored with the prestigious Ballon d'Or.",
+    "score": 4.5
+  },
+  {
     "id": 260,
     "name": "Carlo Ancelotti",
     "continentalClub": 2,
