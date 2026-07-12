@@ -64,22 +64,6 @@
     "description": "Known as 'El Hombre Bala', Roberto Carlos redefined the left-back position with his breathtaking pace, attacking prowess, and a thunderous left foot that unleashed unforgettable free-kicks. His legendary career boasts 3 continental club titles, 2 continental national championships, a FIFA World Cup, and 6 domestic league crowns, cementing his place among football's all-time greats."
   },
   {
-    "id": 7,
-    "name": "Andres Iniesta",
-    "continentalClub": 4,
-    "continentalNational": 2,
-    "worldCup": 1,
-    "domesticLeague": 10,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CM",
-    "nationality": "Spain",
-    "description": "Known reverently as Don Andrés, he was the ethereal maestro of the midfield, gliding through opponents with a balletic grace and an unparalleled vision that made time stand still. His genius orchestrated a glittering array of 4 Continental Club titles, 2 Continental National championships, a FIFA World Cup, and a staggering 10 Domestic League triumphs, etching his name among football's eternal legends.",
-    "score": 13.5
-  },
-  {
     "id": 6,
     "name": "Luka Modric",
     "continentalClub": 5.5,
@@ -110,6 +94,22 @@
     "nationality": "Spain",
     "description": "Sergio Ramos, 'El Capitán', was the embodiment of a warrior on the pitch—a towering defender with an unparalleled will to win, often delivering crucial goals from unexpected positions. His legendary career saw him claim an astonishing four Champions League titles, two European Championships, a World Cup, five La Liga and two Ligue 1 crowns, solidifying his status as an era-defining icon.",
     "score": 13
+  },
+  {
+    "id": 7,
+    "name": "Andres Iniesta",
+    "continentalClub": 3.5,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 10,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Spain",
+    "description": "Andrés Iniesta, 'El Ilusionista,' was a balletic weaver of magic in midfield, whose unparalleled vision and exquisite control unlocked the tightest defenses with effortless grace. A true footballing savant, his cabinet gleams with a FIFA World Cup, two European Championships, four UEFA Champions League trophies, and a remarkable ten domestic league titles, solidifying his place as an eternal legend.",
+    "score": 12.75
   },
   {
     "id": 10,
