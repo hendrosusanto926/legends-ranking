@@ -271,6 +271,22 @@
     "description": "Known universally as 'San Iker,' Iker Casillas was the divine guardian between the sticks, a legend whose acrobatic saves and impeccable shot-stopping redefined the art of goalkeeping. He captained Spain to their historic treble of two UEFA European Championships and a FIFA World Cup, while also lifting an incredible three UEFA Champions League titles and six domestic league crowns with Real Madrid."
   },
   {
+    "id": 27,
+    "name": "Pele",
+    "continentalClub": 1.5,
+    "continentalNational": 0,
+    "worldCup": 2.5,
+    "domesticLeague": 6,
+    "ballonDor": 2,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 1,
+    "position": "AM",
+    "nationality": "Brazil",
+    "description": "Known universally as 'The King,' Pelé, Brazil's eternal maestro, redefined the art of the attacking midfielder with a style of unparalleled grace, explosive power, and breathtaking goal-scoring prowess. His genius ignited pitches worldwide, a balletic blend of skill and athleticism that saw him lift an unprecedented three FIFA World Cups, two Copa Libertadores, and six domestic league titles.",
+    "score": 10.5
+  },
+  {
     "id": 17,
     "name": "Ronaldo Nazario",
     "continentalClub": 0,
@@ -427,22 +443,6 @@
     "position": "CB",
     "nationality": "Spain",
     "description": "Carles Puyol, the indomitable 'Tarzán,' was the very soul of courage and commitment on the pitch, a lion-hearted warrior who led with unwavering passion. His fearless, all-action defending and inspiring leadership defined an era. With him at the helm, he lifted 3 Champions League trophies, 1 European Championship, 1 World Cup, and 6 domestic La Liga titles.",
-    "score": 9.75
-  },
-  {
-    "id": 27,
-    "name": "Pele",
-    "continentalClub": 1.5,
-    "continentalNational": 0,
-    "worldCup": 2.5,
-    "domesticLeague": 6,
-    "ballonDor": 2,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "AM",
-    "nationality": "Brazil",
-    "description": "Known universally as 'The King,' Pelé, Brazil's eternal maestro, redefined the art of the attacking midfielder with a style of unparalleled grace, explosive power, and breathtaking goal-scoring prowess. His genius ignited pitches worldwide, a balletic blend of skill and athleticism that saw him lift an unprecedented three FIFA World Cups, two Copa Libertadores, and six domestic league titles.",
     "score": 9.75
   },
   {
