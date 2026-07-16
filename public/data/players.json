@@ -572,6 +572,22 @@
     "score": 9
   },
   {
+    "id": 32,
+    "name": "Alessandro Costacurta",
+    "continentalClub": 4,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 7,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CB",
+    "nationality": "Italy",
+    "description": "Known affectionately as 'Billy,' Alessandro Costacurta embodied defensive artistry, a versatile and intelligent pillar whose calm authority and tactical astuteness anchored legendary backlines. His storied career is marked by an astounding five Continental Club titles, seven Serie A championships, and a World Cup runner-up medal, cementing his legacy as a true colossus of the game.",
+    "score": 9
+  },
+  {
     "id": 28,
     "name": "Dunga",
     "continentalClub": 0,
@@ -646,22 +662,6 @@
     "position": "CM",
     "nationality": "Netherlands",
     "score": 8.5
-  },
-  {
-    "id": 32,
-    "name": "Alessandro Costacurta",
-    "continentalClub": 4,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 7,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0.5,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CB",
-    "nationality": "Italy",
-    "description": "Alessandro Costacurta, the quintessential defender, was a tactical maestro renowned for his intelligence, versatility, and impeccable timing. A silent architect of legendary defenses, his career is adorned with 7 domestic league titles, an astounding 4 UEFA Champions League crowns, and a FIFA World Cup final appearance, cementing his place among football's immortal guardians.",
-    "score": 8.25
   },
   {
     "id": 171,
