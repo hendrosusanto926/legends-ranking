@@ -144,6 +144,22 @@
     "score": 12.25
   },
   {
+    "id": 75,
+    "name": "Rodri",
+    "continentalClub": 1,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 4,
+    "ballonDor": 1,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "DM",
+    "nationality": "Spain",
+    "description": "Revered as 'The Architect,' Rodri redefined the defensive midfield role through his sublime vision, immaculate passing, and unyielding defensive prowess, dictating the tempo for club and country. His unparalleled trophy cabinet boasts a World Cup, a European Championship, the Champions League, four Domestic League titles, and the coveted Ballon d'Or, solidifying his place among the game's immortal legends.",
+    "score": 12.25
+  },
+  {
     "id": 9,
     "name": "Toni Kroos",
     "continentalClub": 5.5,
@@ -2133,21 +2149,6 @@
     "continentalRunnerUp": 1,
     "position": "CM",
     "nationality": "Italy",
-    "score": 5.25
-  },
-  {
-    "id": 75,
-    "name": "Rodri",
-    "continentalClub": 1,
-    "continentalNational": 1,
-    "worldCup": 0,
-    "domesticLeague": 4,
-    "ballonDor": 1,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "DM",
-    "nationality": "Spain",
     "score": 5.25
   },
   {
