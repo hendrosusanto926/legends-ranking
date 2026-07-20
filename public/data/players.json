@@ -7,13 +7,13 @@
     "worldCup": 1,
     "domesticLeague": 12,
     "ballonDor": 8,
-    "worldCupRunnerUp": 1,
+    "worldCupRunnerUp": 2,
     "worldCupThirdPlace": 0,
     "continentalRunnerUp": 2,
     "position": "RW",
     "nationality": "Argentina",
-    "score": 21.75,
-    "description": "Known universally as 'La Pulga' or simply the GOAT, Lionel Messi danced across pitches with unparalleled dribbling, visionary passing, and a preternatural goal-scoring touch that defied physics. His record 8 Ballon d'Or awards underscore a career shimmering with trophies, including four UEFA Champions League titles and a staggering twelve domestic league crowns. Culminating in an emotional FIFA World Cup triumph and two major continental national titles for Argentina, Messi's legacy is etched forever as football's most sublime and dominant force."
+    "description": "Known universally as 'La Pulga' or simply the GOAT, Lionel Messi danced across pitches with unparalleled dribbling, visionary passing, and a preternatural goal-scoring touch that defied physics. His record 8 Ballon d'Or awards underscore a career shimmering with trophies, including four UEFA Champions League titles and a staggering twelve domestic league crowns. Culminating in an emotional FIFA World Cup triumph and two major continental national titles for Argentina, Messi's legacy is etched forever as football's most sublime and dominant force.",
+    "score": 23.25
   },
   {
     "id": 2,
