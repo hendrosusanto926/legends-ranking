@@ -2676,6 +2676,22 @@
     "score": 4.75
   },
   {
+    "id": 141,
+    "name": "Lamine Yamal",
+    "continentalClub": 0,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "RW",
+    "nationality": "Spain",
+    "description": "",
+    "score": 4.75
+  },
+  {
     "id": 237,
     "name": "Alisson Becker",
     "continentalClub": 1,
@@ -3702,21 +3718,6 @@
     "continentalRunnerUp": 1,
     "position": "DM",
     "nationality": "Italy",
-    "score": 2.75
-  },
-  {
-    "id": 141,
-    "name": "Lamine Yamal",
-    "continentalClub": 0,
-    "continentalNational": 1,
-    "worldCup": 0,
-    "domesticLeague": 3,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "RW",
-    "nationality": "Spain",
     "score": 2.75
   },
   {
