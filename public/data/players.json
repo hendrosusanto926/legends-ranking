@@ -1286,6 +1286,22 @@
     "score": 7
   },
   {
+    "id": 204,
+    "name": "Emiliano Martínez",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 0,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "GK",
+    "nationality": "Argentina",
+    "description": "Known as 'Dibu,' Emiliano Martínez is a commanding and often provocative goalkeeper renowned for his incredible shot-stopping ability, penalty shootout heroics, and psychological gamesmanship. He became a global icon for his instrumental role in Argentina's triumph at the FIFA World Cup 2022, where he also secured the Golden Glove award. His fearless performances also led Argentina to Copa América glory in 2021.",
+    "score": 7
+  },
+  {
     "id": 186,
     "name": "Jurgen Kohler",
     "continentalClub": 1,
@@ -2041,22 +2057,6 @@
     "continentalRunnerUp": 1,
     "position": "CF",
     "nationality": "Germany",
-    "score": 5.5
-  },
-  {
-    "id": 204,
-    "name": "Emiliano Martínez",
-    "continentalClub": 0,
-    "continentalNational": 2,
-    "worldCup": 1,
-    "domesticLeague": 0,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "GK",
-    "nationality": "Argentina",
-    "description": "Known as 'Dibu,' Emiliano Martínez is a commanding and often provocative goalkeeper renowned for his incredible shot-stopping ability, penalty shootout heroics, and psychological gamesmanship. He became a global icon for his instrumental role in Argentina's triumph at the FIFA World Cup 2022, where he also secured the Golden Glove award. His fearless performances also led Argentina to Copa América glory in 2021.",
     "score": 5.5
   },
   {
