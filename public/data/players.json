@@ -789,6 +789,22 @@
     "score": 8
   },
   {
+    "id": 174,
+    "name": "Alexis Mac Allister",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 8
+  },
+  {
     "id": 36,
     "name": "Xabi Alonso",
     "continentalClub": 1.5,
@@ -1389,21 +1405,6 @@
     "worldCupThirdPlace": 0,
     "continentalRunnerUp": 0,
     "position": "DM",
-    "nationality": "Argentina",
-    "score": 6.5
-  },
-  {
-    "id": 174,
-    "name": "Alexis Mac Allister",
-    "continentalClub": 0,
-    "continentalNational": 2,
-    "worldCup": 1,
-    "domesticLeague": 1,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CM",
     "nationality": "Argentina",
     "score": 6.5
   },
