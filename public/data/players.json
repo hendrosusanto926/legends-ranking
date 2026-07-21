@@ -3575,6 +3575,22 @@
     "score": 3.25
   },
   {
+    "id": 263,
+    "name": "Harry Kane",
+    "continentalClub": 0,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 2,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 2,
+    "position": "CF",
+    "nationality": "England",
+    "description": "From the heart of England emerged Harry Kane, the indomitable 'HurriKane,' a complete centre-forward whose lethal finishing was matched only by his exquisite playmaking. A true footballing titan, he led his teams to two domestic league triumphs and powered his nation to a World Cup third-place finish. His relentless drive also saw him bravely contest two continental finals, etching his name into the annals of the game.",
+    "score": 3.25
+  },
+  {
     "id": 200,
     "name": "Hristo Stoichkov",
     "continentalClub": 1,
@@ -4014,22 +4030,6 @@
     "position": "CM",
     "nationality": "England",
     "description": "Frank Lampard, affectionately known as 'Super Frank,' redefined the modern goalscoring midfielder with his relentless engine, astute positioning, and an uncanny ability to arrive in the box at precisely the right moment. This midfield maestro’s legendary career yielded a staggering goal tally, culminating in a UEFA Champions League triumph and three Premier League titles.",
-    "score": 2.5
-  },
-  {
-    "id": 263,
-    "name": "Harry Kane",
-    "continentalClub": 0,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 2,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 2,
-    "position": "CF",
-    "nationality": "England",
-    "description": "",
     "score": 2.5
   },
   {
