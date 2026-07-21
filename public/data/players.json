@@ -1191,6 +1191,22 @@
     "score": 7.25
   },
   {
+    "id": 206,
+    "name": "Gonzalo Montiel",
+    "continentalClub": 0,
+    "continentalNational": 2,
+    "worldCup": 1,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "RB",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 7.25
+  },
+  {
     "id": 272,
     "name": "Nilton Santos",
     "continentalClub": 0,
@@ -1470,22 +1486,6 @@
     "continentalRunnerUp": 0,
     "position": "DM",
     "nationality": "Argentina",
-    "score": 6.5
-  },
-  {
-    "id": 206,
-    "name": "Gonzalo Montiel",
-    "continentalClub": 0,
-    "continentalNational": 2,
-    "worldCup": 1,
-    "domesticLeague": 1,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "RB",
-    "nationality": "Argentina",
-    "description": "",
     "score": 6.5
   },
   {
