@@ -2125,6 +2125,22 @@
     "score": 5.38
   },
   {
+    "id": 95,
+    "name": "Lautaro Martinez",
+    "continentalClub": 0,
+    "continentalNational": 1.5,
+    "worldCup": 0.5,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0.5,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 5.38
+  },
+  {
     "id": 72,
     "name": "Neymar",
     "continentalClub": 2,
@@ -2710,21 +2726,6 @@
     "nationality": "Brazil",
     "description": "Known affectionately as 'The Holy Goalie', Alisson Becker redefined the art of goalkeeping. His calm command, breathtaking shot-stopping, and visionary distribution transformed the sweeper-keeper into a primary architect of attack. A legend forged in victory, his illustrious career includes a UEFA Champions League, a Copa América, two domestic league titles, and a Continental runner-up finish, solidifying his place among football's elite.",
     "score": 4.63
-  },
-  {
-    "id": 95,
-    "name": "Lautaro Martinez",
-    "continentalClub": 0,
-    "continentalNational": 1.5,
-    "worldCup": 0.5,
-    "domesticLeague": 3,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CF",
-    "nationality": "Argentina",
-    "score": 4.625
   },
   {
     "id": 97,
