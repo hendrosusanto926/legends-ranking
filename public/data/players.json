@@ -1753,6 +1753,22 @@
     "score": 6.13
   },
   {
+    "id": 155,
+    "name": "Enzo Fernandez",
+    "continentalClub": 0,
+    "continentalNational": 1.5,
+    "worldCup": 0.5,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CM",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 6.13
+  },
+  {
     "id": 60,
     "name": "Lothar Matthaus",
     "continentalClub": 0,
@@ -3753,21 +3769,6 @@
     "continentalRunnerUp": 0.5,
     "position": "CM",
     "nationality": "Uruguay",
-    "score": 2.75
-  },
-  {
-    "id": 155,
-    "name": "Enzo Fernandez",
-    "continentalClub": 0,
-    "continentalNational": 1.5,
-    "worldCup": 0.5,
-    "domesticLeague": 1,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CM",
-    "nationality": "Argentina",
     "score": 2.75
   },
   {
