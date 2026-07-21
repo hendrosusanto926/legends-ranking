@@ -495,6 +495,22 @@
     "score": 9.25
   },
   {
+    "id": 166,
+    "name": "Julián Álvarez",
+    "continentalClub": 2,
+    "continentalNational": 1,
+    "worldCup": 1,
+    "domesticLeague": 3,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 1,
+    "worldCupThirdPlace": 0,
+    "continentalRunnerUp": 0,
+    "position": "CF",
+    "nationality": "Argentina",
+    "description": "",
+    "score": 9.25
+  },
+  {
     "id": 22,
     "name": "Angel Di Maria",
     "continentalClub": 1,
@@ -846,21 +862,6 @@
     "continentalRunnerUp": 0,
     "position": "DM",
     "nationality": "Netherlands",
-    "score": 7.75
-  },
-  {
-    "id": 166,
-    "name": "Julián Álvarez",
-    "continentalClub": 2,
-    "continentalNational": 1,
-    "worldCup": 1,
-    "domesticLeague": 3,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0,
-    "position": "CF",
-    "nationality": "Argentina",
     "score": 7.75
   },
   {
