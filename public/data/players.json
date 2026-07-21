@@ -3387,6 +3387,22 @@
     "score": 3.63
   },
   {
+    "id": 139,
+    "name": "Jude Bellingham",
+    "continentalClub": 1,
+    "continentalNational": 0,
+    "worldCup": 0,
+    "domesticLeague": 1,
+    "ballonDor": 0,
+    "worldCupRunnerUp": 0,
+    "worldCupThirdPlace": 1,
+    "continentalRunnerUp": 0.5,
+    "position": "AM",
+    "nationality": "England",
+    "description": "Hailed as 'The Gladiator' of his generation, Jude Bellingham emerged as a colossus in the heart of midfield, his iconic blend of dynamic box-to-box power, sublime skill, and unyielding influence reshaping modern football. With a UEFA Champions League title, a domestic league crown, a fiercely contested World Cup third-place finish, and a memorable continental runner-up accolade to his name, Bellingham's legacy is etched in the annals of the beautiful game.",
+    "score": 3.63
+  },
+  {
     "id": 123,
     "name": "Mats Hummels",
     "continentalClub": 0,
@@ -3709,21 +3725,6 @@
     "continentalRunnerUp": 0.5,
     "position": "AM",
     "nationality": "Portugal",
-    "score": 2.875
-  },
-  {
-    "id": 139,
-    "name": "Jude Bellingham",
-    "continentalClub": 1,
-    "continentalNational": 0,
-    "worldCup": 0,
-    "domesticLeague": 1,
-    "ballonDor": 0,
-    "worldCupRunnerUp": 0,
-    "worldCupThirdPlace": 0,
-    "continentalRunnerUp": 0.5,
-    "position": "AM",
-    "nationality": "England",
     "score": 2.875
   },
   {
